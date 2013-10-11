@@ -4,226 +4,576 @@
 		"selected_items":
 		[
 			[
-				"par",
-				"params"
+				"soilmo",
+				"soilmoisture"
 			],
 			[
-				"so",
-				"soilMoisture"
+				"soil",
+				"soilmoistureFloat"
 			],
 			[
-				"soi",
-				"soilTemp"
+				"senso",
+				"sensorReadings"
 			],
 			[
-				"leng",
-				"length"
+				"light",
+				"lightning"
+			],
+			[
+				"lig",
+				"lightning"
+			],
+			[
+				"crea",
+				"created_at"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"padding-",
+				"padding-top"
+			],
+			[
+				"margin-",
+				"margin-left"
+			],
+			[
+				"gl",
+				"glyphicon-home"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"check",
+				"checkedTimes"
+			],
+			[
+				"error",
+				"error_message"
+			],
+			[
+				"media",
+				"media_id"
+			],
+			[
+				"btn",
+				"btn-default"
+			],
+			[
+				"add_to",
+				"add_to_account"
+			],
+			[
+				"create",
+				"create_account"
+			],
+			[
+				"hash",
+				"hashTag"
+			],
+			[
+				"medi",
+				"media_id"
+			],
+			[
+				"exe",
+				"execute"
+			],
+			[
+				"insta",
+				"insta_entries"
+			],
+			[
+				"has",
+				"hasClass	jQuery"
+			],
+			[
+				"sans",
+				"sans-serif"
+			],
+			[
+				"contest",
+				"contest_id"
+			],
+			[
+				"subsc",
+				"Subscribe_model"
+			],
+			[
+				"Subs",
+				"Subscribe_model"
+			],
+			[
+				"conte",
+				"contest_id"
+			],
+			[
+				"Sub",
+				"Subscribe_model"
+			],
+			[
+				"call",
+				"callback_url"
+			],
+			[
+				"objec",
+				"object_id"
+			],
+			[
+				"callback",
+				"callback_url"
+			],
+			[
+				"data",
+				"dataFooter"
+			],
+			[
+				"da",
+				"dataHeader"
+			],
+			[
+				"access",
+				"access_parameters"
+			],
+			[
+				"acces",
+				"access_token"
+			],
+			[
+				"the",
+				"theData"
+			],
+			[
+				"tag",
+				"tagEndPoint"
+			],
+			[
+				"translation",
+				"translation_id"
+			],
+			[
+				"tran",
+				"translation_text_id"
+			],
+			[
+				"neutral",
+				"neutral_text"
+			],
+			[
+				"neutral_",
+				"neutral_text"
+			],
+			[
+				"te",
+				"text"
+			],
+			[
+				"category",
+				"category"
+			],
+			[
+				"transla",
+				"translation_id"
+			],
+			[
+				"language",
+				"language_id"
+			],
+			[
+				"languages",
+				"languages"
+			],
+			[
+				"cate",
+				"category_id"
+			],
+			[
+				"load",
+				"loadMainView"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"hva",
+				"hva_er_qslist"
+			],
+			[
+				"thumbnails",
+				"thumbnails-frontpage"
+			],
+			[
+				"nivo",
+				"nivo-slider"
+			],
+			[
+				"ca",
+				"category_array"
+			],
+			[
+				"string",
+				"strings_array"
+			],
+			[
+				"array",
+				"array"
+			],
+			[
+				"num",
+				"num_rows"
+			],
+			[
+				"fo",
+				"foreach	foreach …"
+			],
+			[
+				"page",
+				"page_model"
+			],
+			[
+				"catego",
+				"category"
+			],
+			[
+				"home",
+				"home"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"sam",
+				"sameheightTop"
 			],
 			[
 				"min",
-				"minutes"
+				"min-width"
 			],
 			[
-				"get",
-				"getHours"
+				"max-",
+				"max-width"
 			],
 			[
-				"end",
-				"endtime"
+				"background",
+				"background-color"
 			],
 			[
-				"lengt",
-				"length-1"
+				"o",
+				"overflow"
 			],
 			[
-				"last",
-				"lastdate"
+				"padd",
+				"padding"
 			],
 			[
-				"ste",
-				"stepTooltip"
+				"letter",
+				"letter-spacing"
 			],
 			[
-				"pho",
-				"photo_thumb_url"
+				"text-",
+				"text-transform"
 			],
 			[
-				"thu",
-				"thumb_url"
+				"list",
+				"list-style-type"
 			],
 			[
-				"photo",
-				"photo_url"
+				"backgrou",
+				"background-color"
 			],
 			[
-				"forma",
-				"formatMinutes"
+				"marin",
+				"margin-top"
+			],
+			[
+				"stat",
+				"station_next_err"
+			],
+			[
+				"current",
+				"currentResource"
+			],
+			[
+				"fed",
+				"feedparser"
+			],
+			[
+				"ticket",
+				"tickets"
+			],
+			[
+				"d",
+				"d"
+			],
+			[
+				"p",
+				"p"
 			],
 			[
 				"cre",
-				"created_at"
+				"create"
 			],
 			[
-				"im",
-				"imgurl"
+				"find",
+				"find_project"
 			],
 			[
-				"cr",
-				"created_at"
+				"projec",
+				"projects"
 			],
 			[
-				"cur",
-				"curtime"
+				"if",
+				"if	if … end"
 			],
 			[
-				"cu",
-				"currentTime"
+				"track",
+				"trackCopy"
+			],
+			[
+				"n",
+				"nth-child"
+			],
+			[
+				"planta",
+				"plantagotchiVariables"
+			],
+			[
+				"air",
+				"airTempOptions"
+			],
+			[
+				"soilT",
+				"soilTempOptions"
+			],
+			[
+				"to",
+				"toLowerCase"
+			],
+			[
+				"capi",
+				"capitaliseFirstLetter"
+			],
+			[
+				"soi",
+				"soilMoisture"
+			],
+			[
+				"Soil",
+				"soilmoisture"
 			],
 			[
 				"hu",
-				"hum"
+				"humidity"
 			],
 			[
-				"soilMo",
-				"soilMoist"
+				"get",
+				"getData"
+			],
+			[
+				"hum",
+				"humidityOptions"
+			],
+			[
+				"humi",
+				"humidityData"
+			],
+			[
+				"airT",
+				"airTempChart"
 			],
 			[
 				"ai",
 				"airTemp"
 			],
 			[
-				"light",
+				"json",
+				"jsonData"
+			],
+			[
+				"lo",
+				"lowerLimit"
+			],
+			[
+				"a",
+				"arrayToDataTable"
+			],
+			[
+				"v",
+				"visualization"
+			],
+			[
+				"se",
+				"section	Tag"
+			],
+			[
+				"is_nu",
+				"is_numeric"
+			],
+			[
+				"pi",
+				"picture"
+			],
+			[
+				"li",
 				"light"
-			],
-			[
-				"humidity",
-				"humidity"
-			],
-			[
-				"ait",
-				"airtemp"
-			],
-			[
-				"gra",
-				"graphsoiltemp"
-			],
-			[
-				"gr",
-				"graphairtemp"
-			],
-			[
-				"Luft",
-				"Lufttempratur"
-			],
-			[
-				"Jo",
-				"Jordtempratur"
-			],
-			[
-				"soil",
-				"soilMoist"
-			],
-			[
-				"ligh",
-				"lightblue"
-			],
-			[
-				"air",
-				"airTemp"
-			],
-			[
-				"en",
-				"enabled"
-			],
-			[
-				"soit",
-				"soiltemp"
-			],
-			[
-				"soilt",
-				"soiltemp"
-			],
-			[
-				"num",
-				"numbers"
-			],
-			[
-				"des",
-				"destroyData"
-			],
-			[
-				"cal",
-				"calculateDataForCalculations"
-			],
-			[
-				"var",
-				"variable2"
-			],
-			[
-				"html",
-				"htmlinsert"
-			],
-			[
-				"dat",
-				"data"
-			],
-			[
-				"data",
-				"dataset"
-			],
-			[
-				"variab",
-				"variable_set"
-			],
-			[
-				"days",
-				"days_between"
-			],
-			[
-				"price",
-				"pricescraper_cron"
-			],
-			[
-				"pri",
-				"pricescraper_cron"
-			],
-			[
-				"pric",
-				"pricescraper_cron"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "document.tex",
+			"settings":
+			{
+				"buffer_size": 388,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 92,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bibliography.bib",
+			"settings":
+			{
+				"buffer_size": 2051,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\\Section{Theoretical perspective}\n",
+			"file": "tex/3_theory.tex",
+			"file_size": 0,
+			"file_write_time": 1381483028000000,
+			"settings":
+			{
+				"buffer_size": 34,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 369.0,
+		"height": 287.0,
 		"selected_items":
 		[
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
 			[
 				"pack",
 				"Package Control: Install Package"
 			],
 			[
-				"bro",
-				"SFTP: Browse Remote…"
+				"pa",
+				"Package Control: Install Package"
 			],
 			[
-				"sfts",
-				"SFTP: Show Panel"
+				"install",
+				"Package Control: Install Package"
 			],
 			[
-				"sft",
-				"SFTP: Browse Server…"
+				"repl",
+				"SublimeREPL: Python - RUN current file"
 			],
 			[
-				"sf",
-				"SFTP: Show Panel"
+				"repl py",
+				"SublimeREPL: Python - RUN current file"
 			],
 			[
-				"packi",
+				"rep",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"sass",
+				"Set Syntax: SASS"
+			],
+			[
+				"git",
+				"Git: Status"
+			],
+			[
+				"gi",
+				"Git: Status"
+			],
+			[
+				"g",
+				"Git: Status"
+			],
+			[
+				"git p",
+				"Git: Push"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"git sta",
+				"Git: Status"
+			],
+			[
+				"git s",
+				"Git: Status"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: i",
 				"Package Control: Install Package"
 			]
 		],
@@ -231,7 +581,7 @@
 	},
 	"console":
 	{
-		"height": 202.0
+		"height": 125.0
 	},
 	"distraction_free":
 	{
@@ -244,69 +594,144 @@
 	},
 	"file_history":
 	[
-		"/run/user/morten/gvfs/mtp:host=%5Busb%3A003%2C006%5D/65537/37/98",
-		"/home/morten/dev/kjekke ting/rails update all sensorvalues",
-		"/home/morten/dev/plantapi/app/models/sensorvalue.rb",
-		"/home/morten/dev/plantapi/app/controllers/sensorvalues_controller.rb",
-		"/home/morten/dev/plantapi/config/environments/production.rb",
-		"/home/morten/dev/plantapi/Gemfile",
-		"/home/morten/dev/plantapi/app/assets/javascripts/application.js",
-		"/home/morten/dev/plantapi/app/assets/stylesheets/application.css.scss",
-		"/home/morten/dev/plantapi/app/views/plants/tempraturegraph.html.erb",
-		"/home/morten/dev/plantapi/config/locales/nb.yml",
-		"/home/morten/dev/plantapi/config/environments/development.rb",
-		"/home/morten/dev/plantapi/config/application.rb",
-		"/home/morten/dev/plantapi/app/views/plants/graph.html.erb",
-		"/home/morten/dev/plantapi/app/views/plants/lightgraph.html.erb",
-		"/home/morten/dev/plantapi/app/views/plants/humiditygraph.html.erb",
-		"/home/morten/dev/plantapi/app/views/plants/soilmoisturegraph.html.erb",
-		"/home/morten/dev/plantapi/app/controllers/plants_controller.rb",
-		"/home/morten/dev/fontello-7a7ca93c/css/fontello.css",
-		"/home/morten/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
-		"/home/morten/dev/plantapi/app/assets/javascripts/ahighstock.js",
-		"/home/morten/dev/Highstock-1.3.5/js/highstock.js",
-		"/home/morten/dev/plantapi/config/environment.rb",
-		"/home/morten/dev/fontello-7a7ca93c/config.json",
-		"/home/morten/dev/plantagotchi/config.ru",
-		"/home/morten/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
-		"/home/morten/.ssh/config",
-		"/home/morten/dev/tallforteller/app/templates/doublecat/collect/data.html",
-		"/home/morten/dev/tallforteller/app/models/SurveyCollection.js",
-		"/home/morten/dev/tallforteller/app/views/doublecat/describe/describeDoubleCatData.js",
-		"/home/morten/dev/tallforteller/app/views/doublecat/collect/catcatListView.js",
-		"/home/morten/Desktop/wimplogo.png",
-		"/home/morten/.config/sublime-text-2/Packages/User/sftp_servers/fleurdelis",
-		"/tmp/sublime-sftp-browse-1370519316/fleurdelis/public_html/images/wimplog.png",
-		"/home/morten/Downloads/anonymous_publishing/pricescraper.install",
-		"/home/morten/dev/statlab/src/anova.js",
-		"/home/morten/ubuntu shortcuts.txt",
-		"/home/morten/Downloads/anonymous_publishing/anonymous_publishing.info",
-		"/home/morten/Downloads/anonymous_publishing/anonymous_publishing.install",
-		"/home/morten/Downloads/anonymous_publishing/anonymous_publishing.module",
-		"/home/morten/Downloads/anonymous_publishing/pricescraper.module",
-		"/home/morten/Documents/SecondLife-i686-3.5.1.274821/README-linux-voice.txt",
-		"/home/morten/Documents/SecondLife-i686-3.5.1.274821/README-linux.txt",
-		"/home/morten/Downloads/tidsbruk.json",
-		"/home/morten/Downloads/variable-value.bin",
-		"/home/morten/dev/statlab/spec/anovaspec.js",
-		"/home/morten/dev/statlab/src/vassaranova.js",
-		"/home/morten/dev/statlab/src/mannwhit.js",
-		"/home/morten/dev/statlab/src/chisquare.js",
-		"/home/morten/dev/statlab/src/kruskal.js",
-		"/home/morten/Downloads/ultimate_cron/ultimate_cron.install",
-		"/home/morten/dev/statlab/vassarstats/chisquare.js",
-		"/etc/cron.daily/trim"
+		"/Users/Cobra/Documents/skole/UIO/master/oppgaven/oppgaven.sublime-project",
+		"/Applications/MAMP/htdocs/plantagotchi_apiView/custom.css",
+		"/Applications/MAMP/htdocs/plantagotchi_apiView/bootstrap.css",
+		"/Applications/MAMP/htdocs/plantagotchi_apiView/apiView.php",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/assets/stylesheets/application.css.scss",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/views/plants/soilmoisturegraph.html.erb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/views/plants/humiditygraph.html.erb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/views/plants/show.html.erb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/views/plants/tempraturegraph.html.erb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/config/routes.rb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/views/plants/graph.html.erb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/views/plants/raskedata.html.erb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/views/plants/lightgraph.html.erb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/db/migrate/20130911141608_update_sensorvalues.rb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/config/application.rb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/models/sensorvalue.rb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/controllers/sensorvalues_controller.rb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/views/videos/index.html.erb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/controllers/plants_controller.rb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/views/layouts/application.html.erb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/views/plants/index.html.erb",
+		"/Users/Cobra/Desktop/test_without_deflicker.sh",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/views/sensorvalues/index.html.erb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/views/plants/_form.html.erb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/views/plants/edit.html.erb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/views/sensorvalues/show.html.erb",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/app/assets/javascripts/application.js",
+		"/Applications/MAMP/htdocs/RAILS/plantagotchi_v2/Gemfile",
+		"/Volumes/ftp.qslist.com/qslist/prod/parallelcurl.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/views/view.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/config/facebook.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/controllers/Example.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/config/autoload.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/models/ion_auth_model.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/views/templates/header.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/language/english/auth_lang.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/config/ion_auth.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/libraries/facebook.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/views/auth/index.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/language/english/ion_auth_lang.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/assets/js/jquery2.0.3-dev.js",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/libraries/base_facebook.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/controllers/auth.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/channel.html",
+		"/Users/Cobra/Downloads/initializr/index.html",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/config/config.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/views/auth/login.php",
+		"/Volumes/ec2-qslist-dev/html/paypal/application/config/database.php",
+		"/Volumes/ec2-qslist-dev/html/qslist/hjem/application/config/autoload.php",
+		"/Volumes/ec2-qslist-dev/html/qslist/hjem/application/config/asset.php",
+		"/Volumes/ec2-qslist-dev/html/qslist/hjem/application/helpers/asset_helper.php",
+		"/Volumes/ec2-qslist-dev/html/qslist/hjem/application/.htaccess",
+		"/Volumes/ftp.qslist.com/qslist/sjur/paypal/cert/api_cert_chain.crt",
+		"/Volumes/ftp.qslist.com/qslist/prod/instavote_getNewItems.php",
+		"/Volumes/ftp.qslist.com/qslist/prod/instavote_callback.php",
+		"/Volumes/ftp.qslist.com/qslist/sjur/paypal/ipnlistener.php",
+		"/Volumes/ec2-sjur-qslist/paypal/js/paypal-button.min.js",
+		"/Volumes/ftp.qslist.com/qslist/hjem/application/views/pages/home.php",
+		"/Volumes/ec2-sjur-qslist/qslist_dev/prod/script/jquery.cookie.js",
+		"/Volumes/ec2-sjur-qslist/qslist_dev/master/qslist_mal.php",
+		"/Volumes/ec2-sjur-qslist/qslist_dev/prod/top01.php",
+		"/Volumes/ec2-sjur-qslist/qslist_dev/prod/instavote_cron_createSubscriptions.php",
+		"/Volumes/ec2-sjur-qslist/qslist_dev/prod/instavote_item.php",
+		"/Volumes/ec2-sjur-qslist/qslist_dev/prod/instavote_inn01.php",
+		"/Volumes/ec2-sjur-qslist/qslist_dev/prod/instavote_cron_deletePhotos.php",
+		"/Volumes/ec2-sjur-qslist/qslist_dev/prod/script/lazyload.min.js",
+		"/Volumes/ec2-sjur-qslist/qslist_dev/prod/instavote_item_admin.php",
+		"/Volumes/ec2-sjur-qslist/qslist_dev/index.php",
+		"/Volumes/ec2-sjur-qslist/qslist_dev/hjem/application/views/templates/header.php",
+		"/Volumes/ec2-sjur-qslist/qslist_dev/includes/qshead.php",
+		"/Volumes/ec2-sjur-qslist/qslist_dev/prod/script/infinite.scroll.min.js",
+		"/Volumes/ec2-50-16-5-7.compute-1.amazonaws.com/qslist_dev/Connections/qsapp.php",
+		"/Volumes/ftp.qslist.com/qslist/umbro/application/views/templates/footer.php",
+		"/Volumes/ftp.qslist.com/qslist/umbro/application/views/templates/header.php",
+		"/Volumes/ftp.qslist.com/qslist/sjur/instavote/application/views/index.html",
+		"/Volumes/ftp.qslist.com/qslist/sjur/instavote/application/views/admin/settings.php",
+		"/Volumes/ftp.qslist.com/qslist/sjur/instavote/application/views/pages/instavote.php",
+		"/Volumes/ftp.qslist.com/qslist/sjur/instavote/application/views/templates/header.php",
+		"/Volumes/ftp.qslist.com/qslist/sjur/instavote/application/controllers/instavote.php",
+		"/Volumes/ftp.qslist.com/qslist/sjur/instavote/application/views/auth/login.php",
+		"/Volumes/ftp.qslist.com/instavote/application/views/admin/settings.php",
+		"/Volumes/ftp.qslist.com/instavote/application/controllers/admin.php",
+		"/Volumes/ftp.qslist.com/instavote/application/libraries/Instagram_api.php",
+		"/Volumes/ftp.qslist.com/instavote/application/config/Instagram_api.php",
+		"/Volumes/ftp.qslist.com/instavote/application/views/templates/header.php",
+		"/Volumes/ftp.qslist.com/instavote/application/controllers/instavote.php",
+		"/Volumes/ftp.qslist.com/instavote/application/models/subscribe_model.php",
+		"/Users/Cobra/Downloads/instagramFiles/callback.php",
+		"/Users/Cobra/Downloads/instagramFiles/subscribe.php",
+		"/Users/Cobra/Downloads/instagramFiles/Subscribe_model.php",
+		"/Volumes/ftp.qslist.com/qslist/sjur/instavote/application/logs/log-2013-07-21.php",
+		"/Volumes/ftp.qslist.com/instavote/application/controllers/pages.php",
+		"/Volumes/ftp.qslist.com/instavote/application/views/pages/instavote.php",
+		"/Volumes/ftp.qslist.com/instavote/application/config/autoload.php",
+		"/Volumes/ftp.qslist.com/instavote/activity.log",
+		"/Volumes/ftp.qslist.com/instavote/application/controllers/activity.log",
+		"/Volumes/ftp.qslist.com/instavote/application/config/config.php",
+		"/Volumes/ftp.qslist.com/instavote/application/config/database.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/assets/js/instavote.js",
+		"/Applications/MAMP/htdocs/Qslist/instavote/application/views/templates/header.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/application/controllers/pages.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/application/controllers/instavote.php",
+		"/Applications/MAMP/htdocs/Qslist/test.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/application/views/admin/settings.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/assets/js/admin_panel.js",
+		"/Applications/MAMP/htdocs/Qslist/instavote/application/controllers/admin.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/assets/css/main.scss",
+		"/Applications/MAMP/htdocs/Qslist/10-07_codeigniter/assets/css/main.scss",
+		"/Applications/MAMP/htdocs/Qslist/instavote/application/config/Instagram_api.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/application/views/pages/instavote.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/application/views/templates/footer.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/assets/js/modernizr-2.6.2-respond-1.1.0.min.js",
+		"/Applications/MAMP/htdocs/Qslist/10-07_codeigniter/application/controllers/pages.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/application/logs/log-2013-07-15.php",
+		"/Applications/MAMP/htdocs/Qslist/10-07_codeigniter/assets/css/main.css",
+		"/Applications/MAMP/htdocs/Qslist/instavote/application/controllers/auth.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/assets/js/jquery.hotkeys.js",
+		"/Applications/MAMP/htdocs/Qslist/instavote/assets/js/bootstrap-wysiwyg.js",
+		"/Users/Cobra/Desktop/slett.html",
+		"/Applications/MAMP/htdocs/Qslist/10-07_codeigniter/application/views/templates/header.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/application/config/config.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/application/config/database.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/application/views/pages/home.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/sparks/ion_auth/2.4.0/controllers/auth.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/application/config/routes.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/application/config/autoload.php",
+		"/Applications/MAMP/htdocs/Qslist/codeigniter/application/controllers/pages.php",
+		"/Applications/MAMP/htdocs/Qslist/instavote/jquery.js"
 	],
 	"find":
 	{
-		"height": 42.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
 		"height": 0.0,
 		"where_history":
 		[
-			""
 		]
 	},
 	"find_state":
@@ -314,96 +739,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"arse",
-			"xchart",
-			"data[i].photo_thumb_url",
-			"humidity",
-			"getImgUrl(data[i].created_at, data[i].id)",
-			"\n							",
-			"getImgUrl(data[i].created_at, data[i].id)\n",
-			"getImgUrl(data[i].created_at, data[i].id)",
-			"dateObj",
-			"curmarker",
-			"31:155",
-			"Currentitme times",
-			"siden",
-			"scales",
-			"ToCommmonScale",
-			"temp",
-			"tempr",
-			"Tempr",
-			"tempr",
+			"1_introduction",
+			"Get",
+			"http://plantagotchi.nfshost.com/api/plant/1/",
+			"plantagotchiVariables",
+			"FAF73F",
+			"f6cb04",
+			"%",
+			"Grader",
 			"grader",
-			"allthedata",
-			"nesten ",
-			"rundt ",
-			"Jordfuktighet",
-			"air",
-			"soilmoisture",
-			"humidity",
-			"Luft",
-			"humidity",
-			"light",
-			"humidity",
-			"humiditychart",
-			"Tempratur",
-			"#",
+			"first",
 			":",
-			"$",
-			"data[i].created_at",
-			"@video",
-			"@sensorvalue",
-			"humidity",
-			"push",
-			"light.push",
-			".push",
-			"counter",
-			"renderGuideLine",
-			"rand2",
-			"AKIAIS7XOHJPLSGIDS6Q",
-			"bucket",
-			"paperclip",
-			"s3_eu_url",
-			"deletePopup",
-			"Popup",
-			"popup",
-			"				$(\"#deletePopup\").",
-			"$(\"#deletePopup\")",
-			"remove",
-			"				$(\"#deletePopup\").",
-			"$(\"#deletePopup\")",
-			"destroySurvey",
-			"this",
-			"warn",
-			"margins",
-			"warni",
-			"calculateData1",
-			"calculateData",
-			"selects1",
-			"names",
-			"	\n  ",
-			"	\n   ",
-			"},",
-			"  ",
-			" \n  ",
-			"  ",
-			" \n  ",
-			"  ",
-			" \n  ",
-			"  ",
-			" \n  ",
-			"  ",
-			"   ",
-			" \n",
-			"\n ",
+			"airtemp",
 			"temp",
-			"cron_example_show_status_message",
-			"\nanonymous_publishing_period",
-			"anonymous_publishing_admin_bylines",
-			"Current posts",
-			"current_posts",
-			"cmds",
-			"gedit.desktop"
+			"path",
+			"_path",
+			"graphs_path",
+			"nt;",
+			"blue",
+			"color:#000000;",
+			"icon-te",
+			" col-md-6",
+			"md",
+			"year",
+			"td",
+			"btn",
+			"</label>",
+			"<label>",
+			" <br />",
+			"checkedTimes",
+			"options",
+			"getuser",
+			"getuseraccesstoken",
+			"accesstoken",
+			"fb_",
+			"fb_id_check",
+			"popup",
+			"group",
+			"Group",
+			"group",
+			"Group",
+			"group",
+			"Group",
+			"group",
+			"Group",
+			"group",
+			"add_to_group",
+			"remove_from_group",
+			"groups",
+			"accounts",
+			"groups",
+			"account",
+			"trigger_event",
+			"view",
+			"$this->email",
+			"email",
+			"forgotten",
+			"login_",
+			"create",
+			"company",
+			"del",
+			"LEFT ",
+			"select",
+			"fetchco",
+			"count",
+			"insta_votes",
+			"$_COOKIE['insta_reports']",
+			"cookie",
+			"votes",
+			"reports",
+			"votes",
+			"cookie",
+			"SESSION",
+			"_SESSION",
+			"SESSION",
+			"href",
+			"stemme",
+			"stemmer",
+			"\"sans-serif\"",
+			"\"serif\"",
+			"width",
+			"http://ec2-50-16-5-7.compute-1.amazonaws.com",
+			"src",
+			"displa",
+			"\".delete\"",
+			"<a",
+			"<img",
+			"img",
+			"hentpost01",
+			"\"",
+			"Photo",
+			"photo",
+			"Photo",
+			"photo",
+			"disabled",
+			"$photo",
+			"40",
+			"$photo",
+			"do",
+			"100%",
+			"max-width",
+			"date",
+			"nex",
+			"__apiCall",
+			"subscribe",
+			"$",
+			"small",
+			"tiny",
+			"nth-chil",
+			"font-awesome",
+			"span6",
+			"</div>",
+			"</d",
+			"...",
+			"access_token",
+			"sparks",
+			"debug",
+			"\"",
+			"translation_text_id",
+			"</td>",
+			"\">",
+			"\"",
+			"category",
+			"h2",
+			"btn",
+			"What is QSlist?",
+			"'fade'",
+			"What is QSlist?",
+			")?>"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -411,7 +874,17 @@
 		"regex": false,
 		"replace_history":
 		[
-			"sublime.desktop"
+			"row-fluid",
+			"",
+			"\\&",
+			"Maria",
+			"Sofia",
+			"Emma",
+			"c2",
+			"c3",
+			"c1",
+			"C2",
+			"C3"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -422,18 +895,151 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "document.tex",
+					"settings":
+					{
+						"buffer_size": 388,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								373,
+								373
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"default_dir": "/Users/Cobra/Documents/skole/UIO/master/oppgaven/tex",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": ".gitignore",
+					"settings":
+					{
+						"buffer_size": 92,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								92,
+								92
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "bibliography.bib",
+					"settings":
+					{
+						"buffer_size": 2051,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2051,
+								2051
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "tex/3_theory.tex",
+					"settings":
+					{
+						"buffer_size": 34,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								34,
+								34
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"input":
 	{
-		"height": 42.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -458,9 +1064,13 @@
 		]
 	},
 	"menu_visible": true,
-	"output.sftp":
+	"output.exec":
 	{
-		"height": 166.0
+		"height": 100.0
+	},
+	"output.git":
+	{
+		"height": 100.0
 	},
 	"replace":
 	{
@@ -472,6 +1082,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"",
+				"untitled"
+			]
 		],
 		"width": 0.0
 	},
@@ -487,6 +1101,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 330.0,
+	"side_bar_width": 278.0,
 	"status_bar_visible": true
 }

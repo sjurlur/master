@@ -2,11 +2,17 @@
 	"folders":
 	[
 		{
-			"path": "/home/morten/Documents/master",
-			"file_exclude_patterns": 
-			[
+			"path": "/Users/Cobra/Documents/skole/UIO/master/oppgaven",
+			"file_exclude_patterns": [
 				"*.pdf",
-				"*.png"
+				"*.log",
+				"*.toc",
+				"readme.md",
+				"*.aux",
+				"document.fdb_latexmk",
+				"document.synctex.gz",
+				"master.sublime-project",
+				"master.sublime-workspace"
 			]
 		}
 	]

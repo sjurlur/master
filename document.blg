@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: document.aux
+The style file: pjgsm.bst
+,* is an unknown function---line 734 of file pjgsm.bst
+url is already a type "field" function name
+---line 957 of file pjgsm.bst
+ : function {url
+ :              }
+Database file #1: bibliography.bib
+Warning--can't use both volume and number fields in ainsworth1999functions
+Warning--can't use both volume and number fields in mifsud2010reconsidering
+Warning--can't use both volume and number fields in van2006supporting
+Warning--can't use both volume and number fields in wood1976role
+You've used 8 entries,
+            2937 wiz_defined-function locations,
+            693 strings with 5988 characters,
+and the built_in function-call counts, 29576 in all, are:
+= -- 4757
+> -- 353
+< -- 5
++ -- 2194
+- -- 105
+* -- 2482
+:= -- 5941
+add.period$ -- 8
+call.type$ -- 8
+change.case$ -- 110
+chr.to.int$ -- 8
+cite$ -- 12
+duplicate$ -- 195
+empty$ -- 318
+format.name$ -- 133
+if$ -- 5359
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 10
+newline$ -- 27
+num.names$ -- 82
+pop$ -- 52
+preamble$ -- 1
+purify$ -- 120
+quote$ -- 0
+skip$ -- 154
+stack$ -- 0
+substring$ -- 6617
+swap$ -- 71
+text.length$ -- 117
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 28
+warning$ -- 4
+while$ -- 183
+width$ -- 0
+write$ -- 117
+(There were 2 error messages)

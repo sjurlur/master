@@ -11,8 +11,9 @@
 				"*.aux",
 				"document.fdb_latexmk",
 				"document.synctex.gz",
-				"master.sublime-project",
-				"master.sublime-workspace"
+				"master.sublime-workspace",
+				"*.bbl",
+				"*.blg"
 			]
 		}
 	]

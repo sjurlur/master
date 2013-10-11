@@ -8,49 +8,51 @@ url is already a type "field" function name
  : function {url
  :              }
 Database file #1: bibliography.bib
+Warning--entry type for "rubyonrails.org" isn't style-file defined
+--line 88 of file bibliography.bib
 Warning--can't use both volume and number fields in ainsworth1999functions
 Warning--can't use both volume and number fields in mifsud2010reconsidering
 Warning--can't use both volume and number fields in van2006supporting
 Warning--can't use both volume and number fields in wood1976role
-You've used 9 entries,
+You've used 11 entries,
             2937 wiz_defined-function locations,
-            698 strings with 6164 characters,
-and the built_in function-call counts, 41021 in all, are:
-= -- 6685
-> -- 507
+            708 strings with 6401 characters,
+and the built_in function-call counts, 46917 in all, are:
+= -- 7653
+> -- 555
 < -- 5
-+ -- 3177
-- -- 154
-* -- 3525
-:= -- 8126
-add.period$ -- 9
-call.type$ -- 9
-change.case$ -- 123
-chr.to.int$ -- 9
-cite$ -- 13
-duplicate$ -- 211
-empty$ -- 347
-format.name$ -- 185
-if$ -- 7421
++ -- 3621
+- -- 168
+* -- 3999
+:= -- 9363
+add.period$ -- 11
+call.type$ -- 11
+change.case$ -- 150
+chr.to.int$ -- 11
+cite$ -- 15
+duplicate$ -- 233
+empty$ -- 393
+format.name$ -- 203
+if$ -- 8464
 int.to.chr$ -- 5
 int.to.str$ -- 0
 missing$ -- 12
-newline$ -- 30
-num.names$ -- 93
-pop$ -- 60
+newline$ -- 37
+num.names$ -- 113
+pop$ -- 73
 preamble$ -- 1
-purify$ -- 135
+purify$ -- 165
 quote$ -- 0
-skip$ -- 164
+skip$ -- 185
 stack$ -- 0
-substring$ -- 9443
-swap$ -- 72
-text.length$ -- 131
+substring$ -- 10795
+swap$ -- 73
+text.length$ -- 159
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 30
+type$ -- 38
 warning$ -- 4
-while$ -- 204
+while$ -- 246
 width$ -- 0
-write$ -- 131
+write$ -- 156
 (There were 2 error messages)

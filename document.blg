@@ -14,15 +14,15 @@ Warning--can't use both volume and number fields in van2006supporting
 Warning--can't use both volume and number fields in wood1976role
 You've used 9 entries,
             2937 wiz_defined-function locations,
-            698 strings with 6154 characters,
-and the built_in function-call counts, 39943 in all, are:
-= -- 6489
+            698 strings with 6164 characters,
+and the built_in function-call counts, 41021 in all, are:
+= -- 6685
 > -- 507
 < -- 5
-+ -- 3079
++ -- 3177
 - -- 154
-* -- 3427
-:= -- 7930
+* -- 3525
+:= -- 8126
 add.period$ -- 9
 call.type$ -- 9
 change.case$ -- 123
@@ -31,7 +31,7 @@ cite$ -- 13
 duplicate$ -- 211
 empty$ -- 347
 format.name$ -- 185
-if$ -- 7225
+if$ -- 7421
 int.to.chr$ -- 5
 int.to.str$ -- 0
 missing$ -- 12
@@ -43,7 +43,7 @@ purify$ -- 135
 quote$ -- 0
 skip$ -- 164
 stack$ -- 0
-substring$ -- 9149
+substring$ -- 9443
 swap$ -- 72
 text.length$ -- 131
 text.prefix$ -- 0

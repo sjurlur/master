@@ -1,0 +1,492 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"par",
+				"params"
+			],
+			[
+				"so",
+				"soilMoisture"
+			],
+			[
+				"soi",
+				"soilTemp"
+			],
+			[
+				"leng",
+				"length"
+			],
+			[
+				"min",
+				"minutes"
+			],
+			[
+				"get",
+				"getHours"
+			],
+			[
+				"end",
+				"endtime"
+			],
+			[
+				"lengt",
+				"length-1"
+			],
+			[
+				"last",
+				"lastdate"
+			],
+			[
+				"ste",
+				"stepTooltip"
+			],
+			[
+				"pho",
+				"photo_thumb_url"
+			],
+			[
+				"thu",
+				"thumb_url"
+			],
+			[
+				"photo",
+				"photo_url"
+			],
+			[
+				"forma",
+				"formatMinutes"
+			],
+			[
+				"cre",
+				"created_at"
+			],
+			[
+				"im",
+				"imgurl"
+			],
+			[
+				"cr",
+				"created_at"
+			],
+			[
+				"cur",
+				"curtime"
+			],
+			[
+				"cu",
+				"currentTime"
+			],
+			[
+				"hu",
+				"hum"
+			],
+			[
+				"soilMo",
+				"soilMoist"
+			],
+			[
+				"ai",
+				"airTemp"
+			],
+			[
+				"light",
+				"light"
+			],
+			[
+				"humidity",
+				"humidity"
+			],
+			[
+				"ait",
+				"airtemp"
+			],
+			[
+				"gra",
+				"graphsoiltemp"
+			],
+			[
+				"gr",
+				"graphairtemp"
+			],
+			[
+				"Luft",
+				"Lufttempratur"
+			],
+			[
+				"Jo",
+				"Jordtempratur"
+			],
+			[
+				"soil",
+				"soilMoist"
+			],
+			[
+				"ligh",
+				"lightblue"
+			],
+			[
+				"air",
+				"airTemp"
+			],
+			[
+				"en",
+				"enabled"
+			],
+			[
+				"soit",
+				"soiltemp"
+			],
+			[
+				"soilt",
+				"soiltemp"
+			],
+			[
+				"num",
+				"numbers"
+			],
+			[
+				"des",
+				"destroyData"
+			],
+			[
+				"cal",
+				"calculateDataForCalculations"
+			],
+			[
+				"var",
+				"variable2"
+			],
+			[
+				"html",
+				"htmlinsert"
+			],
+			[
+				"dat",
+				"data"
+			],
+			[
+				"data",
+				"dataset"
+			],
+			[
+				"variab",
+				"variable_set"
+			],
+			[
+				"days",
+				"days_between"
+			],
+			[
+				"price",
+				"pricescraper_cron"
+			],
+			[
+				"pri",
+				"pricescraper_cron"
+			],
+			[
+				"pric",
+				"pricescraper_cron"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 369.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"bro",
+				"SFTP: Browse Remote…"
+			],
+			[
+				"sfts",
+				"SFTP: Show Panel"
+			],
+			[
+				"sft",
+				"SFTP: Browse Server…"
+			],
+			[
+				"sf",
+				"SFTP: Show Panel"
+			],
+			[
+				"packi",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 202.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/run/user/morten/gvfs/mtp:host=%5Busb%3A003%2C006%5D/65537/37/98",
+		"/home/morten/dev/kjekke ting/rails update all sensorvalues",
+		"/home/morten/dev/plantapi/app/models/sensorvalue.rb",
+		"/home/morten/dev/plantapi/app/controllers/sensorvalues_controller.rb",
+		"/home/morten/dev/plantapi/config/environments/production.rb",
+		"/home/morten/dev/plantapi/Gemfile",
+		"/home/morten/dev/plantapi/app/assets/javascripts/application.js",
+		"/home/morten/dev/plantapi/app/assets/stylesheets/application.css.scss",
+		"/home/morten/dev/plantapi/app/views/plants/tempraturegraph.html.erb",
+		"/home/morten/dev/plantapi/config/locales/nb.yml",
+		"/home/morten/dev/plantapi/config/environments/development.rb",
+		"/home/morten/dev/plantapi/config/application.rb",
+		"/home/morten/dev/plantapi/app/views/plants/graph.html.erb",
+		"/home/morten/dev/plantapi/app/views/plants/lightgraph.html.erb",
+		"/home/morten/dev/plantapi/app/views/plants/humiditygraph.html.erb",
+		"/home/morten/dev/plantapi/app/views/plants/soilmoisturegraph.html.erb",
+		"/home/morten/dev/plantapi/app/controllers/plants_controller.rb",
+		"/home/morten/dev/fontello-7a7ca93c/css/fontello.css",
+		"/home/morten/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/morten/dev/plantapi/app/assets/javascripts/ahighstock.js",
+		"/home/morten/dev/Highstock-1.3.5/js/highstock.js",
+		"/home/morten/dev/plantapi/config/environment.rb",
+		"/home/morten/dev/fontello-7a7ca93c/config.json",
+		"/home/morten/dev/plantagotchi/config.ru",
+		"/home/morten/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/morten/.ssh/config",
+		"/home/morten/dev/tallforteller/app/templates/doublecat/collect/data.html",
+		"/home/morten/dev/tallforteller/app/models/SurveyCollection.js",
+		"/home/morten/dev/tallforteller/app/views/doublecat/describe/describeDoubleCatData.js",
+		"/home/morten/dev/tallforteller/app/views/doublecat/collect/catcatListView.js",
+		"/home/morten/Desktop/wimplogo.png",
+		"/home/morten/.config/sublime-text-2/Packages/User/sftp_servers/fleurdelis",
+		"/tmp/sublime-sftp-browse-1370519316/fleurdelis/public_html/images/wimplog.png",
+		"/home/morten/Downloads/anonymous_publishing/pricescraper.install",
+		"/home/morten/dev/statlab/src/anova.js",
+		"/home/morten/ubuntu shortcuts.txt",
+		"/home/morten/Downloads/anonymous_publishing/anonymous_publishing.info",
+		"/home/morten/Downloads/anonymous_publishing/anonymous_publishing.install",
+		"/home/morten/Downloads/anonymous_publishing/anonymous_publishing.module",
+		"/home/morten/Downloads/anonymous_publishing/pricescraper.module",
+		"/home/morten/Documents/SecondLife-i686-3.5.1.274821/README-linux-voice.txt",
+		"/home/morten/Documents/SecondLife-i686-3.5.1.274821/README-linux.txt",
+		"/home/morten/Downloads/tidsbruk.json",
+		"/home/morten/Downloads/variable-value.bin",
+		"/home/morten/dev/statlab/spec/anovaspec.js",
+		"/home/morten/dev/statlab/src/vassaranova.js",
+		"/home/morten/dev/statlab/src/mannwhit.js",
+		"/home/morten/dev/statlab/src/chisquare.js",
+		"/home/morten/dev/statlab/src/kruskal.js",
+		"/home/morten/Downloads/ultimate_cron/ultimate_cron.install",
+		"/home/morten/dev/statlab/vassarstats/chisquare.js",
+		"/etc/cron.daily/trim"
+	],
+	"find":
+	{
+		"height": 42.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"arse",
+			"xchart",
+			"data[i].photo_thumb_url",
+			"humidity",
+			"getImgUrl(data[i].created_at, data[i].id)",
+			"\n							",
+			"getImgUrl(data[i].created_at, data[i].id)\n",
+			"getImgUrl(data[i].created_at, data[i].id)",
+			"dateObj",
+			"curmarker",
+			"31:155",
+			"Currentitme times",
+			"siden",
+			"scales",
+			"ToCommmonScale",
+			"temp",
+			"tempr",
+			"Tempr",
+			"tempr",
+			"grader",
+			"allthedata",
+			"nesten ",
+			"rundt ",
+			"Jordfuktighet",
+			"air",
+			"soilmoisture",
+			"humidity",
+			"Luft",
+			"humidity",
+			"light",
+			"humidity",
+			"humiditychart",
+			"Tempratur",
+			"#",
+			":",
+			"$",
+			"data[i].created_at",
+			"@video",
+			"@sensorvalue",
+			"humidity",
+			"push",
+			"light.push",
+			".push",
+			"counter",
+			"renderGuideLine",
+			"rand2",
+			"AKIAIS7XOHJPLSGIDS6Q",
+			"bucket",
+			"paperclip",
+			"s3_eu_url",
+			"deletePopup",
+			"Popup",
+			"popup",
+			"				$(\"#deletePopup\").",
+			"$(\"#deletePopup\")",
+			"remove",
+			"				$(\"#deletePopup\").",
+			"$(\"#deletePopup\")",
+			"destroySurvey",
+			"this",
+			"warn",
+			"margins",
+			"warni",
+			"calculateData1",
+			"calculateData",
+			"selects1",
+			"names",
+			"	\n  ",
+			"	\n   ",
+			"},",
+			"  ",
+			" \n  ",
+			"  ",
+			" \n  ",
+			"  ",
+			" \n  ",
+			"  ",
+			" \n  ",
+			"  ",
+			"   ",
+			" \n",
+			"\n ",
+			"temp",
+			"cron_example_show_status_message",
+			"\nanonymous_publishing_period",
+			"anonymous_publishing_admin_bylines",
+			"Current posts",
+			"current_posts",
+			"cmds",
+			"gedit.desktop"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"sublime.desktop"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 42.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.sftp":
+	{
+		"height": 166.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 330.0,
+	"status_bar_visible": true
+}

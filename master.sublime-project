@@ -1,0 +1,13 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/morten/Documents/master",
+			"file_exclude_patterns": 
+			[
+				"*.pdf",
+				"*.png"
+			]
+		}
+	]
+}

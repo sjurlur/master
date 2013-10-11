@@ -1,8 +1,8 @@
-document.aux
-document.fdb_latexmk
-document.log
-document.pdf
-document.synctex.gz
-document.toc
+*.aux
+*.fdb_latexmk
+*.log
+*.pdf
+*.synctex.gz
+*.toc
 master.sublime-project
 master.sublime-workspace

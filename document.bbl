@@ -10,10 +10,21 @@ Fielding, R.~T.  \harvardyearleft 2000\harvardyearright , Architectural styles
   and the design of network-based software architectures, PhD thesis,
   University of California.
 
+\harvarditem[Gr{\o}nlien et~al.]{Gr{\o}nlien, Ryvarden \harvardand\
+  Tandberg}{2008}{bi2}
+Gr{\o}nlien, H., Ryvarden, L. \harvardand\ Tandberg, C.  \harvardyearleft
+  2008\harvardyearright , {\em Bi 2}, Gyldendal Norsk Forlag.
+
 \harvarditem{Heinemeier~Hansson}{2013}{rubyonrails.org}
 Heinemeier~Hansson, D.  \harvardyearleft 2013\harvardyearright ,
   `www.rubyonrails.org'.
 \newline\harvardurl{http://www.rubyonrails.org}
+
+\harvarditem{Kirschbaum}{2011}{kirschbaum2011does}
+Kirschbaum, M.~U.  \harvardyearleft 2011\harvardyearright , ``Does enhanced
+  photosynthesis enhance growth? lessons learned from co2 enrichment studies'',
+  {\em Plant Physiology} , Vol. 155, American Society of Plant Biologists,
+  pp.~117--124.
 
 \harvarditem{Mifsud \harvardand\ M{\o}rch}{2010}{mifsud2010reconsidering}
 Mifsud, L. \harvardand\ M{\o}rch, A.  \harvardyearleft 2010\harvardyearright ,
@@ -52,6 +63,20 @@ Wertsch, J.~V., Tulviste, P. \harvardand\ Hagstrom, F.  \harvardyearleft
   1993\harvardyearright , ``A sociocultural approach to agency'', {\em Contexts
   for learning: Sociocultural dynamics in children's development} , Vol.~23,
   Oxford University Press New York, pp.~326--356.
+
+\harvarditem{Wikimedia}{2009}{wiki:chloroplast}
+Wikimedia  \harvardyearleft 2009\harvardyearright , `A diagram showing the
+  simple structure of a chloroplast molecule --- {W}ikimedia commons{,} the
+  free media repository',
+  \url{http://commons.wikimedia.org/wiki/File:Chloroplast_diagram.svg}.
+\newblock [Online; accessed 11-October-2013].
+
+\harvarditem{Wikipedia}{2012}{wiki:photosystem}
+Wikipedia  \harvardyearleft 2012\harvardyearright , `Light-dependent reactions
+  of photosynthesis at the thylakoid membrane --- {W}ikipedia{,} the free
+  encyclopedia',
+  \url{http://en.wikipedia.org/wiki/File:Thylakoid_membrane_2.svg}.
+\newblock [Online; accessed 11-October-2013].
 
 \harvarditem[Wood et~al.]{Wood, Bruner \harvardand\ Ross}{1976}{wood1976role}
 Wood, D., Bruner, J.~S. \harvardand\ Ross, G.  \harvardyearleft

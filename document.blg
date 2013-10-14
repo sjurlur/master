@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2012)
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: pjgsm.bst
@@ -8,46 +8,52 @@ url is already a type "field" function name
  : function {url
  :              }
 Database file #1: bibliography.bib
+Warning--entry type for "rubyonrails.org" isn't style-file defined
+--line 123 of file bibliography.bib
+Warning--can't use both volume and number fields in ainsworth1999functions
 Warning--can't use both volume and number fields in kirschbaum2011does
-You've used 5 entries,
+Warning--can't use both volume and number fields in mifsud2010reconsidering
+Warning--can't use both volume and number fields in van2006supporting
+Warning--can't use both volume and number fields in wood1976role
+You've used 15 entries,
             2937 wiz_defined-function locations,
-            668 strings with 5631 characters,
-and the built_in function-call counts, 23837 in all, are:
-= -- 3912
-> -- 296
-< -- 1
-+ -- 1894
-- -- 91
-* -- 2052
-:= -- 4755
-add.period$ -- 7
-call.type$ -- 5
-change.case$ -- 68
-chr.to.int$ -- 5
-cite$ -- 6
-duplicate$ -- 83
-empty$ -- 157
-format.name$ -- 103
-if$ -- 4278
+            731 strings with 7129 characters,
+and the built_in function-call counts, 59277 in all, are:
+= -- 9637
+> -- 697
+< -- 6
++ -- 4532
+- -- 210
+* -- 5008
+:= -- 11915
+add.period$ -- 17
+call.type$ -- 15
+change.case$ -- 205
+chr.to.int$ -- 15
+cite$ -- 20
+duplicate$ -- 300
+empty$ -- 520
+format.name$ -- 254
+if$ -- 10679
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 5
-newline$ -- 20
-num.names$ -- 52
-pop$ -- 37
+missing$ -- 15
+newline$ -- 51
+num.names$ -- 154
+pop$ -- 102
 preamble$ -- 1
-purify$ -- 75
+purify$ -- 225
 quote$ -- 0
-skip$ -- 66
+skip$ -- 240
 stack$ -- 0
-substring$ -- 5576
-swap$ -- 18
-text.length$ -- 71
+substring$ -- 13545
+swap$ -- 90
+text.length$ -- 216
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
-warning$ -- 1
-while$ -- 108
+type$ -- 52
+warning$ -- 5
+while$ -- 333
 width$ -- 0
-write$ -- 73
+write$ -- 213
 (There were 2 error messages)

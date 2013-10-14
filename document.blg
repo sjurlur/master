@@ -12,48 +12,49 @@ Warning--entry type for "rubyonrails.org" isn't style-file defined
 --line 123 of file bibliography.bib
 Warning--can't use both volume and number fields in ainsworth1999functions
 Warning--can't use both volume and number fields in kirschbaum2011does
+Warning--can't use both volume and number fields in kluge2010simulation
 Warning--can't use both volume and number fields in mifsud2010reconsidering
 Warning--can't use both volume and number fields in van2006supporting
 Warning--can't use both volume and number fields in wood1976role
-You've used 15 entries,
+You've used 16 entries,
             2937 wiz_defined-function locations,
-            731 strings with 7129 characters,
-and the built_in function-call counts, 59277 in all, are:
-= -- 9637
-> -- 697
-< -- 6
-+ -- 4532
-- -- 210
-* -- 5008
-:= -- 11915
-add.period$ -- 17
-call.type$ -- 15
-change.case$ -- 205
-chr.to.int$ -- 15
-cite$ -- 20
-duplicate$ -- 300
-empty$ -- 520
-format.name$ -- 254
-if$ -- 10679
+            739 strings with 7331 characters,
+and the built_in function-call counts, 62788 in all, are:
+= -- 10194
+> -- 744
+< -- 7
++ -- 4780
+- -- 224
+* -- 5306
+:= -- 12613
+add.period$ -- 18
+call.type$ -- 16
+change.case$ -- 219
+chr.to.int$ -- 16
+cite$ -- 22
+duplicate$ -- 329
+empty$ -- 566
+format.name$ -- 274
+if$ -- 11323
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 15
-newline$ -- 51
-num.names$ -- 154
-pop$ -- 102
+missing$ -- 16
+newline$ -- 54
+num.names$ -- 164
+pop$ -- 107
 preamble$ -- 1
-purify$ -- 225
+purify$ -- 240
 quote$ -- 0
-skip$ -- 240
+skip$ -- 265
 stack$ -- 0
-substring$ -- 13545
-swap$ -- 90
-text.length$ -- 216
+substring$ -- 14303
+swap$ -- 104
+text.length$ -- 231
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
-warning$ -- 5
-while$ -- 333
+type$ -- 56
+warning$ -- 6
+while$ -- 357
 width$ -- 0
-write$ -- 213
+write$ -- 228
 (There were 2 error messages)

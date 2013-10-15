@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2012)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: pjgsm.bst
@@ -8,52 +8,51 @@ url is already a type "field" function name
  : function {url
  :              }
 Database file #1: bibliography.bib
-Warning--entry type for "rubyonrails.org" isn't style-file defined
---line 123 of file bibliography.bib
-Warning--can't use both volume and number fields in ainsworth1999functions
+I was expecting a `,' or a `}'---line 35 of file bibliography.bib
+ :   
+ :   howpublished = "\url{http://www.uic.edu/classes/bios/bios100/lecturesf04am/lect10.htm}",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--can't use both volume and number fields in kirschbaum2011does
-Warning--can't use both volume and number fields in mifsud2010reconsidering
-Warning--can't use both volume and number fields in van2006supporting
-Warning--can't use both volume and number fields in wood1976role
-You've used 15 entries,
+You've used 7 entries,
             2937 wiz_defined-function locations,
-            731 strings with 7129 characters,
-and the built_in function-call counts, 59277 in all, are:
-= -- 9637
-> -- 697
-< -- 6
-+ -- 4532
-- -- 210
-* -- 5008
-:= -- 11915
-add.period$ -- 17
-call.type$ -- 15
-change.case$ -- 205
-chr.to.int$ -- 15
-cite$ -- 20
-duplicate$ -- 300
-empty$ -- 520
-format.name$ -- 254
-if$ -- 10679
+            679 strings with 5905 characters,
+and the built_in function-call counts, 32323 in all, are:
+= -- 5327
+> -- 367
+< -- 1
++ -- 2559
+- -- 112
+* -- 2767
+:= -- 6448
+add.period$ -- 9
+call.type$ -- 7
+change.case$ -- 96
+chr.to.int$ -- 7
+cite$ -- 8
+duplicate$ -- 120
+empty$ -- 218
+format.name$ -- 132
+if$ -- 5809
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 15
-newline$ -- 51
-num.names$ -- 154
-pop$ -- 102
+missing$ -- 6
+newline$ -- 26
+num.names$ -- 72
+pop$ -- 53
 preamble$ -- 1
-purify$ -- 225
+purify$ -- 105
 quote$ -- 0
-skip$ -- 240
+skip$ -- 97
 stack$ -- 0
-substring$ -- 13545
-swap$ -- 90
-text.length$ -- 216
+substring$ -- 7569
+swap$ -- 29
+text.length$ -- 99
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
-warning$ -- 5
-while$ -- 333
+type$ -- 24
+warning$ -- 1
+while$ -- 151
 width$ -- 0
-write$ -- 213
-(There were 2 error messages)
+write$ -- 98
+(There were 3 error messages)

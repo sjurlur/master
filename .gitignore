@@ -4,6 +4,8 @@
 *.pdf
 *.synctex.gz
 *.toc
+*.bbl
+*.blg
 master.sublime-project
 master.sublime-workspace
 pjgsm.bst

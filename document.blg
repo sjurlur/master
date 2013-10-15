@@ -13,46 +13,53 @@ I was expecting a `,' or a `}'---line 35 of file bibliography.bib
  :   howpublished = "\url{http://www.uic.edu/classes/bios/bios100/lecturesf04am/lect10.htm}",
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Warning--entry type for "rubyonrails.org" isn't style-file defined
+--line 139 of file bibliography.bib
+Warning--can't use both volume and number fields in ainsworth1999functions
 Warning--can't use both volume and number fields in kirschbaum2011does
-You've used 7 entries,
+Warning--can't use both volume and number fields in kluge2010simulation
+Warning--can't use both volume and number fields in mifsud2010reconsidering
+Warning--can't use both volume and number fields in van2006supporting
+Warning--can't use both volume and number fields in wood1976role
+You've used 18 entries,
             2937 wiz_defined-function locations,
-            679 strings with 5905 characters,
-and the built_in function-call counts, 32323 in all, are:
-= -- 5327
-> -- 367
-< -- 1
-+ -- 2559
-- -- 112
-* -- 2767
-:= -- 6448
-add.period$ -- 9
-call.type$ -- 7
-change.case$ -- 96
-chr.to.int$ -- 7
-cite$ -- 8
-duplicate$ -- 120
-empty$ -- 218
-format.name$ -- 132
-if$ -- 5809
+            750 strings with 7605 characters,
+and the built_in function-call counts, 71274 in all, are:
+= -- 11609
+> -- 815
+< -- 7
++ -- 5445
+- -- 245
+* -- 6021
+:= -- 14306
+add.period$ -- 20
+call.type$ -- 18
+change.case$ -- 247
+chr.to.int$ -- 18
+cite$ -- 24
+duplicate$ -- 366
+empty$ -- 627
+format.name$ -- 303
+if$ -- 12854
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 6
-newline$ -- 26
-num.names$ -- 72
-pop$ -- 53
+missing$ -- 17
+newline$ -- 60
+num.names$ -- 184
+pop$ -- 123
 preamble$ -- 1
-purify$ -- 105
+purify$ -- 270
 quote$ -- 0
-skip$ -- 97
+skip$ -- 296
 stack$ -- 0
-substring$ -- 7569
-swap$ -- 29
-text.length$ -- 99
+substring$ -- 16296
+swap$ -- 115
+text.length$ -- 259
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
-warning$ -- 1
-while$ -- 151
+type$ -- 64
+warning$ -- 6
+while$ -- 400
 width$ -- 0
-write$ -- 98
+write$ -- 253
 (There were 3 error messages)

@@ -5,6 +5,12 @@ Ainsworth, S.  \harvardyearleft 1999\harvardyearright , ``The functions of
   multiple representations'', {\em Computers \& Education} , Vol.~33, Elsevier,
   pp.~131--152.
 
+\harvarditem[Fielding et~al.]{Fielding, Gettys, Mogul, Frystyk, Masinter, Leach
+  \harvardand\ Berners-Lee}{1999}{fielding1999hypertext}
+Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter, L., Leach, P.
+  \harvardand\ Berners-Lee, T.  \harvardyearleft 1999\harvardyearright ,
+  `Hypertext transfer protocol--http/1.1'.
+
 \harvarditem{Fielding}{2000}{fielding2000architectural}
 Fielding, R.~T.  \harvardyearleft 2000\harvardyearright , Architectural styles
   and the design of network-based software architectures, PhD thesis,

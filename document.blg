@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2012)
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: pjgsm.bst
@@ -21,45 +21,45 @@ Warning--can't use both volume and number fields in kluge2010simulation
 Warning--can't use both volume and number fields in mifsud2010reconsidering
 Warning--can't use both volume and number fields in van2006supporting
 Warning--can't use both volume and number fields in wood1976role
-You've used 18 entries,
+You've used 19 entries,
             2937 wiz_defined-function locations,
-            750 strings with 7605 characters,
-and the built_in function-call counts, 71274 in all, are:
-= -- 11609
-> -- 815
+            754 strings with 7802 characters,
+and the built_in function-call counts, 81519 in all, are:
+= -- 13322
+> -- 969
 < -- 7
-+ -- 5445
-- -- 245
-* -- 6021
-:= -- 14306
-add.period$ -- 20
-call.type$ -- 18
-change.case$ -- 247
-chr.to.int$ -- 18
-cite$ -- 24
-duplicate$ -- 366
-empty$ -- 627
-format.name$ -- 303
-if$ -- 12854
++ -- 6320
+- -- 294
+* -- 6955
+:= -- 16272
+add.period$ -- 21
+call.type$ -- 19
+change.case$ -- 261
+chr.to.int$ -- 19
+cite$ -- 25
+duplicate$ -- 377
+empty$ -- 653
+format.name$ -- 355
+if$ -- 14697
 int.to.chr$ -- 5
 int.to.str$ -- 0
 missing$ -- 17
-newline$ -- 60
-num.names$ -- 184
-pop$ -- 123
+newline$ -- 63
+num.names$ -- 195
+pop$ -- 131
 preamble$ -- 1
-purify$ -- 270
+purify$ -- 285
 quote$ -- 0
-skip$ -- 296
+skip$ -- 308
 stack$ -- 0
-substring$ -- 16296
-swap$ -- 115
-text.length$ -- 259
+substring$ -- 18798
+swap$ -- 116
+text.length$ -- 273
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 64
+type$ -- 68
 warning$ -- 6
-while$ -- 400
+while$ -- 421
 width$ -- 0
-write$ -- 253
+write$ -- 266
 (There were 3 error messages)

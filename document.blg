@@ -8,58 +8,53 @@ url is already a type "field" function name
  : function {url
  :              }
 Database file #1: bibliography.bib
-I was expecting a `,' or a `}'---line 35 of file bibliography.bib
+I was expecting a `,' or a `}'---line 49 of file bibliography.bib
  :   
  :   howpublished = "\url{http://www.uic.edu/classes/bios/bios100/lecturesf04am/lect10.htm}",
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--entry type for "rubyonrails.org" isn't style-file defined
---line 139 of file bibliography.bib
-Warning--can't use both volume and number fields in ainsworth1999functions
-Warning--can't use both volume and number fields in kirschbaum2011does
+--line 153 of file bibliography.bib
 Warning--can't use both volume and number fields in kluge2010simulation
-Warning--can't use both volume and number fields in mifsud2010reconsidering
-Warning--can't use both volume and number fields in van2006supporting
-Warning--can't use both volume and number fields in wood1976role
-You've used 19 entries,
+You've used 6 entries,
             2937 wiz_defined-function locations,
-            754 strings with 7802 characters,
-and the built_in function-call counts, 81519 in all, are:
-= -- 13322
-> -- 969
-< -- 7
-+ -- 6320
-- -- 294
-* -- 6955
-:= -- 16272
-add.period$ -- 21
-call.type$ -- 19
-change.case$ -- 261
-chr.to.int$ -- 19
-cite$ -- 25
-duplicate$ -- 377
-empty$ -- 653
-format.name$ -- 355
-if$ -- 14697
+            673 strings with 5554 characters,
+and the built_in function-call counts, 24732 in all, are:
+= -- 4050
+> -- 297
+< -- 1
++ -- 1931
+- -- 91
+* -- 2100
+:= -- 4997
+add.period$ -- 8
+call.type$ -- 6
+change.case$ -- 83
+chr.to.int$ -- 6
+cite$ -- 7
+duplicate$ -- 84
+empty$ -- 171
+format.name$ -- 108
+if$ -- 4425
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 17
-newline$ -- 63
-num.names$ -- 195
-pop$ -- 131
+missing$ -- 1
+newline$ -- 24
+num.names$ -- 61
+pop$ -- 42
 preamble$ -- 1
-purify$ -- 285
+purify$ -- 90
 quote$ -- 0
-skip$ -- 308
+skip$ -- 79
 stack$ -- 0
-substring$ -- 18798
-swap$ -- 116
-text.length$ -- 273
+substring$ -- 5724
+swap$ -- 18
+text.length$ -- 85
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 68
-warning$ -- 6
-while$ -- 421
+type$ -- 24
+warning$ -- 1
+while$ -- 129
 width$ -- 0
-write$ -- 266
+write$ -- 83
 (There were 3 error messages)

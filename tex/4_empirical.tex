@@ -2,10 +2,32 @@
 \chapter{Empirical settings and method}
 The application is divided into three logical units: data collection, data processing and database, and user interface. In the following sections these units will be explained further. 
 
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{img/hardware/application.png}
+\caption{High-level illustration of the physical hardware components in the application}
+\label{fig:application}
+\end{figure}
+
 \section{Plant data collection}
-At the lowest level in the information hierarchy we have the hardware and software responsible for capturing and uploading the environmental data regarding the plant. Like a patient in a hospital, the plant is connected to a range of sensors each responsible for reading a specific variable which is important for the plant’s functioning. These variables are then sent to a computer, and after processing, uploaded to the next level in the data hierarchy. In the following chapters we will follow the data on it’s way from the plant’s physical location to the cloud.
+At the lowest level in the information hierarchy is the hardware and software responsible for capturing and uploading environmental data regarding the plant. Like a patient in a hospital, the plant is connected to a range of sensors, each responsible for reading a specific variable which is important for the plant’s functioning. These variables are then sent to a computer, processed, and uploaded to the next level in the data hierarchy. In the following chapters we will follow the data on it’s way from the plant’s physical location to the cloud.
 
 \subsection{Sensors}
+
+\def\arraystretch{1.8}
+\begin{table}
+    \begin{tabular}{|l|p{250pt}|}
+    \hline
+    \textbf{Sensor}               & \textbf{Description}                                                                                                  \\ \hline
+    TSL2561              & Digital luminosity sensor. Measures light in lux from 300-1100nm.                                            \\ \hline
+    RHT03                & Digital humidity and temperature sensor. Measures relative humidity and temperature in celsius.              \\ \hline
+    DS18B20              & Digital waterproof temperature sensor. Measures temperature in celsius                                       \\ \hline
+    DFRobot sku:sen0114  & Analog soil moisture sensor. Returns values between 0 and 900 depending on electrical conductivity of soil.  \\ \hline
+    \end{tabular}
+    \caption{Sensors used in the application}
+\end{table}
+
+
 With the advent of the \emph{“internet of things”}, sensors are becoming available in many different forms and packages. Just as LEGO-blocks they can be used in a wide range of applications. From automating tasks such as keeping a steady indoor-temperature, to measuring variables which we as humans cannot see. 
 
 For this application we did a short review of the available off-the-shelf packages available on the market. 
@@ -15,38 +37,65 @@ The sensors are able to capture information about the environment and transform 
 
 (write something about the sensortag)
 
-The sensors we have used in this project works at the most basic level in the same way as a volume controller on an amplifier. On an amplifier one can adjust the volume by varying the resistance in the signal going to the speakers. If we turn the volume up, the resistance goes down, and if we turn the volume down, the resistance goes up. The concept with sensors is the same, only that instead of a human controlling the resistance, it is controlled by light, moisture or other environmental variables. 
+The sensors we have used in this project works at the most basic level in the same way as a volume controller on an amplifier. On an amplifier one can adjust the volume by varying the resistance in the signal going to the speakers. If we turn the volume up, the resistance goes down, and if we turn the volume down, the resistance goes up. The concept with sensors is the same, only that instead controlling resistance with a volume knob, it is controlled by light, moisture or other environmental variables. 
 
-The resistors used in the temperature sensors are called “thermistors”, and the way they operate is by varying the resistance according to the temperature. Since we already know how many volts we are sending to the thermistor on the one end, we can use the amount of volts we get back to calculate the resistance. In our application this is done by a voltage divider (formula ref)
+The resistors used in the temperature sensors are called “thermistors”, and the way they operate is by varying the resistance according to the temperature. Since we already know how many volts we are sending to the thermistor on the one end, we can use the amount of volts we get back to calculate the resistance. In our application this is done by a voltage divider which uses a formula as follows: 
 
-If we solve this equation with regard to R2 we can see that the resistance is calculated to be X ohm. This value can then be mapped to the correct unit of measure, in this case Celsius or Fahrenheit. 
+\begin{equation}
+U_{out}=\frac{R_{2}}{R_{1}+R_{2}}\cdot U_{in} 
+\label{eq:vdiv1}
+\end{equation}
+Where $V_{out}$ is voltage out, $U_{in}$ is voltage in, $R_{1}$ is a given resistance, and $R_{2}$ is the resistance we want to calculate. For this example let's assume that $U_{in} = 5_{v}$, $U_{out} = 2_{v}$, and $R_{1} = 1K\Omega$. We solve this equation with regard to $R_{2}$
+\begin{equation}
+R_{2} = \frac{U_{out} \cdot R_{1}}{U_{in}-U_{out}}
+\end{equation} 
+
+\begin{equation}
+R_{2} = \frac{2V \cdot 1000\Omega}{5V-2V}
+\end{equation} 
+
+\begin{equation}
+R_{2} = \frac{2000\Omega}{3}
+\end{equation} 
+
+\begin{equation}
+R_{2} = 667\Omega
+\end{equation} 
+
+Then we can see that the calculated resistance is 667$\Omega$. This value can then be mapped to the correct unit of measure, in this case Celsius or Fahrenheit. 
+
 As we are using digital sensors, all of these calculations are done internally in the sensors, and coded into a digital signal. This signal, consisting of 1s and 0s, is then passed onto the next unit in our system, the Arduino.  
 
 \subsection{Arduino}
 (Write about embedded systems. What other alternatives are there to the Arduino? )
 
-Arduino is an open-source prototyping (arduino.cc) platform which makes it easy to interface low-level electronics (e.g sensors) with higher-level electronics (e.g computers). The core part of the Arduino is an Atmel(tm) Atmega microcontroller which can be programmed by a computer over usb, using the Arduino programming language and the Arduino development environment (arduino.cc).
+Arduino is an open-source prototyping platform which makes it easy to interface low-level electronics (e.g sensors) with higher-level electronics (e.g computers). The core part of the Arduino is an Atmel\texttrademark Atmega microcontroller which can be programmed by a computer over usb, using the Arduino programming language and the Arduino development environment \citep{arduino}.
 
-We have used an Arduino Uno which has 13 digital input output pins (GPIO), five analog inputs, i2c inputs, and USB for serial communication. The DSB18B20 soil temperature sensor and RHT03 temperature and humidity sensor are connected to the digital inputs through a 1K(ohm) pullup resistor. The pullup resistors are used to keep the voltage sent to the arduino from fluctuating when the sensor is not sending any data. The TSL2561 luminosity sensor is connected to the A4/SDA and A5/SDL ports of the Arduino as it communicates over the i2c protocol. And the generic soil moisture sensor is connected to A3 (Analog input 3) as it outputs analog voltage (not 1s and 0s).  
+We have used an Arduino Uno which has 13 digital input output pins (GPIO), five analog inputs, i2c inputs, and USB for serial communication. The DSB18B20 soil temperature sensor and RHT03 temperature and humidity sensor are connected to the digital inputs through a 1K(ohm) pullup resistor. The pullup resistors are used to keep the voltage sent to the arduino from fluctuating when the sensor is not sending any data. The TSL2561 luminosity sensor is connected to the A4/SDA and A5/SDL ports of the Arduino as it communicates over the i2c protocol. And the DFRobot soil moisture sensor is connected to A3 (Analog input 3) as it outputs analog voltage.  
 
-(illustration of schemadiagram)
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{img/hardware/Arduino_and_sensors_schem.png}
+\caption{Schema diagram of Arduino sensor wiring}
+\label{fig:arduino}
+\end{figure}
 
 The community surrounding Arduino is quite large, and therefore we were able to find pre-written libraries for communicating with the different sensors. This has made the task of converting the digital signal to the correct units (celsius, relative humidity, lux) and levels a breeze. 
 
-In the case of the generic soil moisture sensor, it does not output soil moisture in any kind of universal unit. Therefore we measured the resistance in air (high resistance), and in water (low resistance), and let these be the high and low points of a new unit called arbitrary moisture units (AMU).
+In the case of the soil moisture sensor, it does not output soil moisture in any kind of universal unit. Therefore we measured the resistance in air (high resistance), and in water (low resistance), and let these be the high and low points of a new unit called arbitrary moisture units (AMU).
 
 The code residing in the arduino runs a simple loop where it waits for a special character sent over serial communication through USB. If it receives this character it reads all the sensor values, and sends them back to the next logical unit: the Raspberry Pi
 
 \subsection{Raspberry Pi}
 (Why raspberry? Beagleboard?)
-The Raspberry Pi is a “cheap, accessible, programmable computer” (http://www.raspberrypi.org/about) which is roughly the size of a credit card. Our model was released early 2012, and contains two usb ports, audio, sd-card slot, and several GPIO-pins. The devices connected to it are: wireless network adapter, high-definition webcamera, and the Arduino. The operating system running on it is a port of Debian Linux optimized for the Raspberry, called Raspbian. 
+The Raspberry Pi is a “cheap, accessible, programmable computer” \citep{raspberrypi} which is roughly the size of a credit card. Our model was released early 2012, and contains two usb ports, audio, sd-card slot, and several GPIO-pins. The devices connected to it are: wireless network adapter, high-definition webcamera, and the Arduino. The operating system running on it is a port of Debian Linux optimized for the Raspberry, called Raspbian. 
 
 (illustration of raspberry)
 
-The GPIO-pins on the raspberry works almost in the same fashion as the Arduino’s digital input output pins. Thus we could in theory simplified the hardware by omitting the Arduino. The main reason for not doing this is that the Raspberry does not have an analog to digital converter (ADC). Therefore we would have to make a complex circuit involving an ADC to interface the Raspberry with the soil moisture sensor. In addition to this, we would most likely face timing issues. When we ask the digital sensors for data, they send the response immediately. If the unit receiving is not available to read the data, it gets lost. This can be a problem when using a high-level computer, as it performs multiple other tasks in addition to reading sensordata. 
+The GPIO-pins on the raspberry works almost in the same fashion as the Arduino’s digital input output pins. Thus we could in theory simplified the hardware by omitting the Arduino. The main reason for not doing this is that the Raspberry does not have an analog to digital converter (ADC). Therefore we would have to make a complex circuit involving an ADC to interface the Raspberry with the soil moisture sensor. In addition, we would most likely face timing issues. When we ask the digital sensors for data, they send the response immediately. If the unit receiving is not available to read the data, it gets lost. This can be a problem when using a high-level computer, as it performs multiple other tasks in addition to reading sensordata. 
 
 \subsubsection{Operation}
-After booting up an endless loop bash-script is called. The script snaps a photo of the plant using the webcam, and then runs a python-script responsible for collecting sensordata. Since we sometimes can get erroneous values from the sensors, we decided to read 15 values and upload the median value.
+After booting up an endless loop bash-script is called. The script snaps a photo of the plant using the webcam, and then runs a python-script responsible for collecting sensordata. Since we sometimes can get erroneous values from the sensors, we read 15 values and upload the median value.
 
 %http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
 \lstset{language=Python} 

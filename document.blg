@@ -15,46 +15,51 @@ I was expecting a `,' or a `}'---line 49 of file bibliography.bib
 I'm skipping whatever remains of this entry
 Warning--entry type for "rubyonrails.org" isn't style-file defined
 --line 153 of file bibliography.bib
+Warning--can't use both volume and number fields in ainsworth1999functions
+Warning--can't use both volume and number fields in kirschbaum2011does
 Warning--can't use both volume and number fields in kluge2010simulation
-You've used 6 entries,
+Warning--can't use both volume and number fields in mifsud2010reconsidering
+Warning--can't use both volume and number fields in van2006supporting
+Warning--can't use both volume and number fields in wood1976role
+You've used 21 entries,
             2937 wiz_defined-function locations,
-            673 strings with 5554 characters,
-and the built_in function-call counts, 24732 in all, are:
-= -- 4050
-> -- 297
-< -- 1
-+ -- 1931
-- -- 91
-* -- 2100
-:= -- 4997
-add.period$ -- 8
-call.type$ -- 6
-change.case$ -- 83
-chr.to.int$ -- 6
-cite$ -- 7
-duplicate$ -- 84
-empty$ -- 171
-format.name$ -- 108
-if$ -- 4425
+            763 strings with 7985 characters,
+and the built_in function-call counts, 86567 in all, are:
+= -- 14134
+> -- 1017
+< -- 7
++ -- 6684
+- -- 308
+* -- 7349
+:= -- 17350
+add.period$ -- 25
+call.type$ -- 21
+change.case$ -- 289
+chr.to.int$ -- 21
+cite$ -- 27
+duplicate$ -- 399
+empty$ -- 705
+format.name$ -- 373
+if$ -- 15591
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 1
-newline$ -- 24
-num.names$ -- 61
-pop$ -- 42
+missing$ -- 17
+newline$ -- 71
+num.names$ -- 215
+pop$ -- 147
 preamble$ -- 1
-purify$ -- 90
+purify$ -- 315
 quote$ -- 0
-skip$ -- 79
+skip$ -- 328
 stack$ -- 0
-substring$ -- 5724
-swap$ -- 18
-text.length$ -- 85
+substring$ -- 19910
+swap$ -- 118
+text.length$ -- 301
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
-warning$ -- 1
-while$ -- 129
+type$ -- 76
+warning$ -- 6
+while$ -- 463
 width$ -- 0
-write$ -- 83
+write$ -- 294
 (There were 3 error messages)

@@ -5,6 +5,12 @@ arduino.cc  \harvardyearleft 2013\harvardyearright , `What is arduino',
   \url{http://arduino.cc/en/Guide/Introduction}.
 \newblock [Online; accessed 15-October-2013].
 
+\harvarditem[Fielding et~al.]{Fielding, Gettys, Mogul, Frystyk, Masinter, Leach
+  \harvardand\ Berners-Lee}{1999}{fielding1999hypertext}
+Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter, L., Leach, P.
+  \harvardand\ Berners-Lee, T.  \harvardyearleft 1999\harvardyearright ,
+  `Hypertext transfer protocol--http/1.1'.
+
 \harvarditem{Fielding}{2000}{fielding2000architectural}
 Fielding, R.~T.  \harvardyearleft 2000\harvardyearright , Architectural styles
   and the design of network-based software architectures, PhD thesis,

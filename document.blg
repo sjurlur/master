@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2012)
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: pjgsm.bst
@@ -16,45 +16,45 @@ I'm skipping whatever remains of this entry
 Warning--entry type for "rubyonrails.org" isn't style-file defined
 --line 153 of file bibliography.bib
 Warning--can't use both volume and number fields in kluge2010simulation
-You've used 5 entries,
+You've used 6 entries,
             2937 wiz_defined-function locations,
-            668 strings with 5353 characters,
-and the built_in function-call counts, 14487 in all, are:
-= -- 2337
-> -- 143
+            673 strings with 5554 characters,
+and the built_in function-call counts, 24732 in all, are:
+= -- 4050
+> -- 297
 < -- 1
-+ -- 1056
-- -- 42
-* -- 1166
-:= -- 3031
-add.period$ -- 7
-call.type$ -- 5
-change.case$ -- 69
-chr.to.int$ -- 5
-cite$ -- 6
-duplicate$ -- 73
-empty$ -- 145
-format.name$ -- 56
-if$ -- 2582
++ -- 1931
+- -- 91
+* -- 2100
+:= -- 4997
+add.period$ -- 8
+call.type$ -- 6
+change.case$ -- 83
+chr.to.int$ -- 6
+cite$ -- 7
+duplicate$ -- 84
+empty$ -- 171
+format.name$ -- 108
+if$ -- 4425
 int.to.chr$ -- 5
 int.to.str$ -- 0
 missing$ -- 1
-newline$ -- 21
-num.names$ -- 50
-pop$ -- 34
+newline$ -- 24
+num.names$ -- 61
+pop$ -- 42
 preamble$ -- 1
-purify$ -- 75
+purify$ -- 90
 quote$ -- 0
-skip$ -- 67
+skip$ -- 79
 stack$ -- 0
-substring$ -- 3222
-swap$ -- 17
-text.length$ -- 71
+substring$ -- 5724
+swap$ -- 18
+text.length$ -- 85
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 20
+type$ -- 24
 warning$ -- 1
-while$ -- 108
+while$ -- 129
 width$ -- 0
-write$ -- 70
+write$ -- 83
 (There were 3 error messages)

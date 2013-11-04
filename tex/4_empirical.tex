@@ -16,13 +16,12 @@ At the lowest level in the information hierarchy is the hardware and software re
 
 \def\arraystretch{1.8}
 \begin{table}
-    \begin{tabular}{|l|p{250pt}|}
-    \hline
-    \textbf{Sensor}               & \textbf{Description}                                                                                                  \\ \hline
-    TSL2561              & Digital luminosity sensor. Measures light in lux from 300-1100nm.                                            \\ \hline
-    RHT03                & Digital humidity and temperature sensor. Measures relative humidity and temperature in celsius.              \\ \hline
-    DS18B20              & Digital waterproof temperature sensor. Measures temperature in celsius                                       \\ \hline
-    DFRobot sku:sen0114  & Analog soil moisture sensor. Returns values between 0 and 900 depending on electrical conductivity of soil.  \\ \hline
+    \begin{tabular}{@{}lp{250pt}@{}}\toprule
+    Sensor               & Description \\ \midrule                                                                                                  
+    TSL2561              & Digital luminosity sensor. Measures light in lux from 300-1100nm.                                            \\ 
+    RHT03                & Digital humidity and temperature sensor. Measures relative humidity and temperature in celsius.              \\ 
+    DS18B20              & Digital waterproof temperature sensor. Measures temperature in celsius                                       \\ 
+    DFRobot sku:sen0114  & Analog soil moisture sensor. Returns values between 0 and 900 depending on electrical conductivity of soil.  \\ \bottomrule
     \end{tabular}
     \caption{Sensors used in the application}
 \end{table}
@@ -120,7 +119,7 @@ for x in xrange(1,15):
 //calculate and post the median using numpy
 postData(np.median(airtemp),np.median(humidity),np.median(light),np.median(soiltemp)) 
 \end{lstlisting}
-\caption{Sensor reading Raspberry Pi}
+\caption{Reading sensor values from Arduino on Raspberry PI}
 \label{fig:raspberrycode}
 \end{figure}
 
@@ -236,25 +235,97 @@ This will make the API respond with a status code “302 Found”, and the body 
 
 \bgroup
 \def\arraystretch{1.8}	%  margin for cells 1 is default
-\begin{table}
+\begin{table*}
 	\centering
-	\begin{tabular}{|c|p{250pt}|} \hline
-		\textbf{part of URL}&	\textbf{meaning}\\ \hline
-		\texttt{http://}&	the protocol we acces the API through\\ \hline
-		\texttt{monoplant.me}&	the domain of the API\\ \hline
+	\begin{tabular}{@{}lp{250pt}@{}} \toprule
+		\textbf{part of URL}&	\textbf{meaning}\\ \midrule
+		\texttt{http://}&	the protocol we acces the API through\\ 
+		\texttt{monoplant.me}&	the domain of the API\\ 
 		\texttt{/plants/(:id)}&	\texttt{/plants} states that we want to access a resource named plant \\ &
-		\texttt{/(:id)} is a number representing the specific plant we want to access\\ \hline
+		\texttt{/(:id)} is a number representing the specific plant we want to access\\ 
 		\texttt{/sensorvalues/(:id)}&	\texttt{/sensorvalues} states that we want to access a resource named sensorvalue, since this comes after \texttt{/plants/(:id)} it means that we will get sensorvalues owned by the plant with \texttt{(:id)}. \\ &
-		\texttt{/(:id)} is a number representing the specific sensorvalue we want to operate\\ \hline
-		\texttt{(.format)}&	 \texttt{.format} can be blank, .html, .xml or .json. If it is blank, the API will respond with the default format, in our case html. If not it will respond with the corresponding format.\\ \hline
+		\texttt{/(:id)} is a number representing the specific sensorvalue we want to operate\\ 
+		\texttt{(.format)}&	 \texttt{.format} can be blank, .html, .xml or .json. If it is blank, the API will respond with the default format, in our case html. If not it will respond with the corresponding format.\\ \bottomrule
 	\end{tabular}
 	\caption{How a REST-url is built up}
 	\label{fig:RESTurl}
-\end{table}
+\end{table*}
 \egroup
 
+\subsection{Generating timelapse videos}
+Regular video cameras captures around 24 to 30 images or frames per second (fps), and plays them back at the same rate. The events in the video will then unfold at the same speed in which they happened during the shoot. Timelapse photography utilizes this principle by slowing down the rate at which images are captured, while maintaining the playback rate. So for instance if we captured one image per second, and played it back at 24 fps, one second in the film would equal 24 seconds in real life. Thus when played back, time would appear to move faster. This makes it possible to pronounce changes which are subtle to the human eye. E.g, a sunset, moving clouds, or a plant growing.  
+
+Each day at midnight the system collects all the images taken during the day, and combine them to a timelapse video played back at 30 frames per second. As the webcamera captures approximately one picture per minute, one second in the video equals 30 minutes in real life. One picure each minute equals \begin{math} 60min*24hours=1440 \end{math}
+pictures each day. Which, if we divide it by 30 frames per second gives us a 48 second displaying 24 hours in real life. This equals a speed increase of 1800 times. 
+
+Logically, to adhere to the principle of separation between data generation, storage and presentation. The Raspberry would generate the timelapse videos itself, and then push them to the API. But in an effort to reduce the amount of load on the Raspberry PI, we decided to compile the timelapse videos needed on the same server as the API. By doing so the amount of data transferred from the PI to the API is also reduced, as the API server already has the processing power and the images needed for the generation. 
+
+\subsubsection{HTML5 Video Element}
+Prior to HTML5 there was no standard way of implementing videos on web-pages. Therefore the web was filled with a myriad of different solutions, with QuickTime, RealPlayer, and Flash being the most prominent \citep{pilgrim2010html5}.
+
+In HTML5 we have a new, standard \verb@video@ element which, in theory, should give us support for native video in all browsers. But due to the nature of video-files, problems arise when users have different operating systems and different browsers. To be able to explain these problems, we have to dive a bit deeper in the architecture of a video file.
+
+A video file consists of a container, a video codec, and audio codec. The container defines how the content within is stored. Just as a .txt file can contain any type of text, an .avi or .mp4-file can contain any type of video. The video codec defines how the video stream is encoded, and come in a wide variety from lossy to lossless formats. Similarly the audio can be coded and decoded in many different ways. As you can see, a video can exist in hundreds of different permutations. Therefore it is not likely that we will have a combination that would work in all browsers in any foreseeable future \citep{pilgrim2010html5}.
+
+Thus, for maximum compatibility we have to encode video in three different formats: H.264+MP4, Webm and Theora (see table~\ref{tab:videosupport}). This is done via a bash-script which runs every night (see figure~\ref{fig:videoencoding}). First, all the image files are copied into a separate folder. Then a perl-script for "deflickering", e.g calculate and convert the images to a median brightness to redure video flickering, is run. And finally mencoder and ffmpeg2theora is used for creating H.264-, webm- and theora-videos.  
+
+\begin{table*}\centering
+\begin{tabular}{@{}lcccc@{}} \toprule
+Codecs/containers & IE & Firefox & Safari & Chrome \\ \midrule
+Theora+Vorbis+Ogg & ~                 & 3.5+    & ~      & 5.0+   \\ 
+H.264+AAC+MP4     & 9.0+              & ~       & 3.0+   & 5.0+   \\ 
+WebM              & 9.0+              & 4.0+    & ~      & 6.0+   \\ \bottomrule
+\end{tabular}
+\caption{Video support in different browsers \citep{pilgrim2010html5}}
+\label{tab:videosupport}
+\end{table*}
+
+%http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
+\lstset{language=bash} 
+\begin{figure}
+\begin{lstlisting}
+#!/bin/bash
+#get yesterdays date
+year=`/bin/date -d '1 day ago' +%Y`
+
+date=`/bin/date -d '1 day ago' +%m`
+month=`expr $date + 0`
+
+date=`/bin/date -d '1 day ago' +%d`
+day=`expr $date + 0`
+
+#copy files
+cp /mnt/s3/plant_2/$year/$month/$day/original/* /home/ubuntu/bin/timelapse/source_folder_of_pictures/
+
+#run deflicker
+perl /home/ubuntu/bin/timelapse/timelapse-deflicker.pl
+
+#step into deflickered folder
+cd /home/ubuntu/bin/timelapse/source_folder_of_pictures/Deflickered
+
+#get a file for the coverpicture
+ls | grep -v files.txt > files.txt 
+coverpicture=$(sed -n '100p' < files.txt)
+rm files.txt
+
+#create video h264
+/usr/bin/mencoder -idx -nosound -noskip -of avi -ovc x264 -x264encopts pass=1:bitrate=2000:crf=24:bframes=0 -o output.avi -mf fps=30 'mf://@files.txt'
+/usr/bin/MP4Box -aviraw video output.avi
+/usr/bin/MP4Box -add output_video.h264 output.mp4
+
+#create video theora (ogv)
+/usr/local/bin/ffmpeg2theora --noaudio -v 7 output.avi
+
+#create video webm
+/usr/bin/mencoder -idx -ovc lavc -nosound -of lavf -lavfopts format=webm -lavcopts threads=4:vcodec=libvpx -ffourcc VP80 output.mp4 -o output.webm
+
+\end{lstlisting}
+\caption{Video encoding for HTML5}
+\label{fig:videoencoding}
+\end{figure}
+
 \section{User Interface}
-The user interface (UI) of monoplant is where we visualize the data from the API to the users. We have built the UI in RoR, HTML, CSS and javascript. The main page represents the current state of the plant, ie. displays the last picture with the corresponding data from the plant. On the right side, there is a time lapse video with a connected graph from the day before (see figure~\ref{fig:mainpage} on page~\pageref{fig:mainpage}).
+The user interface (UI) of monoplant is where we visualize the data from the API to the users. We have built the UI in Ruby on Rails, HTML, CSS and javascript. The main page represents the current state of the plant, ie. displays the last picture with the corresponding data from the plant. On the right side, there is a time lapse video with a connected graph from the day before (see figure~\ref{fig:mainpage} on page~\pageref{fig:mainpage}).
 
 \begin{figure}
 \centering
@@ -314,7 +385,7 @@ To make sure that one can read the appropriate sensorvalues we provide several o
 Apart from the video-graph and the last 24 hours-graph we provide singular line graphs for each variable, this gives us the ability to display graphs with correct y-axises. The user can select time period for these graphs by interacting with the small graph on the bottom. 
 
 \subsection{Videoelement}
-The html5 specification provides a video-tag for playing videos in the browser, most newer browsers support this, however with varying format-support. Due to the prototypal nature of our application, storage-limits and time constraints we chose to support one video format, and therefore chose h.264 which has the broadest browser support. The video-element can be accessed through javascript, and by checking the state of the video, we are able to make the highcharts graph follow the video based on the currentTime of the videoelement.
+The HTML5 specification provides a video-tag for playing videos in the browser, most newer browsers support this, however with varying format-support. \sout{Due to the prototypal nature of our application, storage-limits and time constraints we chose to support one video format, and therefore chose h.264 which has the broadest browser support.} The video-element can be accessed through javascript, and by checking the state of the video, we are able to make the highcharts graph follow the video based on the currentTime of the videoelement.
 
 \begin{figure}
 	\begin{lstlisting}[language=javascript]

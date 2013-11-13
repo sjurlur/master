@@ -127,6 +127,8 @@ These values, along with the photo of the plant, are then passed on to the next 
 
 \section{Data processing and database}
 When the data has been gathered at the low level hierarchy, it is stored in the cloud. This is done by posting the data to an API on our web server. The main function of an API is to be a mean of communication between software, in our case the data collector and the user interface. After some research on web-API design, we decided that a REST architectual style was the way to go. 
+%REST uses URIs and HTTP by default, the data you send is the data you send. This meas that the data is easy to use out of the box, 
+%SOAP can use URIs and HTTP, the data you send becomes larger as verbose SOAP-standards are added to the data.
 
 \subsection{Representational State Transfer (REST)}
 REST is an architectual style for distributed hypermedia systems \citep{fielding2000architectural}. In Fielding's dissertation, he writes about the interaction constraints of REST that is introduced in order to limit how a distributed system can be constructed. 

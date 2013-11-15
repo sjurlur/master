@@ -10,6 +10,12 @@ arduino.cc  \harvardyearleft 2013\harvardyearright , `What is arduino',
   \url{http://arduino.cc/en/Guide/Introduction}.
 \newblock [Online; accessed 15-October-2013].
 
+\harvarditem{Cherry}{2010}{adequatleyqood}
+Cherry, B.  \harvardyearleft 2010\harvardyearright , `Minimum timer intervals
+  in javascript',
+  \url{http://www.adequatelygood.com/Minimum-Timer-Intervals-in-JavaScript.html}.
+\newblock [Online; accessed 22-October-2013].
+
 \harvarditem[Fielding et~al.]{Fielding, Gettys, Mogul, Frystyk, Masinter, Leach
   \harvardand\ Berners-Lee}{1999}{fielding1999hypertext}
 Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter, L., Leach, P.
@@ -25,6 +31,11 @@ Fielding, R.~T.  \harvardyearleft 2000\harvardyearright , Architectural styles
 Heinemeier~Hansson, D.  \harvardyearleft 2013\harvardyearright ,
   `www.rubyonrails.org', \url{http://www.rubyonrails.org}.
 \newblock [Online; accessed 4-November-2013].
+
+\harvarditem{Jordan \harvardand\ Henderson}{1995}{jordan1995interaction}
+Jordan, B. \harvardand\ Henderson, A.  \harvardyearleft 1995\harvardyearright ,
+  ``Interaction analysis: Foundations and practice'', {\em The journal of the
+  learning sciences} , Vol.~4, Taylor \& Francis, pp.~39--103.
 
 \harvarditem{Kluge \harvardand\ Bakken}{2010}{kluge2010simulation}
 Kluge, A. \harvardand\ Bakken, S.~M.  \harvardyearleft 2010\harvardyearright ,

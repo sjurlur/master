@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2012)
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: pjgsm.bst
@@ -8,6 +8,7 @@ url is already a type "field" function name
  : function {url
  :              }
 Database file #1: bibliography.bib
+<<<<<<< HEAD
 I was expecting a `,' or a `}'---line 56 of file bibliography.bib
  :   
  :   howpublished = "\url{http://www.uic.edu/classes/bios/bios100/lecturesf04am/lect10.htm}",
@@ -60,3 +61,49 @@ while$ -- 333
 width$ -- 0
 write$ -- 212
 (There were 3 error messages)
+=======
+Warning--can't use both volume and number fields in jordan1995interaction
+Warning--can't use both volume and number fields in kluge2010simulation
+You've used 9 entries,
+            2937 wiz_defined-function locations,
+            690 strings with 5995 characters,
+and the built_in function-call counts, 32369 in all, are:
+= -- 5250
+> -- 392
+< -- 2
++ -- 2461
+- -- 119
+* -- 2708
+:= -- 6610
+add.period$ -- 13
+call.type$ -- 9
+change.case$ -- 124
+chr.to.int$ -- 9
+cite$ -- 11
+duplicate$ -- 138
+empty$ -- 270
+format.name$ -- 146
+if$ -- 5794
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 4
+newline$ -- 34
+num.names$ -- 91
+pop$ -- 63
+preamble$ -- 1
+purify$ -- 135
+quote$ -- 0
+skip$ -- 120
+stack$ -- 0
+substring$ -- 7343
+swap$ -- 32
+text.length$ -- 128
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 34
+warning$ -- 2
+while$ -- 195
+width$ -- 0
+write$ -- 126
+(There were 2 error messages)
+>>>>>>> 4056fd08d59c7d41cdee9e1f90c94e5ae23dbd4d

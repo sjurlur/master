@@ -13,46 +13,50 @@ I was expecting a `,' or a `}'---line 56 of file bibliography.bib
  :   howpublished = "\url{http://www.uic.edu/classes/bios/bios100/lecturesf04am/lect10.htm}",
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Warning--can't use both volume and number fields in ainsworth1999functions
 Warning--can't use both volume and number fields in kluge2010simulation
-You've used 7 entries,
+Warning--can't use both volume and number fields in mifsud2010reconsidering
+Warning--can't use both volume and number fields in van2006supporting
+Warning--can't use both volume and number fields in wood1976role
+You've used 15 entries,
             2937 wiz_defined-function locations,
-            678 strings with 5652 characters,
-and the built_in function-call counts, 26682 in all, are:
-= -- 4349
-> -- 321
-< -- 1
-+ -- 2060
-- -- 98
-* -- 2243
-:= -- 5433
-add.period$ -- 10
-call.type$ -- 7
-change.case$ -- 96
-chr.to.int$ -- 7
-cite$ -- 8
-duplicate$ -- 100
-empty$ -- 200
-format.name$ -- 117
-if$ -- 4769
+            729 strings with 6905 characters,
+and the built_in function-call counts, 56226 in all, are:
+= -- 9106
+> -- 674
+< -- 6
++ -- 4254
+- -- 203
+* -- 4725
+:= -- 11356
+add.period$ -- 18
+call.type$ -- 15
+change.case$ -- 206
+chr.to.int$ -- 15
+cite$ -- 20
+duplicate$ -- 295
+empty$ -- 517
+format.name$ -- 250
+if$ -- 10127
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 3
-newline$ -- 27
-num.names$ -- 71
-pop$ -- 50
+missing$ -- 13
+newline$ -- 51
+num.names$ -- 153
+pop$ -- 102
 preamble$ -- 1
-purify$ -- 105
+purify$ -- 225
 quote$ -- 0
-skip$ -- 88
+skip$ -- 241
 stack$ -- 0
-substring$ -- 6121
-swap$ -- 19
-text.length$ -- 99
+substring$ -- 12738
+swap$ -- 90
+text.length$ -- 216
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 26
-warning$ -- 1
-while$ -- 150
+type$ -- 54
+warning$ -- 5
+while$ -- 333
 width$ -- 0
-write$ -- 97
+write$ -- 212
 (There were 3 error messages)

@@ -2,52 +2,52 @@ This is BibTeX, Version 0.99d (TeX Live 2012)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: pjgsm.bst
-I found no \citation commands---while reading file document.aux
 ,* is an unknown function---line 734 of file pjgsm.bst
 url is already a type "field" function name
 ---line 957 of file pjgsm.bst
  : function {url
  :              }
 Database file #1: bibliography.bib
-You've used 0 entries,
+Warning--can't use both volume and number fields in kirschbaum2011does
+You've used 7 entries,
             2937 wiz_defined-function locations,
-            640 strings with 4727 characters,
-and the built_in function-call counts, 32 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 18
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+            681 strings with 6009 characters,
+and the built_in function-call counts, 32336 in all, are:
+= -- 5330
+> -- 367
+< -- 1
++ -- 2559
+- -- 112
+* -- 2768
+:= -- 6451
+add.period$ -- 10
+call.type$ -- 7
+change.case$ -- 96
+chr.to.int$ -- 7
+cite$ -- 8
+duplicate$ -- 120
+empty$ -- 218
+format.name$ -- 132
+if$ -- 5812
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+missing$ -- 6
+newline$ -- 27
+num.names$ -- 72
+pop$ -- 52
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 105
 quote$ -- 0
-skip$ -- 1
+skip$ -- 96
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 7569
+swap$ -- 29
+text.length$ -- 99
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
+type$ -- 24
+warning$ -- 1
+while$ -- 151
 width$ -- 0
-write$ -- 2
-(There were 3 error messages)
+write$ -- 101
+(There were 2 error messages)

@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2012)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: pjgsm.bst
@@ -8,46 +8,45 @@ url is already a type "field" function name
  : function {url
  :              }
 Database file #1: bibliography.bib
-Warning--can't use both volume and number fields in kirschbaum2011does
-You've used 7 entries,
+You've used 1 entry,
             2937 wiz_defined-function locations,
-            681 strings with 6009 characters,
-and the built_in function-call counts, 32336 in all, are:
-= -- 5330
-> -- 367
-< -- 1
-+ -- 2559
-- -- 112
-* -- 2768
-:= -- 6451
-add.period$ -- 10
-call.type$ -- 7
-change.case$ -- 96
-chr.to.int$ -- 7
-cite$ -- 8
-duplicate$ -- 120
-empty$ -- 218
-format.name$ -- 132
-if$ -- 5812
+            646 strings with 5087 characters,
+and the built_in function-call counts, 3095 in all, are:
+= -- 504
+> -- 24
+< -- 0
++ -- 231
+- -- 7
+* -- 246
+:= -- 655
+add.period$ -- 2
+call.type$ -- 1
+change.case$ -- 14
+chr.to.int$ -- 1
+cite$ -- 1
+duplicate$ -- 11
+empty$ -- 27
+format.name$ -- 9
+if$ -- 546
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 6
-newline$ -- 27
-num.names$ -- 72
-pop$ -- 52
+missing$ -- 0
+newline$ -- 7
+num.names$ -- 10
+pop$ -- 8
 preamble$ -- 1
-purify$ -- 105
+purify$ -- 15
 quote$ -- 0
-skip$ -- 96
+skip$ -- 11
 stack$ -- 0
-substring$ -- 7569
-swap$ -- 29
-text.length$ -- 99
+substring$ -- 703
+swap$ -- 1
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
-warning$ -- 1
-while$ -- 151
+type$ -- 4
+warning$ -- 0
+while$ -- 21
 width$ -- 0
-write$ -- 101
+write$ -- 16
 (There were 2 error messages)

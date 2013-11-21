@@ -1,3 +1,25 @@
 \begin{thebibliography}{xx}
 
+\harvarditem{arduino.cc}{2013}{arduino}
+arduino.cc  \harvardyearleft 2013\harvardyearright , `What is arduino',
+  \url{http://arduino.cc/en/Guide/Introduction}.
+\newblock [Online; accessed 15-October-2013].
+
+\harvarditem{Fielding}{2000}{fielding2000architectural}
+Fielding, R.~T.  \harvardyearleft 2000\harvardyearright , Architectural styles
+  and the design of network-based software architectures, PhD thesis,
+  University of California.
+
+\harvarditem{raspberrypi.org}{2013}{raspberrypi}
+raspberrypi.org  \harvardyearleft 2013\harvardyearright , `About us',
+  \url{http://www.raspberrypi.org/about}.
+\newblock [Online; accessed 15-October-2013].
+
+\harvarditem{Utdanningsetaten}{2010}{utdanningsetaten}
+Utdanningsetaten  \harvardyearleft 2010\harvardyearright , `Nedre poenggrense
+  for inntak til vg1 (videregående trinn 1) for ungdom med opplæringsrett,
+  skoleåret 2010/2011, 2. inntaksrunde.',
+  \url{http://www.utdanningsetaten.oslo.kommune.no/getfile.php/utdanningsetaten%20%28UDE%29/Internett%20%28UDE%29/EFP/Inntak/2010Nedrepoenggrense2inntakVg1.pdf}.
+\newblock [Online; accessed 12-November-2013].
+
 \end{thebibliography}

@@ -1,62 +1,14 @@
-\BOOKMARK [0][-]{chapter.1}{Background}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Related work}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{Photosynthesis}{chapter.1}% 3
-\BOOKMARK [2][-]{subsection.1.2.1}{Light-dependent reaction}{section.1.2}% 4
-\BOOKMARK [3][-]{subsubsection.1.2.1.1}{Photosystem 2}{subsection.1.2.1}% 5
-\BOOKMARK [3][-]{subsubsection.1.2.1.2}{Photosystem 1}{subsection.1.2.1}% 6
-\BOOKMARK [2][-]{subsection.1.2.2}{Light-independent reaction}{section.1.2}% 7
-\BOOKMARK [2][-]{subsection.1.2.3}{External factors}{section.1.2}% 8
-\BOOKMARK [3][-]{subsubsection.1.2.3.1}{"3222378 \040levels}{subsection.1.2.3}% 9
-\BOOKMARK [3][-]{subsubsection.1.2.3.2}{Temperature}{subsection.1.2.3}% 10
-\BOOKMARK [3][-]{subsubsection.1.2.3.3}{Light intensity and wavelength}{subsection.1.2.3}% 11
-\BOOKMARK [3][-]{subsubsection.1.2.3.4}{Water}{subsection.1.2.3}% 12
-\BOOKMARK [0][-]{chapter.2}{Technical Background}{}% 13
-\BOOKMARK [1][-]{section.2.1}{Plant data collection}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.1.1}{Sensors}{section.2.1}% 15
-\BOOKMARK [2][-]{subsection.2.1.2}{Arduino}{section.2.1}% 16
-\BOOKMARK [2][-]{subsection.2.1.3}{Raspberry Pi}{section.2.1}% 17
-\BOOKMARK [3][-]{subsubsection.2.1.3.1}{Operation}{subsection.2.1.3}% 18
-\BOOKMARK [1][-]{section.2.2}{Data processing and database}{chapter.2}% 19
-\BOOKMARK [2][-]{subsection.2.2.1}{Representational State Transfer \(REST\)}{section.2.2}% 20
-\BOOKMARK [2][-]{subsection.2.2.2}{Application Programming Interface - API}{section.2.2}% 21
-\BOOKMARK [2][-]{subsection.2.2.3}{Generating timelapse videos}{section.2.2}% 22
-\BOOKMARK [3][-]{subsubsection.2.2.3.1}{HTML5 Video Element}{subsection.2.2.3}% 23
-\BOOKMARK [1][-]{section.2.3}{User Interface}{chapter.2}% 24
-\BOOKMARK [2][-]{subsection.2.3.1}{Highcharts}{section.2.3}% 25
-\BOOKMARK [2][-]{subsection.2.3.2}{Videoelement}{section.2.3}% 26
-\BOOKMARK [0][-]{chapter.3}{Theoretical perspective}{}% 27
-\BOOKMARK [1][-]{section.3.1}{Sociocultural}{chapter.3}% 28
-\BOOKMARK [2][-]{subsection.3.1.1}{Tools \046 Signs}{section.3.1}% 29
-\BOOKMARK [2][-]{subsection.3.1.2}{Implications for Learning}{section.3.1}% 30
-\BOOKMARK [1][-]{section.3.2}{Zone of Proximal Development}{chapter.3}% 31
-\BOOKMARK [1][-]{section.3.3}{Scaffolding}{chapter.3}% 32
-\BOOKMARK [1][-]{section.3.4}{Multiple External Representations}{chapter.3}% 33
-\BOOKMARK [0][-]{chapter.4}{Empirical settings and methods}{}% 34
-\BOOKMARK [1][-]{section.4.1}{Empirical setting}{chapter.4}% 35
-\BOOKMARK [2][-]{subsection.4.1.1}{Experiment}{section.4.1}% 36
-\BOOKMARK [3][-]{subsubsection.4.1.1.1}{Planning}{subsection.4.1.1}% 37
-\BOOKMARK [3][-]{subsubsection.4.1.1.2}{The experiments}{subsection.4.1.1}% 38
-\BOOKMARK [2][-]{subsection.4.1.2}{Data collection}{section.4.1}% 39
-\BOOKMARK [3][-]{subsubsection.4.1.2.1}{Video and audio}{subsection.4.1.2}% 40
-\BOOKMARK [3][-]{subsubsection.4.1.2.2}{Passive observation}{subsection.4.1.2}% 41
-\BOOKMARK [3][-]{subsubsection.4.1.2.3}{Document analysis}{subsection.4.1.2}% 42
-\BOOKMARK [3][-]{subsubsection.4.1.2.4}{Web logs}{subsection.4.1.2}% 43
-\BOOKMARK [2][-]{subsection.4.1.3}{Analytical Procedures}{section.4.1}% 44
-\BOOKMARK [3][-]{subsubsection.4.1.3.1}{Interaction analysis}{subsection.4.1.3}% 45
-\BOOKMARK [3][-]{subsubsection.4.1.3.2}{Making sense of the data}{subsection.4.1.3}% 46
-\BOOKMARK [2][-]{subsection.4.1.4}{Ethics}{section.4.1}% 47
-\BOOKMARK [0][-]{chapter.5}{Data \046 Analysis}{}% 48
-\BOOKMARK [1][-]{section.5.1}{Hypothesis generation and testing}{chapter.5}% 49
-\BOOKMARK [2][-]{subsection.5.1.1}{First hypothesis}{section.5.1}% 50
-\BOOKMARK [2][-]{subsection.5.1.2}{Testing the hypothesis}{section.5.1}% 51
-\BOOKMARK [2][-]{subsection.5.1.3}{A new hypothesis}{section.5.1}% 52
-\BOOKMARK [1][-]{section.5.2}{Misconception}{chapter.5}% 53
-\BOOKMARK [2][-]{subsection.5.2.1}{Hypothesis generation based on misconception}{section.5.2}% 54
-\BOOKMARK [2][-]{subsection.5.2.2}{Scaffolding to fix misconception}{section.5.2}% 55
-\BOOKMARK [2][-]{subsection.5.2.3}{Misconception not followed}{section.5.2}% 56
-\BOOKMARK [1][-]{section.5.3}{Conceptualization}{chapter.5}% 57
-\BOOKMARK [2][-]{subsection.5.3.1}{Everyday language}{section.5.3}% 58
-\BOOKMARK [2][-]{subsection.5.3.2}{Teacher intervention}{section.5.3}% 59
-\BOOKMARK [2][-]{subsection.5.3.3}{Scientific language}{section.5.3}% 60
-\BOOKMARK [1][-]{section.5.4}{Linking representations}{chapter.5}% 61
-\BOOKMARK [2][-]{subsection.5.4.1}{Soil moisture representation}{section.5.4}% 62
+\BOOKMARK [0][-]{chapter.1}{Empirical settings and methods}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Empirical setting}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Experiment}{section.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.1.1}{Planning}{subsection.1.1.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.1.1.2}{The experiments}{subsection.1.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.2}{Data collection}{section.1.1}% 6
+\BOOKMARK [3][-]{subsubsection.1.1.2.1}{Video and audio}{subsection.1.1.2}% 7
+\BOOKMARK [3][-]{subsubsection.1.1.2.2}{Passive observation}{subsection.1.1.2}% 8
+\BOOKMARK [3][-]{subsubsection.1.1.2.3}{Document analysis}{subsection.1.1.2}% 9
+\BOOKMARK [3][-]{subsubsection.1.1.2.4}{Web logs}{subsection.1.1.2}% 10
+\BOOKMARK [2][-]{subsection.1.1.3}{Analytical Procedures}{section.1.1}% 11
+\BOOKMARK [3][-]{subsubsection.1.1.3.1}{Interaction analysis}{subsection.1.1.3}% 12
+\BOOKMARK [3][-]{subsubsection.1.1.3.2}{Making sense of the data}{subsection.1.1.3}% 13
+\BOOKMARK [2][-]{subsection.1.1.4}{Ethics}{section.1.1}% 14

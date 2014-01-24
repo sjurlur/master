@@ -1,9 +1,7 @@
  
 /* start css.sty */
 .cmtt-12{font-family: monospace;}
-.cmbx-12{ font-weight: bold;}
 .cmti-12{ font-style: italic;}
-.cmbxti-10x-x-120{ font-weight: bold; font-style: italic;}
 p.noindent { text-indent: 0em }
 td p.noindent { text-indent: 0em; margin-top:0em; }
 p.nopar { text-indent: 0em; }
@@ -156,33 +154,5 @@ div.array {text-align:center;}
 table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
 div.longtable{text-align:center;}
 table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
-tr#TBL-1-1- td{border-top:0.13159em solid} 
-tr#TBL-01-3- td{border-bottom:0.08224em solid}
-tr#TBL-000001-15- td{border-bottom:0.08224em solid}
-tr#TBL-0000001-18- td{border-bottom:0.13159em solid}
-tr#TBL-2-1- td{border-top:0.13159em solid} 
-tr#TBL-02-3- td{border-bottom:0.08224em solid}
-tr#TBL-3-1- td{border-top:0.13159em solid} 
-tr#TBL-03-3- td{border-bottom:0.08224em solid}
-tr#TBL-4-1- td{border-top:0.13159em solid} 
-tr#TBL-04-3- td{border-bottom:0.08224em solid}
-tr#TBL-5-1- td{border-top:0.13159em solid} 
-tr#TBL-05-3- td{border-bottom:0.08224em solid}
-tr#TBL-0000000005-27- td{border-bottom:0.13159em solid}
-tr#TBL-6-1- td{border-top:0.13159em solid} 
-tr#TBL-06-3- td{border-bottom:0.08224em solid}
-tr#TBL-000006-15- td{border-bottom:0.13159em solid}
-tr#TBL-7-1- td{border-top:0.13159em solid} 
-tr#TBL-07-3- td{border-bottom:0.08224em solid}
-tr#TBL-8-1- td{border-top:0.13159em solid} 
-tr#TBL-08-3- td{border-bottom:0.08224em solid}
-tr#TBL-9-1- td{border-top:0.13159em solid} 
-tr#TBL-09-3- td{border-bottom:0.08224em solid}
-tr#TBL-000009-15- td{border-bottom:0.13159em solid}
-tr#TBL-10-1- td{border-top:0.13159em solid} 
-tr#TBL-010-3- td{border-bottom:0.08224em solid}
-tr#TBL-11-1- td{border-top:0.13159em solid} 
-tr#TBL-011-3- td{border-bottom:0.08224em solid}
-tr#TBL-000000011-21- td{border-bottom:0.13159em solid}
 /* end css.sty */
 

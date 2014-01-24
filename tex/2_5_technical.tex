@@ -35,7 +35,7 @@ For this application we did a short review of the available off-the-shelf packag
 The sensors are able to capture information about the environment and transform it to data variables which we can store and categorize. In total there are five different sensors connected to the plant, or in the plant’s vicinity: soil moisture, soil temperature, air temperature, humidity, and light. 
 
 
-(write something about the sensortag)
+%(write something about the sensortag)
 
 The sensors we have used in this project works at the most basic level in the same way as a volume controller on an amplifier. On an amplifier one can adjust the volume by varying the resistance in the signal going to the speakers. If we turn the volume up, the resistance goes down, and if we turn the volume down, the resistance goes up. The concept with sensors is the same, only that instead controlling resistance with a volume knob, it is controlled by light, moisture or other environmental variables. 
 
@@ -67,7 +67,7 @@ Then we can see that the calculated resistance is 667$\Omega$. This value can th
 As we are using digital sensors, all of these calculations are done internally in the sensors, and coded into a digital signal. This signal, consisting of 1s and 0s, is then passed onto the next unit in our system, the Arduino.  
 
 \subsection{Arduino}
-(Write about embedded systems. What other alternatives are there to the Arduino? )
+%(Write about embedded systems. What other alternatives are there to the Arduino? )
 
 Arduino is an open-source prototyping platform which makes it easy to interface low-level electronics (e.g sensors) with higher-level electronics (e.g computers). The core part of the Arduino is an Atmel\texttrademark Atmega microcontroller which can be programmed by a computer over usb, using the Arduino programming language and the Arduino development environment \citep{arduino}.
 
@@ -87,10 +87,15 @@ In the case of the soil moisture sensor, it does not output soil moisture in any
 The code residing in the arduino runs a simple loop where it waits for a special character sent over serial communication through USB. If it receives this character it reads all the sensor values, and sends them back to the next logical unit: the Raspberry Pi
 
 \subsection{Raspberry Pi}
-(Why raspberry? Beagleboard?)
+%(Why raspberry? Beagleboard?)
 The Raspberry Pi is a “cheap, accessible, programmable computer” \citep{raspberrypi} which is roughly the size of a credit card. Our model was released early 2012, and contains two usb ports, audio, sd-card slot, and several GPIO-pins. The devices connected to it are: wireless network adapter, high-definition webcamera, and the Arduino. The operating system running on it is a port of Debian Linux optimized for the Raspberry, called Raspbian. 
 
-(illustration of raspberry)
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{img/hardware/1200px-RaspberryPi.jpg}
+\caption{Raspberry Pi}
+\label{fig:raspberry}
+\end{figure}
 
 The GPIO-pins on the raspberry works almost in the same fashion as the Arduino’s digital input output pins. Thus we could in theory simplified the hardware by omitting the Arduino. The main reason for not doing this is that the Raspberry does not have an analog to digital converter (ADC). Therefore we would have to make a complex circuit involving an ADC to interface the Raspberry with the soil moisture sensor. In addition, we would most likely face timing issues. When we ask the digital sensors for data, they send the response immediately. If the unit receiving is not available to read the data, it gets lost. This can be a problem when using a high-level computer, as it performs multiple other tasks in addition to reading sensordata. 
 
@@ -270,7 +275,7 @@ In HTML5 we have a new, standard \verb@video@ element which, in theory, should g
 
 A video file consists of a container, a video codec, and audio codec. The container defines how the content within is stored. Just as a .txt file can contain any type of text, an .avi or .mp4-file can contain any type of video. The video codec defines how the video stream is encoded, and come in a wide variety from lossy to lossless formats. Similarly the audio can be coded and decoded in many different ways. As you can see, a video can exist in hundreds of different permutations. Therefore it is not likely that we will have a combination that would work in all browsers in any foreseeable future \citep{pilgrim2010html5}.
 
-Thus, for maximum compatibility we have to encode video in three different formats: H.264+MP4, Webm and Theora (see table~\ref{tab:videosupport}). This is done via a bash-script which runs every night (see figure~\ref{fig:videoencoding}). First, all the image files are copied into a separate folder. Then a perl-script for "deflickering", e.g calculate and convert the images to a median brightness to redure video flickering, is run. And finally mencoder and ffmpeg2theora is used for creating H.264-, webm- and theora-videos.  
+Thus, for maximum compatibility we have to encode video in three different formats: H.264+MP4, Webm and Theora (see table~\ref{tab:videosupport}). This is done via a bash-script which runs every night. First, all the image files are copied into a separate folder. Then a perl-script for "deflickering", e.g calculate and convert the images to a median brightness to redure video flickering, is run. And finally mencoder and ffmpeg2theora is used for creating H.264-, webm- and theora-videos.  
 
 \begin{table*}\centering
 \begin{tabular}{@{}lcccc@{}} \toprule
@@ -284,48 +289,48 @@ WebM              & 9.0+              & 4.0+    & ~      & 6.0+   \\ \bottomrule
 \end{table*}
 
 %http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
-\lstset{language=bash} 
-\begin{figure}
-\begin{lstlisting}
-#!/bin/bash
-#get yesterdays date
-year=`/bin/date -d '1 day ago' +%Y`
+% \lstset{language=bash} 
+% \begin{figure}
+% \begin{lstlisting}
+% #!/bin/bash
+% #get yesterdays date
+% year=`/bin/date -d '1 day ago' +%Y`
 
-date=`/bin/date -d '1 day ago' +%m`
-month=`expr $date + 0`
+% date=`/bin/date -d '1 day ago' +%m`
+% month=`expr $date + 0`
 
-date=`/bin/date -d '1 day ago' +%d`
-day=`expr $date + 0`
+% date=`/bin/date -d '1 day ago' +%d`
+% day=`expr $date + 0`
 
-#copy files
-cp /mnt/s3/plant_2/$year/$month/$day/original/* /home/ubuntu/bin/timelapse/source_folder_of_pictures/
+% #copy files
+% cp /mnt/s3/plant_2/$year/$month/$day/original/* /home/ubuntu/bin/timelapse/source_folder_of_pictures/
 
-#run deflicker
-perl /home/ubuntu/bin/timelapse/timelapse-deflicker.pl
+% #run deflicker
+% perl /home/ubuntu/bin/timelapse/timelapse-deflicker.pl
 
-#step into deflickered folder
-cd /home/ubuntu/bin/timelapse/source_folder_of_pictures/Deflickered
+% #step into deflickered folder
+% cd /home/ubuntu/bin/timelapse/source_folder_of_pictures/Deflickered
 
-#get a file for the coverpicture
-ls | grep -v files.txt > files.txt 
-coverpicture=$(sed -n '100p' < files.txt)
-rm files.txt
+% #get a file for the coverpicture
+% ls | grep -v files.txt > files.txt 
+% coverpicture=$(sed -n '100p' < files.txt)
+% rm files.txt
 
-#create video h264
-/usr/bin/mencoder -idx -nosound -noskip -of avi -ovc x264 -x264encopts pass=1:bitrate=2000:crf=24:bframes=0 -o output.avi -mf fps=30 'mf://@files.txt'
-/usr/bin/MP4Box -aviraw video output.avi
-/usr/bin/MP4Box -add output_video.h264 output.mp4
+% #create video h264
+% /usr/bin/mencoder -idx -nosound -noskip -of avi -ovc x264 -x264encopts pass=1:bitrate=2000:crf=24:bframes=0 -o output.avi -mf fps=30 'mf://@files.txt'
+% /usr/bin/MP4Box -aviraw video output.avi
+% /usr/bin/MP4Box -add output_video.h264 output.mp4
 
-#create video theora (ogv)
-/usr/local/bin/ffmpeg2theora --noaudio -v 7 output.avi
+% #create video theora (ogv)
+% /usr/local/bin/ffmpeg2theora --noaudio -v 7 output.avi
 
-#create video webm
-/usr/bin/mencoder -idx -ovc lavc -nosound -of lavf -lavfopts format=webm -lavcopts threads=4:vcodec=libvpx -ffourcc VP80 output.mp4 -o output.webm
+% #create video webm
+% /usr/bin/mencoder -idx -ovc lavc -nosound -of lavf -lavfopts format=webm -lavcopts threads=4:vcodec=libvpx -ffourcc VP80 output.mp4 -o output.webm
 
-\end{lstlisting}
-\caption{Video encoding for HTML5}
-\label{fig:videoencoding}
-\end{figure}
+% \end{lstlisting}
+% \caption{Video encoding for HTML5}
+% \label{fig:videoencoding}
+% \end{figure}
 
 \section{User Interface}
 The user interface (UI) of monoplant is where we visualize the data from the API to the users. We have built the UI in Ruby on Rails, HTML, CSS and javascript. The main page represents the current state of the plant, ie. displays the last picture with the corresponding data from the plant. On the right side, there is a time lapse video with a connected graph from the day before (see figure~\ref{fig:mainpage} on page~\pageref{fig:mainpage}).
@@ -387,8 +392,8 @@ To make sure that one can read the appropriate sensorvalues we provide several o
 
 Apart from the video-graph and the last 24 hours-graph we provide singular line graphs for each variable, this gives us the ability to display graphs with correct y-axises. The user can select time period for these graphs by interacting with the small graph on the bottom. 
 
-\subsection{Videoelement}
-The HTML5 specification provides a video-tag for playing videos in the browser, most newer browsers support this, however with varying format-support. \sout{Due to the prototypal nature of our application, storage-limits and time constraints we chose to support one video format, and therefore chose h.264 which has the broadest browser support.} The video-element can be accessed through javascript, and by checking the state of the video, we are able to make the highcharts graph follow the video based on the currentTime of the videoelement.
+\subsection{Connecting video and graph}
+ The HTML5 video-element can be accessed through javascript, and by checking the state of the video, we are able to make the highcharts graph follow the video based on the currentTime of the videoelement.
 
 \begin{figure}
 	\begin{lstlisting}[language=javascript]

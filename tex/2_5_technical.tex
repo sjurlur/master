@@ -11,7 +11,7 @@ The application is divided into three logical units: data collection, data proce
 \end{figure}
 
 \section{Plant data collection}
-At the lowest level in the information hierarchy is the hardware and software responsible for capturing and uploading environmental data regarding the plant. Like a patient in a hospital, the plant is connected to a range of sensors, each responsible for reading a specific variable which is important for the plant’s functioning. These variables are then sent to a computer, processed, and uploaded to the next level in the data hierarchy. In the following sections we will follow the data on it’s way from the plant’s physical location to the cloud.
+At the lowest level in the information hierarchy is the hardware and software responsible for capturing and uploading environmental data regarding the plant. Like a patient in a hospital, the plant is connected to a range of sensors, each responsible for reading a specific variable that is important for the plant’s functioning. These variables are then sent to a computer, processed, and uploaded to the next level in the data hierarchy. In the following sections we will follow the data on it’s way from the plant’s physical location to the "cloud".
 
 \subsection{Sensors}
 
@@ -28,18 +28,18 @@ At the lowest level in the information hierarchy is the hardware and software re
 \end{table}
 
 
-With the advent of the \emph{“internet of things”}, sensors are becoming available in many different forms and packages. Just as LEGO-pieces they can be used in a wide range of applications. From automating tasks such as keeping a steady indoor-temperature, to measuring variables which we as humans cannot see. 
+With the advent of the \emph{“internet of things”}, sensors are becoming available in many different forms and packages. Just as LEGO-pieces they can be easily purchased and used in a wide range of applications. From automating tasks such as keeping a steady indoor-temperature, to measuring variables that humans cannot see. 
 
 For this application we did a short review of the available off-the-shelf packages available on the market. 
 
-The sensors are able to capture information about the environment and transform it to data variables which we can store and categorize. In total there are five different sensors connected to the plant, or in the plant’s vicinity: soil moisture, soil temperature, air temperature, humidity, and light. 
+The sensors are able to capture information about the environment and transform it to data variables, which we can store and categorize. In total there are five different sensors connected to the plant, or in the plant’s vicinity: soil moisture, soil temperature, air temperature, humidity, and light. 
 
 
 %(write something about the sensortag)
 
 The sensors we have used in this project works at the most basic level in the same way as a volume controller on an amplifier. On an amplifier one can adjust the volume by varying the resistance in the signal going to the speakers. If we turn the volume up, the resistance goes down, and if we turn the volume down, the resistance goes up. The concept with sensors is the same, only that instead controlling resistance with a volume knob, it is controlled by light, moisture or other environmental variables. 
 
-The resistors used in the temperature sensors are called “thermistors”, and the way they operate is by varying the resistance according to the temperature. Since we already know how many volts we are sending to the thermistor on the one end, we can use the amount of volts we get back to calculate the resistance. In our application this is done by a voltage divider which uses a formula as follows: 
+The resistors used in the temperature sensors are called “thermistors”, and the way they operate is by varying the resistance according to the temperature. Since we already know how many volts we are sending to the thermistor on the one end, we can use the amount of volts we get back to calculate the resistance. In our application this is done by a voltage divider, which uses a formula as follows: 
 
 \begin{equation}
 U_{out}=\frac{R_{2}}{R_{1}+R_{2}}\cdot U_{in} 
@@ -64,14 +64,14 @@ R_{2} = 667\Omega
 
 Then we can see that the calculated resistance is 667$\Omega$. This value can then be mapped to the correct unit of measure, in this case Celsius or Fahrenheit. 
 
-As we are using digital sensors, all of these calculations are done internally in the sensors, and coded into a digital signal. This signal, consisting of 1s and 0s, is then passed onto the next unit in our system, the Arduino.  
+As we are using digital sensors, all calculations are done internally in the sensors, and coded into a digital signal. This signal, consisting of 1s and 0s, is then passed onto the next unit in our system, the Arduino.  
 
 \subsection{Arduino}
 %(Write about embedded systems. What other alternatives are there to the Arduino? )
 
-Arduino is an open-source prototyping platform which makes it easy to interface low-level electronics (e.g sensors) with higher-level electronics (e.g computers). The core part of the Arduino is an Atmel\texttrademark Atmega microcontroller which can be programmed by a computer over usb, using the Arduino programming language and the Arduino development environment \citep{arduino}.
+Arduino is an open-source prototyping platform that makes it easy to interface low-level electronics (e.g sensors) with higher-level electronics (e.g computers). The core part of the Arduino is an Atmel\texttrademark Atmega microcontroller, which can be programmed by a computer over a USB port, using the Arduino programming language and the Arduino development environment \citep{arduino}.
 
-We have used an Arduino Uno which has 13 digital input output pins (GPIO), five analog inputs, i2c inputs, and USB for serial communication. The DSB18B20 soil temperature sensor and RHT03 temperature and humidity sensor are connected to the digital inputs through a 1K(ohm) pullup resistor. The pullup resistors are used to keep the voltage sent to the arduino from fluctuating when the sensor is not sending any data. The TSL2561 luminosity sensor is connected to the A4/SDA and A5/SDL ports of the Arduino as it communicates over the i2c protocol. And the DFRobot soil moisture sensor is connected to A3 (Analog input 3) as it outputs analog voltage.  
+We have used an Arduino Uno that has 13 digital input output pins (GPIO), five analog inputs, i2c inputs, and a USB port for serial communication. The soil temperature sensor and the temperature and humidity sensor are connected to the digital inputs through a 1K(ohm) pullup resistor. The pullup resistor is used to keep the voltage sent to the arduino from fluctuating when the sensor is not sending any data. The TSL2561 luminosity sensor is connected to the A4/SDA and A5/SDL ports of the Arduino as it communicates over the i2c protocol. And the DFRobot soil moisture sensor is connected to A3 (Analog input 3) as it outputs analog voltage.  
 
 \begin{figure}
 \centering
@@ -80,15 +80,15 @@ We have used an Arduino Uno which has 13 digital input output pins (GPIO), five 
 \label{fig:arduino}
 \end{figure}
 
-The community surrounding Arduino is quite large, and therefore we were able to find pre-written libraries for communicating with the different sensors. This has made the task of converting the digital signal to the correct units (celsius, relative humidity, lux) and levels a breeze. 
+The community surrounding Arduino is quite large, and we were therefore able to find pre-written libraries for communicating with the different sensors. This has made the task of converting the digital signal to the correct units (celsius, relative humidity, lux) and levels a breeze. 
 
-In the case of the soil moisture sensor, it does not output soil moisture in any kind of universal unit. Therefore we measured the resistance in air (high resistance), and in water (low resistance), and let these be the high and low points of a new unit called arbitrary moisture units (AMU).
+In the case of the soil moisture sensor, it does not output soil moisture in any kind of universal measuring unit. Therefore we measured the resistance in air (high resistance), and in water (low resistance), and let these be the high and low points of a new unit called arbitrary moisture units (AMU).
 
 The code residing in the arduino runs a simple loop where it waits for a special character sent over serial communication through USB. If it receives this character it reads all the sensor values, and sends them back to the next logical unit: the Raspberry Pi
 
 \subsection{Raspberry Pi}
 %(Why raspberry? Beagleboard?)
-The Raspberry Pi is a “cheap, accessible, programmable computer” \citep{raspberrypi} which is roughly the size of a credit card. Our model was released early 2012, and contains two usb ports, audio, sd-card slot, and several GPIO-pins. The devices connected to it are: wireless network adapter, high-definition webcamera, and the Arduino. The operating system running on it is a port of Debian Linux optimized for the Raspberry, called Raspbian. 
+The Raspberry Pi is a “cheap, accessible, programmable computer” \citep{raspberrypi}, which is roughly the size of a credit card. Our model was released in early 2012, and contains two usb ports, audio, sd-card slot, and several GPIO-pins. We have connected a wireless network adapter, a high-definition webcamera, a powered USB-hub, and an Arduino to the Raspberry. The operating system running on it is a port of Debian Linux optimized for the Raspberry, called Raspbian. 
 
 \begin{figure}
 \centering
@@ -97,10 +97,10 @@ The Raspberry Pi is a “cheap, accessible, programmable computer” \citep{rasp
 \label{fig:raspberry}
 \end{figure}
 
-The GPIO-pins on the raspberry works almost in the same fashion as the Arduino’s digital input output pins. Thus we could in theory simplified the hardware by omitting the Arduino. The main reason for not doing this is that the Raspberry does not have an analog to digital converter (ADC). Therefore we would have to make a complex circuit involving an ADC to interface the Raspberry with the soil moisture sensor. In addition, we would most likely face timing issues. When we ask the digital sensors for data, they send the response immediately. If the unit receiving is not available to read the data, it gets lost. This can be a problem when using a high-level computer, as it performs multiple other tasks in addition to reading sensordata. 
+The GPIO-pins on the raspberry works almost in the same fashion as the Arduino’s digital input output pins. Thus we could in theory simplified the hardware by omitting the Arduino. The main reason for not doing this is that the Raspberry does not have an analog to digital converter (ADC). Therefore we would have to make a complex circuit involving an ADC to interface the Raspberry with the soil moisture sensor. In addition, we would most likely face timing issues. When we ask the digital sensors for data, they send the response immediately. If the unit receiving is not available to read the data, it gets lost. This can be a problem when using a high-level computer, as it performs multiple tasks in addition to reading sensordata. 
 
 \subsubsection{Operation}
-After booting up an endless loop bash-script is called. The script snaps a photo of the plant using the webcam, and then runs a python-script responsible for collecting sensordata. Since we sometimes can get erroneous values from the sensors, we read 15 values and upload the median value.
+After booting up, a bash-script with an endless loop is called. The script snaps a photo of the plant using the webcam, and then runs a python-script responsible for collecting sensordata. Since we sometimes can get erroneous values from the sensors, we read 15 values and upload the median value.
 
 %http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
 \lstset{language=Python} 
@@ -125,14 +125,14 @@ for x in xrange(1,15):
 //calculate and post the median using numpy
 postData(np.median(airtemp),np.median(humidity),np.median(light),np.median(soiltemp)) 
 \end{lstlisting}
-\caption{Reading sensor values from Arduino on Raspberry PI}
+\caption{Reading sensor values from Arduino on Raspberry PI, written in Python}
 \label{fig:raspberrycode}
 \end{figure}
 
 These values, along with the photo of the plant, are then passed on to the next instance, the API, using pythons HTTP-library urllib2. 
 
 \section{Data processing and database}
-When the data has been gathered at the low level hierarchy, it is stored in the cloud. This is done by posting the data to an API on our web server. The main function of an API is to be a mean of communication between software, in our case the data collector and the user interface. After some research on web-API design, we decided that a REST architectual style was the way to go. 
+When the data has been gathered at the low level hierarchy, it is stored in the cloud. This is done by posting the data to an API on our web server. The main function of an API is to be a means of communication between software, in our case the data collector and the user interface. After some research on web-API design, we decided that a REST architectual style was the way to go. 
 %REST uses URIs and HTTP by default, the data you send is the data you send. This meas that the data is easy to use out of the box, 
 %SOAP can use URIs and HTTP, the data you send becomes larger as verbose SOAP-standards are added to the data.
 
@@ -154,10 +154,10 @@ REST is an architectual style for distributed hypermedia systems \citep{fielding
 
 \end{enumerate}
 
-REST is an architectual style, not a strict standard, it allows for flexibility, but at the same time it promotes best practices. The goal of our API was to provide a way of storing and accessing plant data in the cloud, first and foremost for client side applications that we build ourselves. The most important thing was to make something that worked for us. A pragmatic approach to REST gave us the flexibility to create an API that gets the job done. In the following chapter we will describe how the API works and discuss some choices we made in the implementation process.
+REST is an architectual style, not a strict standard. It allows for flexibility, but at the same time it promotes best practice. The goal of our API was to provide a way of storing and accessing plant data in the cloud, first and foremost for client side applications that we build ourselves. The most important thing was to create something that worked for us. A pragmatic approach to REST gave us the flexibility to create an API that gets the job done. In the following chapter we will describe how the API works and discuss some choices we made in the implementation process.
 
 \subsection{Application Programming Interface - API}
-Our first implementation of the API was written in PHP with the framework Codeigniter and a rest-server library as the base. We made a working version, but at some point, after making several dirty workarounds and hacks we started reading about Ruby on Rails and the design paradigm convention over configuration, and soon realized that Rails was exactly what we needed to build our API with.
+Our first implementation of the API was written in PHP with the framework Codeigniter and a rest-server library as the base. We made a working version, but at some point, after making several dirty workarounds and hacks, several discussions in different forums made us aware of Ruby on Rails and the design paradigm "convention over configuration". Thus we soon realized that Rails was exactly what we needed to use for building our API.
 
 \begin{quote}
 "Ruby on Rails is an open-source web framework that’s optimized for programmer happinees and sustainable productivity. It lets you write beautyful code by favoring convention over configuration."\citep{rubyonrails.org} 
@@ -197,7 +197,7 @@ For the api to know how to interpret this information in json, we also need to p
 		updated_at: "2013-09-17T10:45:17+02:00"
 	}
 	\end{lstlisting}
-	\caption{Plant response}
+	\caption{Plant response in json}
 	\label{fig:plantresponse}
 \end{figure}
 
@@ -209,37 +209,39 @@ http://monoplant.me/plants/1/sensorvalues.json
 
 As before the API will interpret the request, store the data and respond with a status code: “201 created”. But there is some more stuff happening in the background, the Raspberry only sent the sensorvalues and an image. Internally the API creates a thumbnail of the image and uploads both the thumbnail and the original to another static server, finally storing the URL for both of them in the database. The response body ends up looking like figure~\ref{fig:sensorvaluesresponse}
 
-\begin{figure}
-	\begin{lstlisting}[language=javascript]
-	{
-		airTemp: 22.14
-		created_at: "2013-09-17T10:49:43+02:00"
-		humidity: 38.5
-		id: 10037
-		img_url: "http://s3-eu-west-1.amazonaws.com/plantespann/2013/9/17/original/10037.jpg?1379407782"
-		light: 1702.5
-		photo_content_type: "image/jpeg"
-		photo_file_name: "viewcam.jpg"
-		photo_file_size: 204358
-		photo_updated_at: "2013-09-17T10:49:42+02:00"
-		plant_id: 1
-		soilMoisture: 54
-		soilTemp: 22.25
-		thumb_url: "http://s3-eu-west-1.amazonaws.com/plantespann/2013/9/17/thumb/10037.jpg?1379407782"
-		updated_at: "2013-09-17T10:49:43+02:00"
-	}
-	\end{lstlisting}
-	\caption{Sensorvalues response}
-	\label{fig:sensorvaluesresponse}
-\end{figure}
-
-If we need to look at this sensorvalue at a later time, we can simply do a GET request using the sensorvalue id:
+If we need to look at this sensorvalue at a later time, we can simply do a GET request using the sensorvalue id we got from the previous response and call the URL:
 
 \begin{quote}
 http://monoplant.me/plants/1/sensorvalues/10037.json 
 \end{quote}
 
-This will make the API respond with a status code “302 Found”, and the body will look just like the previous response body, at least if nothing has been updated. Note that the URL is buildt up according to what resource we are trying to operate. See table~\ref{fig:RESTurl} for an overview on how these URLs are built up.
+This will make the API respond with a status code “302 Found”, and the body will look just like the previous response body, at least if nothing has been updated in the meantime. 
+
+\begin{figure}
+    \begin{lstlisting}[language=javascript]
+    {
+        airTemp: 22.14
+        created_at: "2013-09-17T10:49:43+02:00"
+        humidity: 38.5
+        id: 10037
+        img_url: "http://s3-eu-west-1.amazonaws.com/plantespann/2013/9/17/original/10037.jpg?1379407782"
+        light: 1702.5
+        photo_content_type: "image/jpeg"
+        photo_file_name: "viewcam.jpg"
+        photo_file_size: 204358
+        photo_updated_at: "2013-09-17T10:49:42+02:00"
+        plant_id: 1
+        soilMoisture: 54
+        soilTemp: 22.25
+        thumb_url: "http://s3-eu-west-1.amazonaws.com/plantespann/2013/9/17/thumb/10037.jpg?1379407782"
+        updated_at: "2013-09-17T10:49:43+02:00"
+    }
+    \end{lstlisting}
+    \caption{Sensorvalues response from monoplant}
+    \label{fig:sensorvaluesresponse}
+\end{figure}
+
+Note that the URL is built up according to what resource we are trying to operate. See table~\ref{fig:RESTurl} for an overview on how these URLs are built up.
 
 \bgroup
 \def\arraystretch{1.8}	%  margin for cells 1 is default
@@ -333,7 +335,7 @@ WebM              & 9.0+              & 4.0+    & ~      & 6.0+   \\ \bottomrule
 % \end{figure}
 
 \section{User Interface}
-The user interface (UI) of monoplant is where we visualize the data from the API to the users. We have built the UI in Ruby on Rails, HTML, CSS and javascript. The main page represents the current state of the plant, ie. displays the last picture with the corresponding data from the plant. On the right side, there is a time lapse video with a connected graph from the day before (see figure~\ref{fig:mainpage} on page~\pageref{fig:mainpage}).
+The user interface (UI) of monoplant is where we visualize the data from the API to the users. We have built the UI in Ruby on Rails, HTML, CSS and javascript. The main page represents the current state of the plant, ie. it displays the last picture with the corresponding data from the plant. On the right side, there is a time lapse video with a connected graph from the day before (see figure~\ref{fig:mainpage} on page~\pageref{fig:mainpage}).
 
 \begin{figure}
 \centering
@@ -343,19 +345,19 @@ The user interface (UI) of monoplant is where we visualize the data from the API
 \end{figure}
 
 \subsection{Highcharts}
-There are 4-5 serious javascript chart libraries out there with various types of focus, flexibility and documentation. We ran some tests with google charts, d3.js and highcharts, and found that Highcharts provided the most extensive documentation as well as an easy to understand interface, the functionality also made it possible for us to do things we had not thought of earlier.
+There are 4-5 serious javascript chart libraries on the Internet with various types of focus, flexibility and documentation. We ran some tests with google charts, d3.js and highcharts, and found that Highcharts provided the most extensive documentation as well as an easy to understand interface. The functionality also made it possible for us to do things we had not thought of before.
 
-The first graph we had to make was a graph containing all the plant data from a time corresponding to the timelapse video. This meant putting temperature, light, humidity and soil moisture all in the same graph, even though they all have different units. Out first attempt was done without manipulating the data at all (see figure~\ref{fig:badgraph} on page~\pageref{fig:badgraph}). 
+The first graph we had to make was a graph containing all the plant data from a given time corresponding to the timelapse video. This meant putting temperature, light, humidity and soil moisture all in the same graph, even though they all have different units. Out first attempt was done without manipulating the data at all (see figure~\ref{fig:badgraph} on page~\pageref{fig:badgraph}). 
 
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth]{img/interface/badgraph.png}
-\caption{Screenshot from unsuccessful graph}
+\caption{Screenshot from an unsuccessful graph}
 \label{fig:badgraph}
 \end{figure}
 
-The light data had an average at about 2000 lux, and the temperature was laying at about 22 degrees Celsius. Since highcharts scales the chart based on the data with largest numbers and changes, the data with small numbers and small changes appeared as straight lines at the bottom of the graph. 
-For this graph to display the different sensorvalues’ changes over a day, we needed to create a relative scale and map the values to that scale. Lets say you have a number X, which can have a value between A and B, and you want to map it to a value Y between C and D, this becomes a slightly more advanced version of calculating percentage (see figure~\ref{fig:mapfunc} on page~\pageref{fig:mapfunc}).
+The light data had an average at about 2000 lux, and the temperature was about 22 degrees Celsius. Since highcharts scales the chart based on the data with largest numbers and changes, the data with small numbers and small changes appeared as straight lines at the bottom of the graph. 
+For this graph to display the different sensorvalue changes over a day, we needed to create a relative scale and map the values to that scale. To fake an example, lets say you have a number X, which has a value between A and B, and you want to map it to a value Y, between C and D. This becomes a slightly more advanced version of calculating percentage (see figure~\ref{fig:mapfunc} on page~\pageref{fig:mapfunc}).
 
 \begin{figure}
 \centering
@@ -378,19 +380,19 @@ We chose an output scale from 0 to 100 and wrote a function according to figure~
 	\label{fig:mapscale}
 \end{figure}
 
-After running the data through our new function we got a better result and the changes is now visible (see figure~\ref{fig:goodgraph} on page~\pageref{fig:goodgraph}). It will be interesting to see how students interpret this graph, and if they understand that it is a relativ axis. We wanted to keep the information level on this graph down as it will be interpreted alongside the timelapse video and the overhead for interpreting additional information is quite high.  
+After running the data through our new function we got a better result and the changes became visible (see figure~\ref{fig:goodgraph} on page~\pageref{fig:goodgraph}). It will be interesting to see how students interpret this graph, and if they understand that it is a relativ axis. We wanted to keep the information level on this graph down as it will be interpreted alongside the timelapse video and the overhead for interpreting additional information is quite high.  
 %Don't know if this should be here, it's not technical, but it's interesting.
 
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth]{img/interface/goodgraph.png}
-\caption{Screenshot from succesful graph}
+\caption{Screenshot from a succesful graph}
 \label{fig:goodgraph}
 \end{figure}
 
-To make sure that one can read the appropriate sensorvalues we provide several other graphs, one for the last 24 hours, very similar to the video graph. The only difference is that we have included a mouse-over interaction technique with a tool-tip that displays the actual values alongside with the corresponding image of the plant \citep[p.254]{kluge2010simulation}.
+To make sure one can read the appropriate sensorvalues we provide several other graphs, one for the last 24 hours, very similar to the video graph. The only difference is that we have included a mouse-over interaction technique with a tool-tip that displays the actual values alongside the corresponding image of the plant \citep[p.254]{kluge2010simulation}.
 
-Apart from the video-graph and the last 24 hours-graph we provide singular line graphs for each variable, this gives us the ability to display graphs with correct y-axises. The user can select time period for these graphs by interacting with the small graph on the bottom. 
+Apart from the video-graph and the last 24 hour-graph we provide singular line graphs for each variable, this gives us the ability to display graphs with correct y-axises. The user can select time period for these graphs by interacting with the small graph on the bottom. 
 
 \subsection{Connecting video and graph}
  The HTML5 video-element can be accessed through javascript, and by checking the state of the video, we are able to make the highcharts graph follow the video based on the currentTime of the videoelement.
@@ -412,7 +414,7 @@ Apart from the video-graph and the last 24 hours-graph we provide singular line 
 		clearInterval(interval);
 	}
 	\end{lstlisting}
-	\caption{Video and graph connection code}
+	\caption{Video and graph connection code, written in javascript}
 	\label{fig:videocode}
 \end{figure}
 

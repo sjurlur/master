@@ -1,7 +1,7 @@
  
 /* start css.sty */
-.cmtt-12{font-family: monospace;}
 .cmti-12{ font-style: italic;}
+.cmr-8{font-size:66%;}
 p.noindent { text-indent: 0em }
 td p.noindent { text-indent: 0em; margin-top:0em; }
 p.nopar { text-indent: 0em; }

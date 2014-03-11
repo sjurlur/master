@@ -1,6 +1,7 @@
  
 /* start css.sty */
 .cmti-12{ font-style: italic;}
+.cmbx-12{ font-weight: bold;}
 .cmr-8{font-size:66%;}
 p.noindent { text-indent: 0em }
 td p.noindent { text-indent: 0em; margin-top:0em; }

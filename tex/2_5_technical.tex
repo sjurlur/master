@@ -171,7 +171,7 @@ Our API is a server-side Web-API which can be accessed through the HTTP-protocol
 The Monoplant API have three resources: Plants, Sensorvalues and Videos. To create a plant, one can send a POST request to the URL:
 
 \begin{quote}
-http://monoplant.me/plants.json 
+http://Monoplant.me/plants.json 
 \end{quote}
 
 A post request also need information about the plant to create, in this case we will pass that information in the json-format:
@@ -204,7 +204,7 @@ For the api to know how to interpret this information in json, we also need to p
 If we look at this representation, we see that the API have added an ID to the plant as well as two data attributes created\_at and updated\_at. Since we now have the id of the plant, we can tell the Raspberry Pi to start adding sensor values for the plant. The Raspberry will create a request using the data it gets from the arduino and the image from the web-cam and finally send that POST request to the URL:
 
 \begin{quote}
-http://monoplant.me/plants/1/sensorvalues.json 
+http://Monoplant.me/plants/1/sensorvalues.json 
 \end{quote}
 
 As before the API will interpret the request, store the data and respond with a status code: “201 created”. But there is some more stuff happening in the background, the Raspberry only sent the sensorvalues and an image. Internally the API creates a thumbnail of the image and uploads both the thumbnail and the original to another static server, finally storing the URL for both of them in the database. The response body ends up looking like figure~\ref{fig:sensorvaluesresponse}
@@ -212,7 +212,7 @@ As before the API will interpret the request, store the data and respond with a 
 If we need to look at this sensorvalue at a later time, we can simply do a GET request using the sensorvalue id we got from the previous response and call the URL:
 
 \begin{quote}
-http://monoplant.me/plants/1/sensorvalues/10037.json 
+http://Monoplant.me/plants/1/sensorvalues/10037.json 
 \end{quote}
 
 This will make the API respond with a status code “302 Found”, and the body will look just like the previous response body, at least if nothing has been updated in the meantime. 
@@ -237,7 +237,7 @@ This will make the API respond with a status code “302 Found”, and the body 
         updated_at: "2013-09-17T10:49:43+02:00"
     }
     \end{lstlisting}
-    \caption{Sensorvalues response from monoplant}
+    \caption{Sensorvalues response from Monoplant}
     \label{fig:sensorvaluesresponse}
 \end{figure}
 
@@ -250,7 +250,7 @@ Note that the URL is built up according to what resource we are trying to operat
 	\begin{tabular}{@{}lp{250pt}@{}} \toprule
 		\textbf{part of URL}&	\textbf{meaning}\\ \midrule
 		\texttt{http://}&	the protocol we acces the API through\\ 
-		\texttt{monoplant.me}&	the domain of the API\\ 
+		\texttt{Monoplant.me}&	the domain of the API\\ 
 		\texttt{/plants/(:id)}&	\texttt{/plants} states that we want to access a resource named plant \\ &
 		\texttt{/(:id)} is a number representing the specific plant we want to access\\ 
 		\texttt{/sensorvalues/(:id)}&	\texttt{/sensorvalues} states that we want to access a resource named sensorvalue, since this comes after \texttt{/plants/(:id)} it means that we will get sensorvalues owned by the plant with \texttt{(:id)}. \\ &
@@ -335,7 +335,7 @@ WebM              & 9.0+              & 4.0+    & ~      & 6.0+   \\ \bottomrule
 % \end{figure}
 
 \section{User Interface}
-The user interface (UI) of monoplant is where we visualize the data from the API to the users. We have built the UI in Ruby on Rails, HTML, CSS and javascript. The main page represents the current state of the plant, ie. it displays the last picture with the corresponding data from the plant. On the right side, there is a time lapse video with a connected graph from the day before (see figure~\ref{fig:mainpage} on page~\pageref{fig:mainpage}).
+The user interface (UI) of Monoplant is where we visualize the data from the API to the users. We have built the UI in Ruby on Rails, HTML, CSS and javascript. The main page represents the current state of the plant, ie. it displays the last picture with the corresponding data from the plant. On the right side, there is a time lapse video with a connected graph from the day before (see figure~\ref{fig:mainpage} on page~\pageref{fig:mainpage}).
 
 \begin{figure}
 \centering

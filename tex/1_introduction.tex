@@ -3,14 +3,21 @@
 In this master thesis we will look at how students can use a plant monitoring system called Monoplant to support their scientific inquiry when learning about photosynthesis.
 
 \section{Motivations}
-%Our story - interested in electronics. TEL/CSCL inf5790 + anders mørch.
+%Our story - interested in electronics, plantagotchi + inf5261 and TEL/CSCL inf5790 + anders mørch.
 
 
 
 \section{Monoplant}
-Monoplant is a plant monitoring system we designed for this thesis. It can be used to log data about environmental variables surrounding a plant. The system reads data from sensors every minute and uploads the data to a server. A user can then access the gathered data through a website where timelapse videos and graphs are linked together, connecting visible changes of the plant to invisible changes in the environment.
+Plants live a slow life, they grow slowly and move slowly. Humans have no means of directly observe when a plant grow, but we are able to see that it has grown or bloomed. However, humans have the ability to use tools in order to make sense of the world, and we have created such a tool: Monoplant, which can help us see how plants evolve over time.
+
+Monoplant is a monitoring system for plants. It consists of three parts: 1) a plant station with responsibility for collecting data about the plant, 2) a Web API that enables storage and distribution of data, and 3) a Web Interface that visualize the data for the users. 
+
+The plant station is a wooden box containing a plant, a web camera, a variety of sensors, a micro controller and a small computer responsible for coordinating the recording of data. Once every minute the computer connects to the Web API and uploads a picture and data about the environmental variables surrounding the plant. Once the data is uploaded, a user can access it through the web interface. Thus, one can almost instantly get reports of temperatures, humidity, light-levels or soil moisture. However, we wanted to see how plants evolved over time, hence we don't find the instant data as interesting as combining readings over a timespan. That is why we made Monoplant in such a way that it puts all the images from one day together in one video, which result in a time-lapse video. This makes it possible to see a plants development throughout a day in a matter of seconds. By linking this video to graphs containing environmental variables we are connecting visible changes of the plant to invisible (to humans) changes in the environment. The goal is to be able to observe if some of the variables affect the plant physically. 
+
+%Maybe write something about how this is generic, but that in this thesis we have chosen to focus on how it can be used in learning.
 
 \section{Research questions}
+%place our focus in the CSCL field
 
 \emph{"What characterizes the students’ inquiry in interaction with Monoplant?"}
 

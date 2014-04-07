@@ -25,6 +25,12 @@
 \usepackage{float}
 \restylefloat{table}
 
+
+\newcounter{noindlistcounter}  
+\newenvironment{noindlist}
+ {\begin{list}{\arabic{noindlistcounter}.~~}{\usecounter{noindlistcounter} \labelsep=0em \labelwidth=0em \leftmargin=0em \itemindent=0em}}
+ {\end{list}}
+
 %some code-styling
 \usepackage{color}
 

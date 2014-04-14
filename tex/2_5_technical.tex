@@ -1,5 +1,6 @@
 %!TEX root = ../document.tex
 \chapter{Technical Background}
+In this chapter we will present the technical aspects of our learning tool, Monoplant. We will explain the rationale for the most important design choices made, and go into detail on some of the more difficult aspects. We will not give an in-depth explanation of the technicalities, but rather present an overview to give the reader some background to understand the learning opportunities built into the system. 
 
 The application is divided into three logical units: data collection, data processing and database, and user interface. In the following sections these units will be explained further. 
 
@@ -13,7 +14,7 @@ The application is divided into three logical units: data collection, data proce
 \end{figure}
 
 \section{Plant data collection}
-At the lowest level in the information hierarchy is the hardware and software responsible for capturing and uploading environmental data regarding the plant. Like a patient in a hospital, the plant is connected to a range of sensors, each responsible for reading a specific variable that is important for the plant’s functioning. These variables are then sent to a computer, processed, and uploaded to the next level in the data hierarchy. In the following sections we will follow the data on it’s way from the plant’s physical location to the "cloud".
+At the lowest level in the information hierarchy is the hardware and software responsible for capturing and uploading environmental data regarding the plant. Like a patient in a hospital, the plant is connected to a range of sensors, each responsible for reading a specific variable that is important for the plant’s functioning. These variables are sent to a computer, processed, and uploaded to the next level in the data hierarchy. In the following sections we will follow the data on its way from the plant's physical location to the "cloud" and the user.
 
 \subsection{Sensors}
 
@@ -30,18 +31,16 @@ At the lowest level in the information hierarchy is the hardware and software re
 \end{table}
 
 
-With the advent of the \emph{“internet of things”}, sensors are becoming available in many different forms and packages. Just as LEGO-pieces they can be easily purchased and used in a wide range of applications. From automating tasks such as keeping a steady indoor-temperature, to measuring variables that humans cannot see. 
+With the advent of the \emph{“internet of things”}, sensors are becoming available in many different forms and packages. Just as LEGO-pieces they are cheap and can be used as modular building blocks in a wide range of applications. From automating tasks such as keeping a steady indoor-temperature, to measuring variables that humans cannot see. 
 
-For this application we did a short review of the available off-the-shelf packages available on the market. 
-
-The sensors are able to capture information about the environment and transform it to data variables, which we can store and categorize. In total there are five different sensors connected to the plant, or in the plant’s vicinity: soil moisture, soil temperature, air temperature, humidity, and light. 
+The sensors are able to capture information concerning the environment and transform it to data variables, which we can store and categorize. In total there are five different sensors connected to the plant, or in the plant’s vicinity: soil moisture, soil temperature, air temperature, humidity, and light. 
 
 
 %(write something about the sensortag)
 
-The sensors we have used in this project works at the most basic level in the same way as a volume controller on an amplifier. On an amplifier one can adjust the volume by varying the resistance in the signal going to the speakers. If we turn the volume up, the resistance goes down, and if we turn the volume down, the resistance goes up. The concept with sensors is the same, only that instead controlling resistance with a volume knob, it is controlled by light, moisture or other environmental variables. 
+The sensors we have used in this project are analogous to a volume controller on an amplifier. On an amplifier one can adjust the volume by varying the resistance in the signal going to the speakers. If we turn the volume up, the resistance goes down, and if we turn the volume down, the resistance goes up. Sensors work in the same way, but instead of controlling resistance with a volume knob, it is controlled by light, moisture or other environmental variables. 
 
-The resistors used in the temperature sensors are called “thermistors”, and the way they operate is by varying the resistance according to the temperature. Since we already know how many volts we are sending to the thermistor on the one end, we can use the amount of volts we get back to calculate the resistance. In our application this is done by a voltage divider, which uses a formula as follows: 
+To exemplify let's look at temperature sensors, or "thermistors". They vary their resistance in relation to the temperature. Since we already know how many volts we are sending to the thermistor on the one end, we can use the amount of volts we get back to calculate the resistance. In our application this is done by a voltage divider, which uses a formula as follows: 
 
 \begin{equation}
 U_{out}=\frac{R_{2}}{R_{1}+R_{2}}\cdot U_{in} 
@@ -66,7 +65,7 @@ R_{2} = 667\Omega
 
 Then we can see that the calculated resistance is 667$\Omega$. This value can then be mapped to the correct unit of measure, in this case Celsius or Fahrenheit. 
 
-As we are using digital sensors, all calculations are done internally in the sensors, and coded into a digital signal. This signal, consisting of 1s and 0s, is then passed onto the next unit in our system, the Arduino.  
+As we are using digital sensors, all of these calculations are done internally in the sensors, and coded into a digital signal. This signal, consisting of 1s and 0s, is then passed onto the next unit in our system, the Arduino.  
 
 \subsection{Arduino}
 %(Write about embedded systems. What other alternatives are there to the Arduino? )

@@ -1,4 +1,6 @@
 %!TEX root = ../document.tex
+\setcounter{page}{1}
+\pagenumbering{arabic}
 \chapter{Introduction}
 In this master thesis we will look at how students use a plant monitoring system called Monoplant to support their scientific inquiry when learning about photosynthesis. 
 
@@ -14,14 +16,14 @@ When we started working with ideas for this thesis, our goal was to do research 
 
 \begin{figure}
 \centering
-\includegraphics[width=0.3\textwidth]{img/introduction/plantagotchi.jpg}
+\includegraphics[width=0.5\textwidth]{img/introduction/plantagotchi.jpg}
 \caption{Screenshot of Plantagotchi prototype}
 \label{fig:scrshotplantagotchi}
 \end{figure}
 
-During the spring of 2013 we both took the course inf5790 \emph{Technology enhanced learning} and were introduced to the field of Computer Supported Collaborative Learning (CSCL). As we brought with us an idea of an application that pupils could use to collaboratively learn about a scientific domain, CSCL became the field where we could adapt theoretical perspectives and concepts, which set words and explained our personal ideas and experiences. 
+During the spring of 2013 we both took the course inf5790 \emph{Technology enhanced learning} and were introduced to the field of Computer Supported Collaborative Learning (CSCL). As we brought with us an idea of an application that pupils could use to collaboratively learn about a scientific domain, CSCL became the field where we could adapt theoretical perspectives and concepts, which set words to and explained our personal ideas and experiences. 
 
-As mentioned, the starting point of this thesis was to do research on an actual working system, in an authentic environment. We therefore brought with us the ground idea from Plantagotchi and spent a lot of time improving it and developing a new working prototype. Furthermore, in October 2013 got in touch with a school, \& had a fully working plant monitoring system which we could test with real users in their natural setting. The focus in this thesis is therefore directed to this case study performed in a high school biology class. We will however provide some background information about the decisions made while developing Monoplant. 
+As mentioned, the starting point of this thesis was to do research on an actual working system, in an authentic environment. We therefore brought with us the ground idea from Plantagotchi and spent a lot of time improving it and developing a new working prototype. Furthermore, in October 2013 got in touch with a school, and had a fully working plant monitoring system which we could test with real users in their natural setting. The focus in this thesis is therefore directed to this case study performed in a high school biology class. We will however provide some background information about the decisions made while developing Monoplant. 
 
 
 \section{Monoplant}
@@ -32,7 +34,7 @@ Monoplant is a monitoring system for plants, or rather humans who want to monito
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\textwidth]{img/introduction/graphlapse.png}
+	\includegraphics[width=\textwidth]{img/introduction/graphlapse.png}
 	\caption{Screenshot of timelapse and graph}
 	\label{fig:scrshotgraphlapse}
 \end{figure}
@@ -46,7 +48,7 @@ As mentioned, the overall theme of this thesis will be how students can use Mono
 
 \begin{noindlist}
 \item \emph{"What characterizes the students’ inquiry in interaction with Monoplant?"}\\
-This will naturally adreess the characteristics of the students' actions \& interactions during their work with Monoplant. The first question will also be elaborated through the next three questions.
+This will naturally adreess the characteristics of the students' actions and interactions during their work with Monoplant. The first question will also be elaborated through the next three questions.
 \item \emph{"How does Monoplant, by presenting photosynthesis differently from the text book, support the inquiry process?"}\\
 This question is indicating that there is a difference between the representation of photosynthesis in the school textbook and in Monoplant. To answer this we will address these differences, and discuss what implications they have in the inquiry process of the students.
 \item \emph{"In what way is scaffolding operationalized in the environment?"}\\
@@ -72,21 +74,21 @@ The introduction presents our personal and professional motivations for writing 
 \subsubsection*{Chapter 2 - Scientific background}
 This chapter is an introduction to photosynthesis and thereby the scientific language within the domain. The introduction represents what the students in our case are supposed to learn in \emph{Biology 2}. It is provided as a tool to understand what we mean later in the thesis when using domain specific terms such as \emph{"light dependent reaction"}, \emph{"excited"} or \emph{"chlorophyll molecules"}.
 
-\subsubsection*{Chapter 3 - Technical architecture \& programming}
+\subsubsection*{Chapter 3 - Technical architecture and programming}
 %The application is divided into three logical units: data collection, data processing and database, and user interface. In the following sections these units will be explained further. 
-A major part of the work done was to design and build Monoplant. In this chapter we will describe Monoplant's architecture and address some of the technical concerns we met during the development process. We will introduce \emph{raspberry pi}, \emph{arduino}, \emph{Ruby on Rails}, \emph{REST} and a whole lot of other frameworks and tools used to build Monoplant.
+A major part of the work done was to design and build Monoplant. In this chapter we will describe Monoplant's architecture and address some of the technical concerns we met during the development process. We will introduce \emph{Raspberry Pi}, \emph{Arduino}, \emph{Ruby on Rails}, \emph{REST} and other frameworks and tools used to build Monoplant.
 
-\subsubsection*{Chapter 4 - Theoretical perspective \& concepts for analysis}
+\subsubsection*{Chapter 4 - Theoretical perspective and concepts for analysis}
 %In this chapter we will lay forth the theoretical perspective and theoretical concepts we will apply in this thesis. First we will introduce the \emph{sociocultural perspective} and highlight some key points including \emph{institutional practices}, \emph{zone of proximal development} and \emph{scaffolding}. Further we will look at \emph{multiple external representations} and lastly the concept and method of \emph{Inquiry learning}.
 
-In this chapter we will present the sociocultural perspective, which will be used throughout this thesis. We will also introduce the theoretical concepts: \emph{spontanous \& scientific concepts}, \emph{zone of proximal developement (ZPD)}, \emph{scaffolding}, \emph{multiple external representations (MER)}, \emph{institutional settings}, \emph{inquiry learning} and \emph{misconceptions}. We will make an account for our interpretation of these concepts as we will use them later in the thesis to help answer our research questions. 
+In this chapter we will present the sociocultural perspective, which will be used throughout this thesis. We will also introduce the theoretical concepts: \emph{spontanous and scientific concepts}, \emph{zone of proximal developement (ZPD)}, \emph{scaffolding}, \emph{multiple external representations (MER)}, \emph{institutional settings}, \emph{inquiry learning} and \emph{misconceptions}. We will make an account for our interpretation of these concepts as we will use them later in the thesis to help answer our research questions. 
 
 \subsubsection*{Chapter 5 - Empirical setting and method}
 %In this chapter, we will present the empirical setting and methods used in this thesis. First we will describe the empirical setting in which the data collection took place. Then we will proceed to present the methods for gathering data with a description of the technicalities of the data. Lastly, we will describe the procedures for selection and analysis of data.
 
 Throughout October 2013 we gathered data for this thesis. In this chapter we will describe the empirical setting in which this data gathering took place. We will also describe the methods used for collecting the data and how we chose to use those methods. Lastly we will explain how we approached, selected and made sense of the data once the data collection was done. 
 
-\subsubsection*{Chapter 6 - Data \& analysis}
+\subsubsection*{Chapter 6 - Data and analysis}
 %In this chapter we will present the findings from our case study with a focus on themes relevant to our research questions. Each of the themes contain at least one excerpt with a context description, excerpt from the transcript, and an analysis of the unfolding events.
 Here we will present the main findings from our case study. The chapter contains 10 data extracts, which is presented one by one. First by a context description, then a data transcript and finally a clarification and analysis of what happened. 
 

@@ -1,5 +1,5 @@
 %!TEX root = ../document.tex
-\chapter{Technical Background}
+\chapter{Technical architecture and programming}
 In this chapter we will present the technical aspects of our learning tool, Monoplant. We will explain the rationale for the most important design choices made, and go into detail on some of the more difficult aspects. We will not give an in-depth explanation of the technicalities, but rather present an overview to give the reader some background to understand the learning opportunities built into the system. 
 
 The application is divided into three logical units: data collection, data processing and database, and user interface. In the following sections these units will be explained further. 
@@ -243,8 +243,8 @@ Now that the data from the plant is securely stored in a database and accessible
 		\texttt{Monoplant.me}&	the domain of the API\\ 
 		\texttt{/plants/(:id)}&	\texttt{/plants} states that we want to access a resource named plant \\ &
 		\texttt{/(:id)} is a number representing the specific plant we want to access\\ 
-		\texttt{/sensorvalues/(:id)}&	\texttt{/sensorvalues} states that we want to access a resource named sensorvalue. Since this comes after \texttt{/plants/(:id)} it means that we will get sensorvalues owned by the plant with \texttt{(:id)}. \\ &
-		\texttt{/(:id)} is a number representing the specific sensorvalue we want to access\\ 
+		\texttt{/sensorvalues/(:sid)}&	\texttt{/sensorvalues} states that we want to access a resource named sensorvalue. Since this comes after \texttt{/plants/(:id)} it means that we will get sensorvalues owned by the plant with \texttt{(:id)}. \\ &
+		\texttt{/(:sid)} is a number representing the specific sensorvalue we want to access\\ 
 		\texttt{(.format)}&	 \texttt{.format} can be blank, .html, .xml or .json. If it is blank, the API will respond with the default format, in our case html. If not it will respond with the corresponding format.\\ \bottomrule
 	\end{tabular}
 	\caption{How a REST-url is built up}
@@ -263,13 +263,14 @@ pictures each day, which, if we divide it by 30 frames per second gives us a 48 
 \subsubsection{HTML5 Video Element}
 Prior to HTML5 there was no standard way of implementing videos on web-pages. Therefore the web was filled with a myriad of different solutions, with QuickTime, RealPlayer, and Flash being the most prominent \citep{pilgrim2010html5}.
 
-In HTML5 we have a new, standard \verb@<video>@ element that in theory should give us support for native video in all browsers. But due to the nature of video-files, problems arise when users have different operating systems and different browsers. To be able to explain these problems, we a look at the architecture of a video file.
+In HTML5 we have a new, standard \verb@<video>@ element that in theory should give us support for native video in all browsers. But due to the nature of video-files, problems arise when users have different operating systems and different browsers. To be able to explain these problems, we will take a look at the architecture of a video file.
 
-A video file consists of a container, a video codec, and audio codec. The container defines how the content within is stored, the video codec defines how the video stream is encoded, and the audio codec defines how the audio is encoded. Since there exists numerous containers, video- and audio codecs, endless permutations are possible. Therefore it is not likely that we will have a combination that would work in all browsers in any foreseeable future \citep{pilgrim2010html5}.
+A video file consists of a container, a video codec, and an audio codec. The container defines how the content within is stored, the video codec defines how the video stream is encoded, and the audio codec defines how the audio is encoded. Since there exists numerous containers, video- and audio codecs, endless permutations are possible. Therefore it is not likely that we will have a combination that would work in all browsers in any foreseeable future \citep{pilgrim2010html5}.
 
 In order to maximize compatibility in our application, we decided to encode video in three different formats: H.264+MP4, Webm and Theora (see table~\ref{tab:videosupport}). This is done via a bash script that runs every night. First, we run a perl script for "deflickering", i.e calculate and convert the images to a median brightness to reduce video flickering. Then we use the programs Mencoder and FFmpeg2theora to create H.264-, webm- and theora-videos. And finally, the videos are posted to the respective plants in the database, using the API. 
 
-After the data has been collected from the sensors and uploaded through the API. And we have generated timelapse videos in different formats. We are ready for the next logical unit in the Monoplant application, displaying information to the users. 
+Thus, after 24 hours of collecting and storing data, videos in different formats are generated and Monoplant is ready to display information to the users, which takes us to next logical unit in the system.
+%After the data has been collected from the sensors and uploaded through the API. And we have generated timelapse videos in different formats. We are ready for the next logical unit in the Monoplant application, displaying information to the users. 
 
 \begin{table*}\centering
 \begin{tabular}{@{}lcccc@{}} \toprule
@@ -327,7 +328,7 @@ WebM              & 9.0+              & 4.0+    & ~      & 6.0+   \\ \bottomrule
 % \end{figure}
 
 \section{User Interface}
-The user interface (UI) of Monoplant is where we visualize the data from the API to the users. It is accessible through web, and displays correctly on most devices due to a responsive design. The UI is built with RoR as web application framework, Bootstrap as design framework, and Highcharts as graph framework.   
+The user interface (UI) of Monoplant is where we visualize the data from the API to the users. It is accessible through web (\url{http://www.monoplant.me}), and displays correctly on most devices due to a responsive design. The UI is built with RoR as the web application framework, Bootstrap as the design framework, and Highcharts as the graph framework.   
 
 The main page of each plant represents the current state of the plant. On the left side, it displays the last picture with the corresponding temperature, humidity, light and soil moisture. On the right side, there is a timelapse video from the day before, with a corresponding graph displaying all the sensorvalues throughout that day (see figure~\ref{fig:mainpage} on page~\pageref{fig:mainpage}). 
 
@@ -345,7 +346,7 @@ During our work with the UI, there was two aspects that proved to be particularl
 \subsection{Highcharts}
 There are 4-5 serious javascript chart libraries on the Internet with various types of focus, flexibility and documentation. We ran some tests with Google charts, d3.js and Highcharts, and found that Highcharts provided the most extensive documentation as well as an easy to understand interface. 
 
-The first graph we had to make was a graph containing all the plant data from a given time corresponding to the timelapse video. This meant putting temperature, light, humidity and soil moisture in the same graph, even though they all have different units. 
+The first graph we had to make was a graph containing all the plant data from a given time corresponding to a timelapse video. This meant putting temperature, light, humidity and soil moisture in the same graph, even though they all have different units. 
 
 
 
@@ -356,9 +357,9 @@ The first graph we had to make was a graph containing all the plant data from a 
 \label{fig:badgraph}
 \end{figure}
 
-Our first attempt was done without manipulating the data at all. As Highcharts scales the chart based on the element with the largest numbers and changes, the element with small numbers and changes appeared as straight lines at the bottom of the graph. In figure~\ref{fig:badgraph} we tried to combine light levels of 2000 lux with temperature levels at $22\,^{\circ}\mathrm{C}$, and as we can see, all the elements except light and humidity are concentrated at the bottom. 
+Our first attempt was done without manipulating the data at all. As Highcharts scales the y-axis based on the element with the highest values, the element with small values appeared as straight lines at the bottom of the graph. In figure~\ref{fig:badgraph} we tried to combine light levels of 2000 lux with temperature levels at $22\,^{\circ}\mathrm{C}$, and as we can see, all the elements except light and humidity are concentrated at the bottom. 
 
-For this graph to display the environmental changes during a day we needed to create a relative scale and map the values to that scale. To exemplify, lets say you have a number X, which has a value between A and B, and you want to map it to a value Y, between C and D. The function can then be written as: 
+For this graph to display the environmental changes during a day we needed to create a relative scale and map the values to that scale. To exemplify, lets say you have a number X, which has a value between A and B, and you want to map it to a value Y, between C and D. The function is similar to calculating percentage and can then be written as: 
 \begin{equation}
 Y = \frac{(X-A)}{(B-A)} * (D-C) + C
 \end{equation}
@@ -390,13 +391,14 @@ Through trial and error, we chose the \verb@C@ and \verb@D@ values of each unit 
 
 %To make sure one can read the appropriate sensorvalues we provide several other graphs, one for the last 24 hours, very similar to the video graph. The only difference is that we have included a mouse-over interaction technique with a tool-tip that displays the actual values alongside the corresponding image of the plant \citep[p.254]{kluge2010simulation}.
 
-Apart from the video-graph and the last 24 hour-graph we provide singular line graphs for each variable, this gives us the ability to display graphs with correct y-axises. The user can select time period for these graphs by interacting with the small graph on the bottom. 
+Apart from the video-graph and the last 24 hour-graph we provide singular line graphs for each variable, this gives us the ability to display graphs with correct y-axises. 
+%The user can select time period for these graphs by interacting with the small graph on the bottom. 
 
 \subsection{Connecting video and graph}
 %explain objective
 In order to present how changes in sensor variables manifested themselves physically in the plant, we wanted to connect the graph and the timelapse video. The visual solution became to present the video above the graph, both contained within the screen. As the video is playing, a vertical line layered above the graph moves from left to right representing where we are in the video. 
 
-The HTML5 video-element can be accessed through javascript, and by checking the state of the video we are able to make the Highcharts graph follow the video based on the currentTime of the videoelement.
+The HTML5 video-element can be accessed through javascript, and by checking the state of the video we are able to make the Highcharts graph follow the video based on the \emph{currentTime} of the videoelement.
 
 \begin{figure}
 	\begin{lstlisting}[language=javascript]
@@ -419,4 +421,7 @@ The HTML5 video-element can be accessed through javascript, and by checking the 
 	\label{fig:videocode}
 \end{figure}
 
-By binding startVideo() to the play-event of the video-element and stopVideo() to the pause and stop event, we are able to move the graph marker as the video plays. The reason for using \emph{setInterval} instead of the videos built-in event \emph{timeupdate} is that it is not specified how often the event will fire, but by testing we found that it was somewhere between 3-7 times per second, varying randomly from second to second. This was not often enough as the video had a framerate of 30 frames per second, which meant updating the graph at 1/10 of the speed of the video, resulting in a laggish experience of the graph. We experienced that using \emph{setInterval} gave use much more accuracy when setting it to run every 33th millisecond. No browsers guarantee that the performance of \emph{setInterval} will be faster than 50 ms, but by running tests \citep{adequatleyqood}, we found that the Chrome browser ran this on an average of 4.5 ms. Even though this can be slower when considering the load on the browser when playing a video, we found that in practice most browsers were able to play the video and update the graph simultaneously. 
+By binding startVideo() to the play-event of the video-element and stopVideo() to the pause and stop event, we are able to move the graph marker as the video plays. The video-element has a built-in event called \emph{timeupdate} which is triggered when the video's time is changed. However, in practice this event only appeared 3-7 times per second, giving a lagging experience of the graph marker. To overcome this we made a custom function using \emph{setInterval} which turned out to be a lot faster and more reliable, providing a smooth flow of the graph marker. 
+
+
+%The reason for using \emph{setInterval} instead of the videos built-in event \emph{timeupdate} is that it is not specified how often the event will fire, but by testing we found that it was somewhere between 3-7 times per second, varying randomly from second to second. This was not often enough as the video had a framerate of 30 frames per second, which meant updating the graph at 1/10 of the speed of the video, resulting in a laggish experience of the graph. We experienced that using \emph{setInterval} gave use much more accuracy when setting it to run every 33th millisecond. No browsers guarantee that the performance of \emph{setInterval} will be faster than 50 ms, but by running tests \citep{adequatleyqood}, we found that the Chrome browser ran this on an average of 4.5 ms. Even though this can be slower when considering the load on the browser when playing a video, we found that in practice most browsers were able to play the video and update the graph simultaneously. 

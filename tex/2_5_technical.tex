@@ -20,14 +20,14 @@ At the lowest level in the information hierarchy is the hardware and software re
 
 \def\arraystretch{1.8}
 \begin{table}
-    \begin{tabular}{@{}lp{250pt}@{}}\toprule
-    Sensor               & Description \\ \midrule                                                                                                  
-    TSL2561              & Digital luminosity sensor. Measures light in lux from 300-1100nm.                                            \\ 
-    RHT03                & Digital humidity and temperature sensor. Measures relative humidity and temperature in celsius.              \\ 
-    DS18B20              & Digital waterproof temperature sensor. Measures temperature in celsius                                       \\ 
-    DFRobot sku:sen0114  & Analog soil moisture sensor. Returns values between 0 and 900 depending on electrical conductivity of soil.  \\ \bottomrule
-    \end{tabular}
-    \caption{Sensors used in the application}
+	\begin{tabular}{@{}lp{250pt}@{}}\toprule
+	Sensor               & Description \\ \midrule                                                                                                  
+	TSL2561              & Digital luminosity sensor. Measures light in lux from 300-1100nm.                                            \\ 
+	RHT03                & Digital humidity and temperature sensor. Measures relative humidity and temperature in celsius.              \\ 
+	DS18B20              & Digital waterproof temperature sensor. Measures temperature in celsius                                       \\ 
+	DFRobot sku:sen0114  & Analog soil moisture sensor. Returns values between 0 and 900 depending on electrical conductivity of soil.  \\ \bottomrule
+	\end{tabular}
+	\caption{Sensors used in the application}
 \end{table}
 
 
@@ -104,9 +104,8 @@ The GPIO-pins on the Raspberry works almost in the same fashion as the Arduino's
 After booting up, a bash-script with an endless loop is called. The script snaps a photo of the plant using the webcam, and then runs a python-script responsible for collecting sensordata. Since we sometimes can get erroneous values from the sensors, we read 15 values and upload the median value. These values, along with the photo captured by the webcam, are then passed on to the next logical unit in the Monoplant system. 
 
 %http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
-\lstset{language=Python} 
 \begin{figure}
-\begin{lstlisting}
+	\begin{lstlisting}[style=htmlcssjs]
 //instantiate lists
 airtemp = []
 humidity = []
@@ -116,7 +115,8 @@ soiltemp = []
 for x in xrange(1,15): 
 	ser.write("r") //Ask Arduino for data
 	variables = ser.readline() //Read the data
-	sensorReadings = variables.split('|') //Split string on |
+	sensorReadings = variables.split('|') 
+		//Split string on |
 
 	airtemp.append(float(sensorReadings[0]))
 	humidity.append(float(sensorReadings[1]))
@@ -125,7 +125,7 @@ for x in xrange(1,15):
 
 //calculate and post the median using numpy
 postData(np.median(airtemp),np.median(humidity),np.median(light),np.median(soiltemp)) 
-\end{lstlisting}
+	\end{lstlisting}
 \caption{Reading sensor values from Arduino on Raspberry Pi, written in Python}
 \label{fig:Raspberrycode}
 \end{figure}
@@ -176,9 +176,15 @@ Our API is a server-side Web-API that can be accessed through the HTTP-protocol.
 
 The Monoplant API have three resources: Plants, Sensorvalues and Videos. To create a plant, one can send a POST request to the URL: \begin{verbatim}http://Monoplant.me/plants.json\end{verbatim} A post request also needs information about the plant to create, in this case we will pass that information in the json-format:
 
-\begin{figure}[H]
-	\begin{lstlisting}[language=javascript]
-	 {"plant": {"name": "Alfa", "location": "Intermedia", "plant_type": "Alfalfaspire"}} 
+\begin{figure}
+	\begin{lstlisting}[style=htmlcssjs]
+{
+	"plant": {
+		"name": "Alfa",
+		"location": "Intermedia",
+		"plant_type": "Alfalfaspire"
+	}
+}
 	\end{lstlisting}
 	\caption{POST plant json data}
 	\label{fig:postdata}
@@ -187,15 +193,15 @@ The Monoplant API have three resources: Plants, Sensorvalues and Videos. To crea
 For the API to know how to interpret this information in json, we also need to pass a parameter in the header called Content-type, this variable will be set to “application/json”. When we pass this request, the API will create a plant with the information we gave it, and give a response with the code: \verb@"201 created"@. The response contains a header and a body in which the header has some meta-data about the request and the body will contain a representation of the created plant (see figure~\ref{fig:plantresponse} on page~\pageref{fig:plantresponse}).
 
 \begin{figure}
-	\begin{lstlisting}[language=javascript]
-	{
-		created_at: "2013-09-17T10:45:17+02:00"
-		id: 1
-		location: "Intermedia"
-		name: "Alfa"
-		plant_type: "Alfalfaspire"
-		updated_at: "2013-09-17T10:45:17+02:00"
-	}
+	\begin{lstlisting}[style=htmlcssjs]
+{
+	created_at: "2013-09-17T10:45:17+02:00"
+	id: 1
+	location: "Intermedia"
+	name: "Alfa"
+	plant_type: "Alfalfaspire"
+	updated_at: "2013-09-17T10:45:17+02:00"
+}
 	\end{lstlisting}
 	\caption{Plant response in json}
 	\label{fig:plantresponse}
@@ -208,27 +214,27 @@ As in the first example the API will interpret the request, store the data, and 
 Now that the data from the plant is securely stored in a database and accessible through the API, we move on to how these data are further processed to generate timelapse videos. 
 
 \begin{figure}
-    \begin{lstlisting}[language=javascript]
-    {
-        airTemp: 22.14
-        created_at: "2013-09-17T10:49:43+02:00"
-        humidity: 38.5
-        id: 10037
-        img_url: "http://s3-eu-west-1.amazonaws.com/plantespann/2013/9/17/original/10037.jpg?1379407782"
-        light: 1702.5
-        photo_content_type: "image/jpeg"
-        photo_file_name: "viewcam.jpg"
-        photo_file_size: 204358
-        photo_updated_at: "2013-09-17T10:49:42+02:00"
-        plant_id: 1
-        soilMoisture: 54
-        soilTemp: 22.25
-        thumb_url: "http://s3-eu-west-1.amazonaws.com/plantespann/2013/9/17/thumb/10037.jpg?1379407782"
-        updated_at: "2013-09-17T10:49:43+02:00"
-    }
-    \end{lstlisting}
-    \caption{Sensorvalues response from Monoplant}
-    \label{fig:sensorvaluesresponse}
+	\begin{lstlisting}[style=htmlcssjs]
+{
+	airTemp: 22.14
+	created_at: "2013-09-17T10:49:43+02:00"
+	humidity: 38.5
+	id: 10037
+	img_url: "http://s3-eu-west-1.amazonaws.com/plantespann/2013/9/17/original/10037.jpg?1379407782"
+	light: 1702.5
+	photo_content_type: "image/jpeg"
+	photo_file_name: "viewcam.jpg"
+	photo_file_size: 204358
+	photo_updated_at: "2013-09-17T10:49:42+02:00"
+	plant_id: 1
+	soilMoisture: 54
+	soilTemp: 22.25
+	thumb_url: "http://s3-eu-west-1.amazonaws.com/plantespann/2013/9/17/thumb/10037.jpg?1379407782"
+	updated_at: "2013-09-17T10:49:43+02:00"
+}
+	\end{lstlisting}
+	\caption{Sensorvalues response from Monoplant}
+	\label{fig:sensorvaluesresponse}
 \end{figure}
 
 
@@ -368,13 +374,15 @@ Y = \frac{(X-A)}{(B-A)} * (D-C) + C
 
 %We chose an output scale from 0 to 100 and wrote a function according to figure~\ref{fig:mapfunc} that mapped the values based on what type of data it was. We set the input scales as can be seen in figure~\ref{fig:mapscale}.
 
-\begin{figure}[H]
-	\begin{lstlisting}[language=javascript]
+\begin{figure}
+	\begin{lstlisting}[style=htmlcssjs]
+{
 	humidity: { min: 10, max:100 },
 	soil temprature: { min:15, max:30 },
 	light: { min: 400, max:2500 },
 	air temprature: { min: 15, max: 30 },
 	soil Moisture: { min: 0, max: 700 }
+}
 	\end{lstlisting}
 	\caption{Mapping scales}
 	\label{fig:mapscale}
@@ -401,21 +409,21 @@ In order to present how changes in sensor variables manifested themselves physic
 The HTML5 video-element can be accessed through javascript, and by checking the state of the video we are able to make the Highcharts graph follow the video based on the \emph{currentTime} of the videoelement.
 
 \begin{figure}
-	\begin{lstlisting}[language=javascript]
-	function startVideo(){
-	     interval = setInterval(function() {
-	         var curtime = video.currentTime.toFixed(2);
-	         if(curtime!= lastcurtime){
-		 lastcurtime = curtime;
-		 curmarker = Math.round(curtime*30);
-		 stepTooltip(curmarker);
-	         }
-	     }, 33);
-	}
+	\begin{lstlisting}[style=htmlcssjs]
+function startVideo(){
+	 interval = setInterval(function() {
+		 var curtime = video.currentTime.toFixed(2);
+		 if(curtime!= lastcurtime){
+	 lastcurtime = curtime;
+	 curmarker = Math.round(curtime*30);
+	 stepTooltip(curmarker);
+		 }
+	 }, 33);
+}
 
-	function stopVideo(){
-		clearInterval(interval);
-	}
+function stopVideo(){
+	clearInterval(interval);
+}
 	\end{lstlisting}
 	\caption{Video and graph connection code, written in javascript}
 	\label{fig:videocode}

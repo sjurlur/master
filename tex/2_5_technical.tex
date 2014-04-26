@@ -1,10 +1,8 @@
 %!TEX root = ../document.tex
 \chapter{Technical architecture and programming}
-In this chapter we will present the technical aspects of our learning tool, Monoplant. We will explain the rationale for the most important design choices made, and go into detail on some of the more difficult aspects. We will not give an in-depth explanation of the technicalities, but rather present an overview to give the reader some background to understand the learning opportunities built into the system. 
+In this chapter we will present the technical aspects of our learning tool, Monoplant. We will explain the rationale for the design choices made, and go into detail on some of the more advanced parts of the system. We will not give an in-depth explanation of all the technicalities, but rather present an overview to give the reader some background to understand the learning opportunities built into the system. 
 
 The application is divided into three logical units: data collection, data processing and database, and user interface. In the following sections these units will be explained further. 
-
-
 
 \begin{figure}
 \centering
@@ -31,7 +29,7 @@ At the lowest level in the information hierarchy is the hardware and software re
 \end{table}
 
 
-With the advent of the \emph{“internet of things”}, sensors are becoming available in many different forms and packages. Just as LEGO-pieces they are cheap and can be used as modular building blocks in a wide range of applications. From automating tasks such as keeping a steady indoor-temperature, to measuring variables that humans cannot see. 
+With the advent of the "internet of things", sensors are becoming available in many different forms and packages. Just as LEGO-pieces they are cheap and can be used as modular building blocks in a wide range of applications. From automating tasks such as keeping a steady indoor-temperature, to measuring variables that humans cannot see. 
 
 The sensors are able to capture information concerning the environment and transform it to data variables, which we can store and categorize. In total there are five different sensors connected to the plant, or in the plant’s vicinity: soil moisture, soil temperature, air temperature, humidity, and light. 
 
@@ -43,16 +41,16 @@ The sensors we have used in this project are analogous to a volume controller on
 To exemplify let's look at temperature sensors, or "thermistors". They vary their resistance in relation to the temperature. Since we already know how many volts we are sending to the thermistor on the one end, we can use the amount of volts we get back to calculate the resistance. In our application this is done by a voltage divider, which uses a formula as follows: 
 
 \begin{equation}
-U_{out}=\frac{R_{2}}{R_{1}+R_{2}}\cdot U_{in} 
+V_{out}=\frac{R_{2}}{R_{1}+R_{2}}\cdot V_{in} 
 \label{eq:vdiv1}
 \end{equation}
-Where $V_{out}$ is voltage out, $U_{in}$ is voltage in, $R_{1}$ is a given resistance, and $R_{2}$ is the resistance we want to calculate. For this example let's assume that $U_{in} = 5_{v}$, $U_{out} = 2_{v}$, and $R_{1} = 1K\Omega$. We solve this equation with regard to $R_{2}$
+Where $V_{out}$ is voltage out, $V_{in}$ is voltage in, $R_{1}$ is a given resistance, and $R_{2}$ is the resistance we want to calculate. For this example let's assume that $V_{in} = 5_{v}$, $V_{out} = 2_{v}$, and $R_{1} = 1K\Omega$. We solve this equation with regard to $R_{2}$
 \begin{equation}
-R_{2} = \frac{U_{out} \cdot R_{1}}{U_{in}-U_{out}}
+R_{2} = \frac{V_{out} \cdot R_{1}}{V_{in}-V_{out}}
 \end{equation} 
 
 \begin{equation}
-R_{2} = \frac{2V \cdot 1000\Omega}{5V-2V}
+R_{2} = \frac{2_{v} \cdot 1000\Omega}{5_{v}-2_{v}}
 \end{equation} 
 
 \begin{equation}
@@ -65,7 +63,7 @@ R_{2} = 667\Omega
 
 Then we can see that the calculated resistance is 667$\Omega$. This value can then be mapped to the correct unit of measure, in this case Celsius or Fahrenheit. 
 
-As we are using digital sensors, all of these calculations are done internally in the sensors, and coded into a digital signal. This signal, consisting of 1s and 0s, is then passed onto the next unit in our system, the Arduino.  
+As we are using digital sensors, all of these calculations are done internally in the sensors, and coded into a digital signal. This signal is then passed onto the next unit in our system, the Arduino.  
 
 \subsection{Arduino}
 %(Write about embedded systems. What other alternatives are there to the Arduino? )
@@ -77,7 +75,7 @@ Arduino is an open-source prototyping platform that makes it easy to interface l
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth]{img/hardware/Arduino_and_sensors_schem.png}
-\caption{Schema diagram of Arduino sensor wiring. Pullup resistors on the data line of the temperature sensors. The TSL2561 light sensor communicates over the i2c protocol (SDA,SCL), and the soil moisture sensor connects to analog input}
+\caption{Schema diagram of Arduino sensor wiring. Pullup resistors on the data line of the temperature sensors.} %The TSL2561 light sensor communicates over the i2c protocol (SDA,SCL), and the soil moisture sensor connects to analog input}
 \label{fig:Arduino}
 \end{figure}
 
@@ -85,11 +83,11 @@ The community surrounding Arduino is quite large, and we have therefore been abl
 
 In the case of the soil moisture sensor, it measures conductivity in the soil, and does not output moisture levels in any kind of universal measuring unit. But the conductivity measured in the soil is repeatable and proportional to the moisture level. Therefore we measured the resistance in air (high resistance), and in water (low resistance), and let these be the high and low points of a new unit called arbitrary moisture units (AMU) \citep{ch00ftech}.
 
-The code residing in the Arduino runs a simple loop where it waits for a special character sent over serial communication through USB. If it receives this character it reads all the sensor values, and sends them back to the next logical unit in the Monoplant system: the Raspberry Pi
+The code residing in the Arduino runs a simple loop where it waits for a special character sent over serial communication through USB. If it receives this character it reads all the sensor values, and sends them back to the next device in the Monoplant system: the Raspberry Pi
 
 \subsection{Raspberry Pi}
 %(Why Raspberry? Beagleboard?)
-The Raspberry Pi is a “cheap, accessible, programmable computer” \citep{Raspberrypi}, which is roughly the size of a credit card. Our model was released in early 2012 and contains two usb ports, audio, sd-card slot, and several GPIO-pins. We have connected a wireless network adapter, a high-definition webcam, a powered USB-hub, and an Arduino to the Raspberry. The operating system running on it is a port of Debian Linux optimized for the Raspberry, called Raspbian. 
+The Raspberry Pi is a “cheap, accessible, programmable computer” \citep{Raspberrypi}, which is roughly the size of a credit card. Our model was released in early 2012 and contains two usb ports, audio and a sd-card slot. We have connected a wireless network adapter, a high-definition webcam, a powered USB-hub, and an Arduino to the Raspberry. The operating system running on it is a port of Debian Linux optimized for the Raspberry, called Raspbian. 
 
 \begin{figure}
 \centering
@@ -98,10 +96,10 @@ The Raspberry Pi is a “cheap, accessible, programmable computer” \citep{Rasp
 \label{fig:Raspberry}
 \end{figure}
 
-The GPIO-pins on the Raspberry works almost in the same fashion as the Arduino's digital input output pins. Thus we could in theory simplified the hardware by omitting the Arduino. The main reason for not doing this is that the Raspberry does not have an analog to digital converter (ADC). Therefore we would have to make a complex circuit involving an ADC to interface the Raspberry with the soil moisture sensor. In addition, we would most likely face timing issues. When we ask the digital sensors for data, they send the response immediately. If the unit receiving is not available to read the data, it gets lost. This can be a problem when using a high-level computer, as it performs multiple tasks in addition to reading sensordata. 
+%The GPIO-pins on the Raspberry works almost in the same fashion as the Arduino's digital input output pins. Thus we could in theory simplified the hardware by omitting the Arduino. The main reason for not doing this is that the Raspberry does not have an analog to digital converter (ADC). Therefore we would have to make a complex circuit involving an ADC to interface the Raspberry with the soil moisture sensor. In addition, we would most likely face timing issues. When we ask the digital sensors for data, they send the response immediately. If the unit receiving is not available to read the data, it gets lost. This can be a problem when using a high-level computer, as it performs multiple tasks in addition to reading sensordata. 
 
 \subsubsection{Operation}
-After booting up, a bash-script with an endless loop is called. The script snaps a photo of the plant using the webcam, and then runs a python-script responsible for collecting sensordata. Since we sometimes can get erroneous values from the sensors, we read 15 values and upload the median value. These values, along with the photo captured by the webcam, are then passed on to the next logical unit in the Monoplant system. 
+After booting up, a bash-script with an endless loop is called. The script snaps a photo of the plant using the webcam, and then runs a python-script responsible for collecting sensordata (see fig. \ref{fig:Raspberrycode}). Since we sometimes can get erroneous values from the sensors, we read 15 values and upload the median value. These values, along with the photo captured by the webcam, are then passed on to the next logical unit in the Monoplant system. 
 
 %http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
 \begin{figure}
@@ -131,7 +129,7 @@ postData(np.median(airtemp),np.median(humidity),np.median(light),np.median(soilt
 \end{figure}
 
 \section{Data processing and database}
-When the data has been gathered at the low level hierarchy, it is stored in the cloud. This is done by posting the data to an application programming interface (API) on our web server. The main function of an API is to be a means of communication between different software, in our case the data collector and the user interface. After some research on web-API design, we decided that a REST architectual style was best suited for our application. 
+When the data has been gathered at the low level hierarchy, it is stored in the cloud. This is done by posting the data to an application programming interface (API) on our web server. The main function of an API is to be a means of communication between different software, in our case the data collector, and the user interface. After some research on web-API design, we decided that a REST architectual style was best suited for our application. 
 %REST uses URIs and HTTP by default, the data you send is the data you send. This meas that the data is easy to use out of the box, 
 %SOAP can use URIs and HTTP, the data you send becomes larger as verbose SOAP-standards are added to the data.
 
@@ -164,7 +162,7 @@ REST is an architectual style, not a strict standard. It allows for flexibility,
 Our first implementation of the API was written in PHP with the framework Codeigniter. This worked well for a while, but after having made several dirty hacks and workarounds we decided to look for other options. After researching Ruby on Rails and their focus on "convention over configuration", we found that it was a framework well suited for building our API.  
 
 \begin{quote}
-Ruby on Rails is an open-source web framework that’s optimized for programmer happinees and sustainable productivity. It lets you write beautyful code by favoring convention over configuration. \citep{rubyonrails.org} 
+Ruby on Rails is an open-source web framework that’s optimized for programmer happinees and sustainable productivity. It lets you write beautyful code by favoring convention over configuration \citep{rubyonrails.org}. 
 \end{quote}
 
 Ruby on Rails (RoR) makes the assumption that there is a "best" way of doing things, and encourages that way. It emphasizes well-known software engineering principles such as convention over configuration, don't repeat yourself, model-view-controller and REST.
@@ -172,9 +170,9 @@ Ruby on Rails (RoR) makes the assumption that there is a "best" way of doing thi
 Our web server is running on Amazon Elastic Compute Cloud (ec2), a virtual computer service with low costs and extensive configuration options. We chose this because we needed to be able to configure the server for our purposes and install several libraries and applications onto the server. 
 %We wanted to create the API The API is created with Ruby on Rails to 
 
-Our API is a server-side Web-API that can be accessed through the HTTP-protocol. To use it, one can send a request to the domain of the API from any client that can send HTTP-requests. The API will interpret the request and respond based on how the interpretation went. Since our API is based on the REST architectual style, it adheres to how the HTTP-protocol is built, meaning that a resource has a unique identifier, a URI, and some uniform actions called the HTTP-verbs which the resource can be operated with. There are 8 methods in the HTTP/1.1 protocol \citep[p.36]{fielding1999hypertext}, but only four of them are of interest when speaking of resources. These methods are the four basic functions of persistent storage in computer programming, often referred to as CRUD (Create, Read, Update and Delete), but in HTTP their names are POST, GET, PUT and DELETE. 
+Our API is a server-side Web-API that can be accessed through the HTTP-protocol. To use it, one can send a request to the domain of the API from any client that can send HTTP-requests. The API will interpret the request and respond based on how the interpretation went. Since our API is based on the REST architectual style, it adheres to how the HTTP-protocol is built, meaning that a resource has a unique identifier, a URI, and some uniform actions called the HTTP-verbs which the resource can be operated with. There are 8 methods in the HTTP/1.1 protocol \citep[p.36]{fielding1999hypertext}, but only four of them are of interest when speaking of resources. These are the four basic functions of persistent storage in computer programming, often referred to as CRUD (Create, Read, Update and Delete), but in HTTP their names are POST, GET, PUT and DELETE. 
 
-The Monoplant API have three resources: Plants, Sensorvalues and Videos. To create a plant, one can send a POST request to the URL: \begin{verbatim}http://Monoplant.me/plants.json\end{verbatim} A post request also needs information about the plant to create, in this case we will pass that information in the json-format:
+The Monoplant API has three resources: Plants, Sensorvalues and Videos. To create a plant, one can send a POST request to the URL: \begin{verbatim}http://Monoplant.me/plants.json\end{verbatim} A post request also needs information about the plant to create, in this case we will pass that information in the json-format:
 
 \begin{figure}
 	\begin{lstlisting}[style=htmlcssjs]
@@ -190,7 +188,7 @@ The Monoplant API have three resources: Plants, Sensorvalues and Videos. To crea
 	\label{fig:postdata}
 \end{figure}
 
-For the API to know how to interpret this information in json, we also need to pass a parameter in the header called Content-type, this variable will be set to “application/json”. When we pass this request, the API will create a plant with the information we gave it, and give a response with the code: \verb@"201 created"@. The response contains a header and a body in which the header has some meta-data about the request and the body will contain a representation of the created plant (see figure~\ref{fig:plantresponse} on page~\pageref{fig:plantresponse}).
+For the API to know how to interpret this information in json, we also need to pass a parameter in the header called Content-type, this variable will be set to “application/json”. When we pass this request, the API will create a plant with the information we gave it, and give a response with the code: \verb@"201 created"@. The response contains a header and a body in which the header has some meta-data about the request and the body will contain a representation of the created plant (see figure~\ref{fig:plantresponse}).
 
 \begin{figure}
 	\begin{lstlisting}[style=htmlcssjs]
@@ -251,7 +249,7 @@ Now that the data from the plant is securely stored in a database and accessible
 		\texttt{/(:id)} is a number representing the specific plant we want to access\\ 
 		\texttt{/sensorvalues/(:sid)}&	\texttt{/sensorvalues} states that we want to access a resource named sensorvalue. Since this comes after \texttt{/plants/(:id)} it means that we will get sensorvalues owned by the plant with \texttt{(:id)}. \\ &
 		\texttt{/(:sid)} is a number representing the specific sensorvalue we want to access\\ 
-		\texttt{(.format)}&	 \texttt{.format} can be blank, .html, .xml or .json. If it is blank, the API will respond with the default format, in our case html. If not it will respond with the corresponding format.\\ \bottomrule
+		\texttt{(.format)}&	 \texttt{.format} can be blank, .html, .xml or .json. If it is blank, the API will respond with the default format, in our case html. \\ \bottomrule
 	\end{tabular}
 	\caption{How a REST-url is built up}
 	\label{fig:RESTurl}
@@ -269,7 +267,7 @@ pictures each day, which, if we divide it by 30 frames per second gives us a 48 
 \subsubsection{HTML5 Video Element}
 Prior to HTML5 there was no standard way of implementing videos on web-pages. Therefore the web was filled with a myriad of different solutions, with QuickTime, RealPlayer, and Flash being the most prominent \citep{pilgrim2010html5}.
 
-In HTML5 we have a new, standard \verb@<video>@ element that in theory should give us support for native video in all browsers. But due to the nature of video-files, problems arise when users have different operating systems and different browsers. To be able to explain these problems, we will take a look at the architecture of a video file.
+In HTML5 we have a new, standard \verb@<video>@ element that in theory should give us support for native video in all browsers. But due to the nature of video-files, problems arise when users have different operating systems and different browsers. 
 
 A video file consists of a container, a video codec, and an audio codec. The container defines how the content within is stored, the video codec defines how the video stream is encoded, and the audio codec defines how the audio is encoded. Since there exists numerous containers, video- and audio codecs, endless permutations are possible. Therefore it is not likely that we will have a combination that would work in all browsers in any foreseeable future \citep{pilgrim2010html5}.
 
@@ -336,11 +334,11 @@ WebM              & 9.0+              & 4.0+    & ~      & 6.0+   \\ \bottomrule
 \section{User interface}
 The user interface (UI) of Monoplant is where we visualize the data from the API to the users. It is accessible through web (\url{http://www.monoplant.me}), and displays correctly on most devices due to a responsive design. The UI is built with RoR as the web application framework, Bootstrap as the design framework, and Highcharts as the graph framework.   
 
-The main page of each plant represents the current state of the plant. On the left side, it displays the last picture with the corresponding temperature, humidity, light and soil moisture. On the right side, there is a timelapse video from the day before, with a corresponding graph displaying all the sensorvalues throughout that day (see figure~\ref{fig:mainpage} on page~\pageref{fig:mainpage}). 
+The main web page of each plant represents the current state of the plant. On the left side, it displays the last picture with the corresponding temperature, humidity, light and soil moisture. On the right side, there is a timelapse video from the day before, with a corresponding graph displaying all the sensorvalues throughout that day (see figure~\ref{fig:mainpage} on page~\pageref{fig:mainpage}). 
 
-On the top of the page there are two menu items. The first  is called "videos" and links to the video overview. This is a page containing all the videos for the plant selected. In relation to each video, the max and min values for all the different sensors during that day is shown. The second menu item is called "graphs" and is a drop-down menu with links to graphs for each of the different sensors. In addition there is a link to the graph containing all the sensorvalues for the last 24 hours. 
+On the top of the page there are two menu items. The first  is called \emph{videos} and links to the video overview. This is a page containing all the videos for the plant selected. In relation to each video, the max and min values for all the different sensors during that day is shown. The second menu item is called \emph{graphs} and is a drop-down menu with links to graphs for each of the different sensors. In addition there is a link to the graph containing all the sensorvalues for the last 24 hours. 
 
-During our work with the UI, there was two aspects that proved to be particularly challenging: relative graphs, and connecting the timelapse videos to the graph. In the following sections the work with these obstacles will be explained. 
+During our work with the UI, there was two aspects that proved to be particularly challenging: relative graphs, and connecting the timelapse videos to the graph. In the following sections the work to overcome these obstacles will be explained. 
 
 \begin{figure}
 \centering
@@ -365,7 +363,7 @@ The first graph we had to make was a graph containing all the plant data from a 
 
 Our first attempt was done without manipulating the data at all. As Highcharts scales the y-axis based on the element with the highest values, the element with small values appeared as straight lines at the bottom of the graph. In figure~\ref{fig:badgraph} we tried to combine light levels of 2000 lux with temperature levels at $22\,^{\circ}\mathrm{C}$, and as we can see, all the elements except light and humidity are concentrated at the bottom. 
 
-For this graph to display the environmental changes during a day we needed to create a relative scale and map the values to that scale. To exemplify, lets say you have a number X, which has a value between A and B, and you want to map it to a value Y, between C and D. The function is similar to calculating percentage and can then be written as: 
+For this graph to display the environmental changes during a day we needed to create a relative scale and map the values to that scale. To exemplify, lets say you have a number \ensuremath{X}, which has a value between \ensuremath{A} and \ensuremath{B}, and you want to map it to a value \ensuremath{Y}, between \ensuremath{C} and \ensuremath{D}. The function is similar to calculating percentage and can then be written as: 
 \begin{equation}
 Y = \frac{(X-A)}{(B-A)} * (D-C) + C
 \end{equation}
@@ -388,7 +386,7 @@ Y = \frac{(X-A)}{(B-A)} * (D-C) + C
 	\label{fig:mapscale}
 \end{figure}
 
-Through trial and error, we chose the \verb@C@ and \verb@D@ values of each unit (see figure~\ref{fig:mapscale}). Then, after running the data through our new function all the units became visible (see figure~\ref{fig:goodgraph} on page~\pageref{fig:goodgraph}). As we have mapped all the units to relative units, information of the values at the specific data points are lost. But as the graph is displayed along with the video, we wanted to keep the information level low.  
+Through trial and error, we chose the \ensuremath{C} and \ensuremath{D} values of each unit (see figure~\ref{fig:mapscale}). Then, after running the data through our new function all the units became visible (see figure~\ref{fig:goodgraph} on page~\pageref{fig:goodgraph}). As we have mapped all the units to relative units, information of the values at the specific data points is lost. But as the graph is displayed along with the video, we wanted to keep the information level low.  
 
 \begin{figure}
 \centering
@@ -399,12 +397,12 @@ Through trial and error, we chose the \verb@C@ and \verb@D@ values of each unit 
 
 %To make sure one can read the appropriate sensorvalues we provide several other graphs, one for the last 24 hours, very similar to the video graph. The only difference is that we have included a mouse-over interaction technique with a tool-tip that displays the actual values alongside the corresponding image of the plant \citep[p.254]{kluge2010simulation}.
 
-Apart from the video-graph and the last 24 hour-graph we provide singular line graphs for each variable, this gives us the ability to display graphs with correct y-axises. 
+Apart from the video-graph and the last 24 hour-graph we provide singular line graphs for each variable. This gives us the ability to display graphs with correct y-axises. 
 %The user can select time period for these graphs by interacting with the small graph on the bottom. 
 
 \subsection{Connecting video and graph}
 %explain objective
-In order to present how changes in sensor variables manifested themselves physically in the plant, we wanted to connect the graph and the timelapse video. The visual solution became to present the video above the graph, both contained within the screen. As the video is playing, a vertical line layered above the graph moves from left to right representing where we are in the video. 
+In order to present how changes in sensor variables manifested themselves physically in the plant, we wanted to connect the graph and the timelapse video. The visual solution became to present the video above the graph, both contained within the screen. As the video is playing, a vertical line layered above the graph moves from left to right representing the current point in the video. 
 
 The HTML5 video-element can be accessed through javascript, and by checking the state of the video we are able to make the Highcharts graph follow the video based on the \emph{currentTime} of the videoelement.
 

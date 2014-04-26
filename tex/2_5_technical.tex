@@ -2,7 +2,7 @@
 \chapter{Technical architecture and programming}
 In this chapter we will present the technical aspects of our learning tool, Monoplant. We will explain the rationale for the design choices made, and go into detail on some of the more advanced parts of the system. We will not give an in-depth explanation of all the technicalities, but rather present an overview to give the reader some background to understand the learning opportunities built into the system. 
 
-The application is divided into three logical units: data collection, data processing and database, and user interface. In the following sections these units will be explained further. 
+The application is divided into three logical units: data collection, data processing and storage, and user interface. In the following sections these units will be explained further. 
 
 \begin{figure}
 \centering
@@ -31,7 +31,7 @@ At the lowest level in the information hierarchy is the hardware and software re
 
 With the advent of the "internet of things", sensors are becoming available in many different forms and packages. Just as LEGO-pieces they are cheap and can be used as modular building blocks in a wide range of applications. From automating tasks such as keeping a steady indoor-temperature, to measuring variables that humans cannot see. 
 
-The sensors are able to capture information concerning the environment and transform it to data variables, which we can store and categorize. In total there are five different sensors connected to the plant, or in the plant’s vicinity: soil moisture, soil temperature, air temperature, humidity, and light. 
+The sensors are able to capture information concerning the environment and transform it to data variables, which we can store and categorize. In total there are five different sensors connected to the plant, or in the plant’s vicinity: soil moisture, soil temperature, air temperature, humidity, and light intensity. 
 
 
 %(write something about the sensortag)
@@ -165,7 +165,7 @@ Our first implementation of the API was written in PHP with the framework Codeig
 Ruby on Rails is an open-source web framework that’s optimized for programmer happinees and sustainable productivity. It lets you write beautyful code by favoring convention over configuration \citep{rubyonrails.org}. 
 \end{quote}
 
-Ruby on Rails (RoR) makes the assumption that there is a "best" way of doing things, and encourages that way. It emphasizes well-known software engineering principles such as convention over configuration, don't repeat yourself, model-view-controller and REST.
+Ruby on Rails (RoR) makes the assumption that there is a "best" way of doing things, and encourages that way. It emphasizes well-known software engineering principles such as convention over configuration, don't repeat yourself (DRY), model-view-controller and REST.
 
 Our web server is running on Amazon Elastic Compute Cloud (ec2), a virtual computer service with low costs and extensive configuration options. We chose this because we needed to be able to configure the server for our purposes and install several libraries and applications onto the server. 
 %We wanted to create the API The API is created with Ruby on Rails to 

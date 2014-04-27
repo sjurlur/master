@@ -404,7 +404,7 @@ Apart from the video-graph and the last 24 hour-graph we provide singular line g
 %explain objective
 In order to present how changes in sensor variables manifested themselves physically in the plant, we wanted to connect the graph and the timelapse video. The visual solution became to present the video above the graph, both contained within the screen. As the video is playing, a vertical line layered above the graph moves from left to right representing the current point in the video. 
 
-The HTML5 video-element can be accessed through javascript, and by checking the state of the video we are able to make the Highcharts graph follow the video based on the \emph{currentTime} of the videoelement.
+The HTML5 video-element can be accessed through javascript, and by checking the state of the video we are able to make the Highcharts graph follow the video based on the \verb@currentTime@ of the videoelement.
 
 \begin{figure}
 	\begin{lstlisting}[style=htmlcssjs]
@@ -427,7 +427,7 @@ function stopVideo(){
 	\label{fig:videocode}
 \end{figure}
 
-By binding startVideo() to the play-event of the video-element and stopVideo() to the pause and stop event, we are able to move the graph marker as the video plays. The video-element has a built-in event called \emph{timeupdate} which is triggered when the video's time is changed. However, in practice this event only appeared 3-7 times per second, giving a lagging experience of the graph marker. To overcome this we made a custom function using \emph{setInterval} which turned out to be a lot faster and more reliable, providing a smooth flow of the graph marker. 
+By binding startVideo() to the play-event of the video-element and stopVideo() to the pause and stop event, we are able to move the graph marker as the video plays. The video-element has a built-in event called \verb@timeupdate@ which is triggered when the video's time is changed. However, in practice this event only appeared 3-7 times per second, giving a lagging experience of the graph marker. To overcome this we made a custom function using \verb@setInterval@ which turned out to be a lot faster and more reliable, providing a smooth flow of the graph marker. 
 
 
 %The reason for using \emph{setInterval} instead of the videos built-in event \emph{timeupdate} is that it is not specified how often the event will fire, but by testing we found that it was somewhere between 3-7 times per second, varying randomly from second to second. This was not often enough as the video had a framerate of 30 frames per second, which meant updating the graph at 1/10 of the speed of the video, resulting in a laggish experience of the graph. We experienced that using \emph{setInterval} gave use much more accuracy when setting it to run every 33th millisecond. No browsers guarantee that the performance of \emph{setInterval} will be faster than 50 ms, but by running tests \citep{adequatleyqood}, we found that the Chrome browser ran this on an average of 4.5 ms. Even though this can be slower when considering the load on the browser when playing a video, we found that in practice most browsers were able to play the video and update the graph simultaneously. 

@@ -99,7 +99,7 @@ The Raspberry Pi is a “cheap, accessible, programmable computer” \citep{Rasp
 %The GPIO-pins on the Raspberry works almost in the same fashion as the Arduino's digital input output pins. Thus we could in theory simplified the hardware by omitting the Arduino. The main reason for not doing this is that the Raspberry does not have an analog to digital converter (ADC). Therefore we would have to make a complex circuit involving an ADC to interface the Raspberry with the soil moisture sensor. In addition, we would most likely face timing issues. When we ask the digital sensors for data, they send the response immediately. If the unit receiving is not available to read the data, it gets lost. This can be a problem when using a high-level computer, as it performs multiple tasks in addition to reading sensordata. 
 
 \subsubsection{Operation}
-After booting up, a bash-script with an endless loop is called. The script snaps a photo of the plant using the webcam, and then runs a python-script responsible for collecting sensordata (see fig. \ref{fig:Raspberrycode}). Since we sometimes can get erroneous values from the sensors, we read 15 values and upload the median value. These values, along with the photo captured by the webcam, are then passed on to the next logical unit in the Monoplant system. 
+After booting up, a bash-script with an endless loop is called. The script snaps a photo of the plant using the webcam, and then runs a python-script responsible for collecting sensordata (see fig.~\ref{fig:Raspberrycode}). Since we sometimes can get erroneous values from the sensors, we read 15 values and upload the median value. These values, along with the photo captured by the webcam, are then passed on to the next logical unit in the Monoplant system. 
 
 %http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
 \begin{figure}
@@ -188,7 +188,7 @@ The Monoplant API has three resources: Plants, Sensorvalues and Videos. To creat
 	\label{fig:postdata}
 \end{figure}
 
-For the API to know how to interpret this information in json, we also need to pass a parameter in the header called Content-type, this variable will be set to “application/json”. When we pass this request, the API will create a plant with the information we gave it, and give a response with the code: \verb@"201 created"@. The response contains a header and a body in which the header has some meta-data about the request and the body will contain a representation of the created plant (see figure~\ref{fig:plantresponse}).
+For the API to know how to interpret this information in json, we also need to pass a parameter in the header called Content-type, this variable will be set to “application/json”. When we pass this request, the API will create a plant with the information we gave it, and give a response with the code: \verb@"201 created"@. The response contains a header and a body in which the header has some meta-data about the request and the body will contain a representation of the created plant (see fig.~\ref{fig:plantresponse}).
 
 \begin{figure}
 	\begin{lstlisting}[style=htmlcssjs]
@@ -334,7 +334,7 @@ WebM              & 9.0+              & 4.0+    & ~      & 6.0+   \\ \bottomrule
 \section{User interface}
 The user interface (UI) of Monoplant is where we visualize the data from the API to the users. It is accessible through web (\url{http://www.monoplant.me}), and displays correctly on most devices due to a responsive design. The UI is built with RoR as the web application framework, Bootstrap as the design framework, and Highcharts as the graph framework.   
 
-The main web page of each plant represents the current state of the plant. On the left side, it displays the last picture with the corresponding temperature, humidity, light and soil moisture. On the right side, there is a timelapse video from the day before, with a corresponding graph displaying all the sensorvalues throughout that day (see figure~\ref{fig:mainpage} on page~\pageref{fig:mainpage}). 
+The main web page of each plant represents the current state of the plant. On the left side, it displays the last picture with the corresponding temperature, humidity, light and soil moisture. On the right side, there is a timelapse video from the day before, with a corresponding graph displaying all the sensorvalues throughout that day (see fig.~\ref{fig:mainpage} on page~\pageref{fig:mainpage}). 
 
 On the top of the page there are two menu items. The first  is called \emph{videos} and links to the video overview. This is a page containing all the videos for the plant selected. In relation to each video, the max and min values for all the different sensors during that day is shown. The second menu item is called \emph{graphs} and is a drop-down menu with links to graphs for each of the different sensors. In addition there is a link to the graph containing all the sensorvalues for the last 24 hours. 
 
@@ -386,7 +386,7 @@ Y = \frac{(X-A)}{(B-A)} * (D-C) + C
 	\label{fig:mapscale}
 \end{figure}
 
-Through trial and error, we chose the \ensuremath{C} and \ensuremath{D} values of each unit (see figure~\ref{fig:mapscale}). Then, after running the data through our new function all the units became visible (see figure~\ref{fig:goodgraph} on page~\pageref{fig:goodgraph}). As we have mapped all the units to relative units, information of the values at the specific data points is lost. But as the graph is displayed along with the video, we wanted to keep the information level low.  
+Through trial and error, we chose the \ensuremath{C} and \ensuremath{D} values of each unit (see fig.~\ref{fig:mapscale}). Then, after running the data through our new function all the units became visible (see fig.~\ref{fig:goodgraph} on page~\pageref{fig:goodgraph}). As we have mapped all the units to relative units, information of the values at the specific data points is lost. But as the graph is displayed along with the video, we wanted to keep the information level low.  
 
 \begin{figure}
 \centering

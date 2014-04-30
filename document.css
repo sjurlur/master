@@ -1,8 +1,24 @@
  
 /* start css.sty */
-.cmti-12{ font-style: italic;}
+.cmr-10{font-size:83%;}
+.cmsy-10{font-size:83%;}
 .cmbx-12{ font-weight: bold;}
+.cmbx-12{ font-weight: bold;}
+.cmtt-12{font-family: monospace;}
+.cmtt-12{font-family: monospace;}
+.cmbx-12x-x-207{font-size:207%; font-weight: bold;}
+.cmbx-12x-x-207{ font-weight: bold;}
 .cmr-8{font-size:66%;}
+.cmr-6{font-size:50%;}
+.cmmi-12{font-style: italic;}
+.cmmi-8{font-size:66%;font-style: italic;}
+.cmsy-8{font-size:66%;}
+.cmti-12{ font-style: italic;}
+.cmr-10x-x-109{font-size:90%;}
+.cmtt-10{font-size:83%;font-family: monospace;}
+.cmtt-10{font-family: monospace;}
+.tctt-1000{font-size:83%;font-family: monospace;}
+.cmbxti-10x-x-120{ font-weight: bold; font-style: italic;}
 p.noindent { text-indent: 0em }
 td p.noindent { text-indent: 0em; margin-top:0em; }
 p.nopar { text-indent: 0em; }
@@ -135,25 +151,49 @@ div.lstinputlisting{ font-family: monospace; white-space: nowrap; }
 span.sout {text-decoration: line-through }
 span.xout {text-decoration: line-through }
 span.uwave {text-decoration:underline }
-div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
-table.tabular td p{margin-top:0em;}
-table.tabular {margin-left: auto; margin-right: auto;}
-td p:first-child{ margin-top:0em; }
-td p:last-child{ margin-bottom:0em; }
-div.td00{ margin-left:0pt; margin-right:0pt; }
-div.td01{ margin-left:0pt; margin-right:5pt; }
-div.td10{ margin-left:5pt; margin-right:0pt; }
-div.td11{ margin-left:5pt; margin-right:5pt; }
-table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
-td.td00{ padding-left:0pt; padding-right:0pt; }
-td.td01{ padding-left:0pt; padding-right:5pt; }
-td.td10{ padding-left:5pt; padding-right:0pt; }
-td.td11{ padding-left:5pt; padding-right:5pt; }
-table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
-.hline hr, .cline hr{ height : 1px; margin:0px; }
-div.array {text-align:center;}
 table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
 div.longtable{text-align:center;}
-table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+tr#TBL-1-1- td{border-top:0.13159em solid} 
+tr#TBL-1-1- td{border-bottom:0.08224em solid}
+tr#TBL-1-5- td{border-bottom:0.13159em solid}
+tr#TBL-2-1- td{border-top:0.13159em solid} 
+tr#TBL-2-1- td{border-bottom:0.08224em solid}
+tr#TBL-2-8- td{border-bottom:0.13159em solid}
+tr#TBL-3-1- td{border-top:0.13159em solid} 
+tr#TBL-3-1- td{border-bottom:0.08224em solid}
+tr#TBL-3-4- td{border-bottom:0.13159em solid}
+tr#TBL-4-1- td{border-top:0.13159em solid} 
+tr#TBL-4-1- td{border-bottom:0.08224em solid}
+tr#TBL-4-5- td{border-bottom:0.08224em solid}
+tr#TBL-4-6- td{border-bottom:0.13159em solid}
+tr#TBL-5-1- td{border-top:0.13159em solid} 
+tr#TBL-5-1- td{border-bottom:0.08224em solid}
+tr#TBL-5-10- td{border-bottom:0.13159em solid}
+tr#TBL-6-1- td{border-top:0.13159em solid} 
+tr#TBL-6-1- td{border-bottom:0.08224em solid}
+tr#TBL-7-1- td{border-top:0.13159em solid} 
+tr#TBL-7-1- td{border-bottom:0.08224em solid}
+tr#TBL-8-1- td{border-top:0.13159em solid} 
+tr#TBL-8-1- td{border-bottom:0.08224em solid}
+tr#TBL-9-1- td{border-top:0.13159em solid} 
+tr#TBL-9-1- td{border-bottom:0.08224em solid}
+tr#TBL-9-9- td{border-bottom:0.13159em solid}
+tr#TBL-10-1- td{border-top:0.13159em solid} 
+tr#TBL-10-1- td{border-bottom:0.08224em solid}
+tr#TBL-10-5- td{border-bottom:0.13159em solid}
+tr#TBL-11-1- td{border-top:0.13159em solid} 
+tr#TBL-11-1- td{border-bottom:0.08224em solid}
+tr#TBL-12-1- td{border-top:0.13159em solid} 
+tr#TBL-12-1- td{border-bottom:0.08224em solid}
+tr#TBL-12-5- td{border-bottom:0.13159em solid}
+tr#TBL-13-1- td{border-top:0.13159em solid} 
+tr#TBL-13-1- td{border-bottom:0.08224em solid}
+tr#TBL-14-1- td{border-top:0.13159em solid} 
+tr#TBL-14-1- td{border-bottom:0.08224em solid}
+tr#TBL-15-1- td{border-top:0.13159em solid} 
+tr#TBL-15-1- td{border-bottom:0.08224em solid}
+tr#TBL-15-7- td{border-bottom:0.13159em solid}
+tr#TBL-16-1- td{border-bottom:0.13159em solid}
+tr#TBL-16-3- td{border-bottom:0.08224em solid}
 /* end css.sty */
 

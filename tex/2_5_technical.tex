@@ -22,14 +22,14 @@ At the lowest level in the information hierarchy is the hardware and software re
 	Sensor               & Description \\ \midrule                                                                                                  
 	TSL2561              & Digital luminosity sensor. Measures light in lux from 300-1100nm.                                            \\ 
 	RHT03                & Digital humidity and temperature sensor. Measures relative humidity and temperature in celsius.              \\ 
-	DS18B20              & Digital waterproof temperature sensor. Measures temperature in celsius                                       \\ 
+	DS18B20              & Digital waterproof temperature sensor. Measures temperature in celsius.                                       \\ 
 	DFRobot sku:sen0114  & Analog soil moisture sensor. Returns values between 0 and 900 depending on electrical conductivity of soil.  \\ \bottomrule
 	\end{tabular}
 	\caption{Sensors used in the application}
 \end{table}
 
 
-With the advent of the "internet of things", sensors are becoming available in many different forms and packages. Just as LEGO-pieces they are cheap and can be used as modular building blocks in a wide range of applications. From automating tasks such as keeping a steady indoor-temperature, to measuring variables that humans cannot see. 
+With the advent of the "internet of things", sensors are becoming available in many different forms and packages. They are cheap and can be used as modular building blocks in a wide range of applications, from automating tasks such as keeping a steady indoor-temperature, to measuring variables that humans cannot see. 
 
 The sensors are able to capture information concerning the environment and transform it to data variables, which we can store and categorize. In total there are five different sensors connected to the plant, or in the plant’s vicinity: soil moisture, soil temperature, air temperature, humidity, and light intensity. 
 
@@ -99,7 +99,7 @@ The Raspberry Pi is a “cheap, accessible, programmable computer” \citep{Rasp
 %The GPIO-pins on the Raspberry works almost in the same fashion as the Arduino's digital input output pins. Thus we could in theory simplified the hardware by omitting the Arduino. The main reason for not doing this is that the Raspberry does not have an analog to digital converter (ADC). Therefore we would have to make a complex circuit involving an ADC to interface the Raspberry with the soil moisture sensor. In addition, we would most likely face timing issues. When we ask the digital sensors for data, they send the response immediately. If the unit receiving is not available to read the data, it gets lost. This can be a problem when using a high-level computer, as it performs multiple tasks in addition to reading sensordata. 
 
 \subsubsection{Operation}
-After booting up, a bash-script with an endless loop is called. The script snaps a photo of the plant using the webcam, and then runs a python-script responsible for collecting sensordata (see fig.~\ref{fig:Raspberrycode}). Since we sometimes can get erroneous values from the sensors, we read 15 values and upload the median value. These values, along with the photo captured by the webcam, are then passed on to the next logical unit in the Monoplant system. 
+After booting up, a bash-script running an endless loop is called. The script snaps a photo of the plant using the webcam, and then runs a python-script responsible for collecting sensordata (see fig.~\ref{fig:Raspberrycode}). Since we sometimes can get erroneous values from the sensors, we read 15 values and upload the median value. These values, along with the photo captured by the webcam, are then passed on to the next logical unit in the Monoplant system. 
 
 %http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
 \begin{figure}
@@ -141,7 +141,7 @@ REST is an architectual style for distributed hypermedia systems \citep{fielding
 
 \item{} \emph{Stateless} - The communication between client and server must be stateless. The request from client to server must contain all the information needed to understand the request. In practice this gives the client the responsibility to keep track of the state.
 
-\item{} \emph{Caching} - In order to reduce requests and improve efficiency, the server can state which responses can be reused by the client when sending equivalent requests. This can greatly enhance user-perceived performance, but at the same time reduce reliability if cached data differs from what would have been delivered by the server on a request. We could theoretically cache almost everything since our data belongs to specific timestamps, and the chances that a sensor value is updated at a later time is minimal. However, since we are developing a prototype and have the need for rapid changes in the implementation, we have experienced that the need for reliable data exceeds the need for fast performance.
+\item{} \emph{Caching} - In order to reduce the number of requests and improve efficiency, the server can state which responses the client can reuse when sending equivalent requests. This can greatly enhance user-perceived performance, but at the same time reduce reliability if cached data differs from what would have been delivered by the server on a request. We could theoretically cache almost everything since our data belongs to specific timestamps, and the chances that a sensor value is updated at a later time is minimal. However, since we are developing a prototype and have the need for rapid changes in the implementation, we have experienced that the need for reliable data exceeds the need for fast performance.
 
 \item{} \emph{Uniform interface} - This is a rather complex constraint in terms of RESTful API design, and is the reason for a lot of discussions around implementation of true REST. Fielding describes a REST interface to be:
 
@@ -156,13 +156,13 @@ In an applied context this means that the server has resources that can be refer
 
 \end{enumerate}
 
-REST is an architectual style, not a strict standard. It allows for flexibility, but at the same time promotes best practice. The goal of our API was to provide a way of storing and accessing plant data in the cloud, first and foremost for client side applications that we built ourselves. Our objective was to create something that worked for us. A pragmatic approach to REST gave us the flexibility to create an API that gets the job done. In the following chapter we will describe how the API works and discuss some choices we made in the implementation process.
+REST is an architectural style, not a strict standard. It allows for flexibility, but at the same time promotes best practice. The goal for our API was to provide a way of storing and accessing plant data in the cloud, first and foremost for our own client side applications. Our objective was to create something that worked for us. A pragmatic approach to REST gave us the flexibility to create an API that gets the job done. In the following chapter we will describe how our API works, and discuss some choices we made in the implementation process.
 
 \subsection{Application Programming Interface}
-Our first implementation of the API was written in PHP with the framework Codeigniter. This worked well for a while, but after having made several dirty hacks and workarounds we decided to look for other options. After researching Ruby on Rails and their focus on "convention over configuration", we found that it was a framework well suited for building our API.  
+Our first implementation of the API was written in PHP using the framework Codeigniter. This worked well for a while, but after having made several dirty hacks and workarounds we decided to look for other options. After researching Ruby on Rails and their focus on "convention over configuration", we found that it was a framework well suited for building our API.  
 
 \begin{quote}
-Ruby on Rails is an open-source web framework that’s optimized for programmer happinees and sustainable productivity. It lets you write beautyful code by favoring convention over configuration \citep{rubyonrails.org}. 
+Ruby on Rails is an open-source web framework thats optimized for programmer happiness and sustainable productivity. It lets you write beautiful code by favoring convention over configuration \citep{rubyonrails.org}. 
 \end{quote}
 
 Ruby on Rails (RoR) makes the assumption that there is a "best" way of doing things, and encourages that way. It emphasizes well-known software engineering principles such as convention over configuration, don't repeat yourself (DRY), model-view-controller and REST.
@@ -172,7 +172,7 @@ Our web server is running on Amazon Elastic Compute Cloud (ec2), a virtual compu
 
 Our API is a server-side Web-API that can be accessed through the HTTP-protocol. To use it, one can send a request to the domain of the API from any client that can send HTTP-requests. The API will interpret the request and respond based on how the interpretation went. Since our API is based on the REST architectual style, it adheres to how the HTTP-protocol is built, meaning that a resource has a unique identifier, a URI, and some uniform actions called the HTTP-verbs which the resource can be operated with. There are 8 methods in the HTTP/1.1 protocol \citep[p. 36]{fielding1999hypertext}, but only four of them are of interest when speaking of resources. These are the four basic functions of persistent storage in computer programming, often referred to as CRUD (Create, Read, Update and Delete), but in HTTP their names are POST, GET, PUT and DELETE. 
 
-The Monoplant API has three resources: Plants, Sensorvalues and Videos. To create a plant, one can send a POST request to the URL: \begin{verbatim}http://Monoplant.me/plants.json\end{verbatim} A post request also needs information about the plant to create, in this case we will pass that information in the json-format:
+The Monoplant API has three resources: Plants, Sensorvalues and Videos. To create a plant, one can send a POST request to the URL: \begin{verbatim}http://Monoplant.me/plants.json\end{verbatim} A post request also needs information about the plant to create, in this case we will pass that information in the json-format (see fig.~\ref{fig:postdata}).
 
 \begin{figure}
 	\begin{lstlisting}[style=htmlcssjs]
@@ -188,7 +188,7 @@ The Monoplant API has three resources: Plants, Sensorvalues and Videos. To creat
 	\label{fig:postdata}
 \end{figure}
 
-For the API to know how to interpret this information in json, we also need to pass a parameter in the header called Content-type, this variable will be set to “application/json”. When we pass this request, the API will create a plant with the information we gave it, and give a response with the code: \verb@"201 created"@. The response contains a header and a body in which the header has some meta-data about the request and the body will contain a representation of the created plant (see fig.~\ref{fig:plantresponse}).
+For the API to know how to interpret this information in json, we also need to pass a parameter in the header called Content-type, this variable will be set to “application/json”. When we pass this request, the API will create a plant with the information we gave it, and give a HTTP response with the code: \verb@"201 created"@. The response contains a header and a body. The header has some meta-data about the request and the body will contain a representation of the created plant (see fig.~\ref{fig:plantresponse}).
 
 \begin{figure}
 	\begin{lstlisting}[style=htmlcssjs]
@@ -205,9 +205,9 @@ For the API to know how to interpret this information in json, we also need to p
 	\label{fig:plantresponse}
 \end{figure}
 
-If we look at this representation, we see that the API has added an ID to the plant as well as two data attributes created\_at and updated\_at. Since we now have the id of the plant, we can tell the Raspberry Pi to start adding sensor values for that specific plant. The Raspberry will create a request using the data it gets from the Arduino and the image from the webcam and finally send that POST request to the URL:\begin{verbatim}http://Monoplant.me/plants/1/sensorvalues.json \end{verbatim}
+If we look at this representation, we see that the API has added an ID to the plant as well as the two data attributes created\_at and updated\_at. Since we now have the id of the plant, we can tell the Raspberry Pi to start adding sensor values for that specific plant. The Raspberry will create a request using the data it gets from the Arduino and the image from the webcam and finally send that POST request to the URL:\begin{verbatim}http://Monoplant.me/plants/1/sensorvalues.json \end{verbatim}
 
-As in the first example the API will interpret the request, store the data, and respond with a status code: \verb@"201 created"@. In the background, the API will generate a thumbnail of the image and upload both the thumbnail and the original to another static server, finally storing the URL for both of them in the database. The response body ends up looking as shown in figure~\ref{fig:sensorvaluesresponse}. If we need to look at this sensorvalue at a later time, we can simply do a GET request using the sensorvalue id we got from the previous response and call the URL:\begin{verbatim}http://Monoplant.me/plants/1/sensorvalues/10037.json \end{verbatim} This will make the API respond with a status code \verb@"302 Found"@, and the body will look just like the previous response body, unless it has been updated in the meantime. Note that the URL is built up according to which resource we are trying to operate. See table~\ref{fig:RESTurl} for an overview of how these URLs are built up.
+As in the first example the API will interpret the request, store the data, and respond with a status code: \verb@"201 created"@. In the background, the API will generate a thumbnail of the image and upload both the thumbnail and the original to another static server, finally storing the URL for both of them in a database. The response body ends up looking as shown in figure~\ref{fig:sensorvaluesresponse}. If we need to look at this sensorvalue at a later time, we can simply do a GET request using the sensorvalue id we got from the previous response and call the URL:\begin{verbatim}http://Monoplant.me/plants/1/sensorvalues/10037.json \end{verbatim} This will make the API respond with a status code \verb@"302 Found"@, and the body will look just like the previous response body, unless it has been updated in the meantime. Note that the URL is built up according to which resource we are trying to operate. See table~\ref{fig:RESTurl} for an overview of how these URLs are built up.
 
 Now that the data from the plant is securely stored in a database and accessible through the API, we move on to how these data are further processed to generate timelapse videos. 
 
@@ -257,7 +257,7 @@ Now that the data from the plant is securely stored in a database and accessible
 \egroup
 
 \subsection{Generating timelapse videos}
-Regular video cameras capture 24 to 30 images or frames per second (fps), and play them back at the same rate. The events in the video will then unfold at the same speed in which they happened during the shoot. Timelapse photography utilizes this principle by slowing down the rate at which images are captured, while maintaining the playback rate. So for instance if we captured one image per second, and played it back at 24 fps, one second in the film would equal 24 seconds in real life. Thus when played back, time would appear to move faster. This makes it possible to pronounce changes which are subtle to the human eye. E.g., a sunset, moving clouds, or a plant growing.  
+Regular video cameras capture 24 to 30 images or frames per second (fps), and play them back at the same rate. The events in the video will then unfold at the same speed in which they happened during the shoot. Timelapse photography utilizes this principle by slowing down the rate at which images are captured, while maintaining the playback rate. So for instance if we captured one image per second, and played it back at 24 fps, one second in the film would equal 24 seconds in real life. Thus when played back, time would appear to move faster. This makes it possible to pronounce changes which are subtle to the human eye such as: a sunset, moving clouds, or a plant growing.  
 
 Each day at midnight the system collects all the images taken during the day, and combine them to a timelapse video played back at 30 frames per second. As the Raspberry Pi captures approximately one picture per minute, one second in the video equals 30 minutes in real life. One picture each minute equals \begin{math} 60min*24hours=1440 \end{math}
 pictures each day, which, if we divide it by 30 frames per second gives us a 48 second video representing 24 hours in real life. This equals a speed increase of 1800 times. 
@@ -267,11 +267,11 @@ pictures each day, which, if we divide it by 30 frames per second gives us a 48 
 \subsubsection{HTML5 Video Element}
 Prior to HTML5 there was no standard way of implementing videos on web-pages. Therefore the web was filled with a myriad of different solutions, with QuickTime, RealPlayer, and Flash being the most prominent \citep{pilgrim2010html5}.
 
-In HTML5 we have a new, standard \verb@<video>@ element that in theory should give us support for native video in all browsers. But due to the nature of video-files, problems arise when users have different operating systems and different browsers. 
+In HTML5 we have a new standard \verb@<video>@ element that in theory should give us support for native video in all browsers. But due to the nature of video-files, problems arise when users have different operating systems and different browsers. 
 
 A video file consists of a container, a video codec, and an audio codec. The container defines how the content within is stored, the video codec defines how the video stream is encoded, and the audio codec defines how the audio is encoded. Since there exists numerous containers, video- and audio codecs, endless permutations are possible. Therefore it is not likely that we will have a combination that would work in all browsers in any foreseeable future \citep{pilgrim2010html5}.
 
-In order to maximize compatibility in our application, we decided to encode video in three different formats: H.264+MP4, Webm and Theora (see table~\ref{tab:videosupport}). This is done via a bash script that runs every night. First, we run a perl script for "deflickering", i.e., calculate and convert the images to a median brightness to reduce video flickering. Then we use the programs Mencoder and FFmpeg2theora to create H.264-, webm- and theora-videos. And finally, the videos are posted to the respective plants in the database, using the API. 
+In order to maximize compatibility in our application, we decided to encode video in three different formats: H.264+MP4, Webm and Theora (see table~\ref{tab:videosupport}). This is done via a bash script that runs every night. First, we run a perl script for "deflickering", i.e., calculate and convert the images to a median brightness to reduce video flickering. Then we use the programs Mencoder and FFmpeg2theora to create H.264-, webm- and theora-videos. And finally, the videos are posted to the respective plants in a database, using the API. 
 
 Thus, after 24 hours of collecting and storing data, videos in different formats are generated and Monoplant is ready to display information to the users, which takes us to next logical unit in the system.
 %After the data has been collected from the sensors and uploaded through the API. And we have generated timelapse videos in different formats. We are ready for the next logical unit in the Monoplant application, displaying information to the users. 
@@ -348,7 +348,7 @@ During our work with the UI, there was two aspects that proved to be particularl
 \end{figure}
 
 \subsection{Highcharts}
-There are 4-5 serious javascript chart libraries on the Internet with various types of focus, flexibility and documentation. We ran some tests with Google charts, d3.js and Highcharts, and found that Highcharts provided the most extensive documentation as well as an easy to understand interface. 
+There are a few serious javascript chart libraries available with various types of focus, flexibility and documentation. We ran some tests with Google charts, d3.js and Highcharts, and found that Highcharts provided the most extensive documentation as well as an easy to understand interface. 
 
 The first graph we had to make was a graph containing all the plant data from a given time corresponding to a timelapse video. This meant putting temperature, light, humidity and soil moisture in the same graph, even though they all have different units. 
 
@@ -397,7 +397,7 @@ Through trial and error, we chose the \ensuremath{C} and \ensuremath{D} values o
 
 %To make sure one can read the appropriate sensorvalues we provide several other graphs, one for the last 24 hours, very similar to the video graph. The only difference is that we have included a mouse-over interaction technique with a tool-tip that displays the actual values alongside the corresponding image of the plant \citep[p.254]{kluge2010simulation}.
 
-Apart from the video-graph and the last 24 hour-graph we provide singular line graphs for each variable. This gives us the ability to display graphs with correct y-axises. 
+Apart from the video-graph and the last 24 hour-graph we provide singular line graphs for each variable. This gives us the ability to display graphs with correct y-axes. 
 %The user can select time period for these graphs by interacting with the small graph on the bottom. 
 
 \subsection{Connecting video and graph}

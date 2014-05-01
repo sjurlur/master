@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="612px"
+	 height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
+<g id="Layer_1">
+	<g>
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="17.6665" y1="171" x2="312.334" y2="171">
+			<stop  offset="0" style="stop-color:#2484C6"/>
+			<stop  offset="1" style="stop-color:#2484C6;stop-opacity:0"/>
+		</linearGradient>
+		<polygon fill="url(#SVGID_1_)" points="17.667,57.667 312.334,57.667 165,284.333 		"/>
+		<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="17.667,57.667 312.334,57.667 165,284.333 		"/>
+	</g>
+	<g>
+		<g>
+			
+				<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="56.836" y1="155.666" x2="215.165" y2="155.666"/>
+			<g>
+				<polygon points="63.463,163.846 64.827,162.381 57.604,155.668 64.827,148.953 63.463,147.488 54.667,155.668 				"/>
+			</g>
+			<g>
+				<polygon points="208.538,163.846 207.173,162.381 214.397,155.668 207.173,148.953 208.538,147.488 217.333,155.668 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="Layer_2">
+	<text transform="matrix(1 0 0 1 51.667 74.333)"><tspan x="0" y="0" font-family="'MyriadPro-Regular'" font-size="18">General,</tspan><tspan x="0" y="21.6" font-family="'MyriadPro-Regular'" font-size="18">abstract</tspan></text>
+	<text transform="matrix(1 0 0 1 133.0005 212.6675)"><tspan x="0" y="0" font-family="'MyriadPro-Regular'" font-size="18">Concrete,</tspan><tspan x="0" y="21.6" font-family="'MyriadPro-Regular'" font-size="18">Specific</tspan></text>
+	<text transform="matrix(1 0 0 1 7 260.3335)"><tspan x="0" y="0" font-family="'MyriadPro-Regular'" font-size="21">Spontaneous</tspan><tspan x="0" y="25.2" font-family="'MyriadPro-Regular'" font-size="21">concepts</tspan></text>
+	<text transform="matrix(1 0 0 1 194 18.9995)"><tspan x="0" y="0" font-family="'MyriadPro-Regular'" font-size="21">Scientific </tspan><tspan x="0" y="25.2" font-family="'MyriadPro-Regular'" font-size="21">concepts</tspan></text>
+	<g>
+		<g>
+			
+				<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="232.333" y1="70.333" x2="232.333" y2="244.165"/>
+			<g>
+				<polygon points="224.154,237.538 225.619,236.173 232.332,243.397 239.046,236.173 240.511,237.538 232.332,246.333 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<line fill="#9E459A" x1="39" y1="239.334" x2="39" y2="63.334"/>
+		<g>
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="39" y1="239.334" x2="39" y2="65.503"/>
+			<g>
+				<polygon points="47.18,72.13 45.715,73.495 39.002,66.271 32.287,73.495 30.822,72.13 39.002,63.334 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

@@ -404,21 +404,8 @@ Y = \frac{(X-A)}{(B-A)} * (D-C) + C
 
 %We chose an output scale from 0 to 100 and wrote a function according to figure~\ref{fig:mapfunc} that mapped the values based on what type of data it was. We set the input scales as can be seen in figure~\ref{fig:mapscale}.
 
-\begin{figure}
-	\begin{lstlisting}[style=htmlcssjs]
-{
-	humidity: { min: 10, max:100 },
-	soil temperature: { min:15, max:30 },
-	light: { min: 400, max:2500 },
-	air temprature: { min: 15, max: 30 },
-	soil Moisture: { min: 0, max: 700 }
-}
-	\end{lstlisting}
-	\caption{Mapping scales}
-	\label{fig:mapscale}
-\end{figure}
 
-Through trial and error, we chose the \ensuremath{C} and \ensuremath{D} values of each unit (see fig.~\ref{fig:mapscale}). Then, after running the data through our new function all the units became visible (see fig.~\ref{fig:goodgraph} on page~\pageref{fig:goodgraph}). As we have mapped all the units to relative units, information of the values at the specific data points is lost. But as the graph is displayed along with the video, we wanted to keep the information level low.  
+Through trial and error, we chose the \ensuremath{C} and \ensuremath{D} values of each unit. Then, after running the data through our new function all the units became visible (see fig.~\ref{fig:goodgraph} on page~\pageref{fig:goodgraph}). As we have mapped all the units to relative units, information of the values at the specific data points is lost. But as the graph is displayed along with the video, we wanted to keep the information level low.  
 
 \begin{figure}
 \centering

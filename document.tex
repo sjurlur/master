@@ -1,5 +1,6 @@
-\documentclass[a4paper, 12pt, english]{report}
+\documentclass[a4paper, 12pt, english, twoside, openright]{report}
 \usepackage{mystyles}  
+\raggedbottom
 
 
 \title{Problems and opportunities in students' scientific inquiry with Monoplant}
@@ -10,15 +11,16 @@
 \uiosloforside[kind={Master thesis}]
 \pagenumbering{roman}
 \input{./tex/0_abstract}
+\cleardoublepage
 \input{./tex/0_5_acknowledgements}
-
+\cleardoublepage
 \tableofcontents
-\newpage
+\cleardoublepage
 \listoffigures
-\newpage
+\cleardoublepage
 %\pagenumbering{roman}
 \listoftables
-\newpage
+\cleardoublepage
 
  \input{./tex/1_introduction}
  \input{./tex/2_background}
@@ -29,9 +31,10 @@
  \input{./tex/6_discussion}
  \input{./tex/7_conclusion}
 
+\cleardoublepage
 \bibliography{bibliography}
 \bibliographystyle{pjgsm}
-\newpage
+\cleardoublepage
 \begin{appendices}
 \input{./appendix/samtykkeskjema}
 \input{./appendix/oppgaver_foss}

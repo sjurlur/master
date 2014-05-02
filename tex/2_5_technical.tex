@@ -166,7 +166,7 @@ When the data has been gathered at the low level hierarchy, it is stored in the 
 %REST uses URIs and HTTP by default, the data you send is the data you send. This meas that the data is easy to use out of the box, 
 %SOAP can use URIs and HTTP, the data you send becomes larger as verbose SOAP-standards are added to the data.
 
-\subsection{Representational State Transfer (REST)}
+\subsection{Representational state transfer (REST)}
 REST is an architectural style for distributed hypermedia systems \citep{fielding2000architectural}. In Fielding's dissertation, he writes about the interaction constraints of REST that is introduced in order to limit how a distributed system can be constructed. 
 
 \begin{enumerate}
@@ -191,7 +191,7 @@ In an applied context this means that the server has resources that can be refer
 
 REST is an architectural style, not a strict standard. It allows for flexibility, but at the same time promotes best practice. The goal for our API was to provide a way of storing and accessing plant data in the cloud, first and foremost for our own client side applications. Our objective was to create something that worked for us. A pragmatic approach to REST gave us the flexibility to create an API that gets the job done. In the following chapter we will describe how our API works, and discuss some choices we made in the implementation process.
 
-\subsection{Application Programming Interface}
+\subsection{Application programming interface}
 Our first implementation of the API was written in PHP using the framework Codeigniter. This worked well for a while, but after having made several dirty hacks and workarounds we decided to look for other options. After researching Ruby on Rails and their focus on "convention over configuration", we found that it was a framework well suited for building our API.  
 
 \begin{quote}

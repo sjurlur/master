@@ -115,7 +115,7 @@ Arduino is an open-source prototyping platform that makes it easy to interface l
 The community surrounding Arduino is quite large, and we have therefore been able to find pre-written libraries for communicating with the different sensors. This has simplified the task of converting the digital signal to the correct units (Celsius, relative humidity, lux). 
 
 In the case of the soil moisture sensor, it measures conductivity in the soil, and does not output moisture levels in any kind of universal measuring unit. But the conductivity measured in the soil is repeatable and proportional to the moisture level. Therefore we measured the resistance in air (high resistance), and in water (low resistance), and let these be the high and low points of a new unit called arbitrary moisture units (AMU) \citep{ch00ftech}.
-
+\clearpage
 The code residing in the Arduino runs a simple loop where it waits for a special character sent over serial communication through USB. If it receives this character it reads all the sensor values, and sends them back to the next device in the Monoplant system: the Raspberry Pi
 
 \subsection{Raspberry Pi}
@@ -366,11 +366,11 @@ WebM              & 9.0+              & 4.0+    & ~      & 6.0+   \\ \bottomrule
 \section{User interface}
 The user interface (UI) of Monoplant is where we visualize the data from the API to the users. It is accessible through web (\url{http://www.monoplant.me}), and displays correctly on most devices due to a responsive design. The UI is built with RoR as the web application framework, Bootstrap as the design framework, and Highcharts as the graph framework.   
 
-The main web page of each plant represents the current state of the plant. On the left side, it displays the last picture with the corresponding temperature, humidity, light and soil moisture. On the right side, there is a timelapse video from the day before, with a corresponding graph displaying all the sensorvalues throughout that day (see fig.~\ref{fig:mainpage} on page~\pageref{fig:mainpage}). 
+The main web page of each plant represents the current state of the plant. On the left side, it displays the last picture with the corresponding temperature, humidity, light and soil moisture. On the right side, there is a time-lapse video from the day before, with a corresponding graph displaying all the sensorvalues throughout that day (see fig.~\ref{fig:mainpage} on page~\pageref{fig:mainpage}). 
 
 On the top of the page there are two menu items. The first  is called \emph{videos} and links to the video overview. This is a page containing all the videos for the plant selected. In relation to each video, the max and min values for all the different sensors during that day is shown. The second menu item is called \emph{graphs} and is a drop-down menu with links to graphs for each of the different sensors. In addition there is a link to the graph containing all the sensorvalues for the last 24 hours. 
 
-During our work with the UI, there were two aspects that proved to be particularly challenging: relative graphs, and connecting the timelapse videos to the graph. In the following sections the work to overcome these obstacles will be explained. 
+During our work with the UI, there were two aspects that proved to be particularly challenging: relative graphs, and connecting the time-lapse videos to the graph. In the following sections the work to overcome these obstacles will be explained. 
 
 \begin{figure}
 \centering
@@ -382,7 +382,7 @@ During our work with the UI, there were two aspects that proved to be particular
 \subsection{Highcharts}
 There are a few serious JavaScript chart libraries available with various types of focus, flexibility and documentation. We ran some tests with Google charts, d3.js and Highcharts, and found that Highcharts provided the most extensive documentation as well as an easy to understand interface. 
 
-The first graph we had to make was a graph containing all the plant data from a given time corresponding to a timelapse video. This meant putting temperature, light, humidity and soil moisture in the same graph, even though they all have different units. 
+The first graph we had to make was a graph containing all the plant data from a given time corresponding to a time-lapse video. This meant putting temperature, light, humidity and soil moisture in the same graph, even though they all have different units. 
 
 
 
@@ -421,7 +421,7 @@ Apart from the video-graph and the last 24 hour-graph we provide singular line g
 
 \subsection{Connecting video and graph}
 %explain objective
-In order to present how changes in sensor variables manifested themselves physically in the plant, we wanted to connect the graph and the timelapse video. The visual solution became to present the video above the graph, both contained within the screen. As the video is playing, a vertical line layered above the graph moves from left to right representing the current point in the video. 
+In order to present how changes in sensor variables manifested themselves physically in the plant, we wanted to connect the graph and the time-lapse~video. The visual solution became to present the video above the graph, both contained within the screen. As the video is playing, a vertical line layered above the graph moves from left to right representing the current point in the video. 
 
 The HTML5 video-element can be accessed through JavaScript, and by checking the state of the video we are able to make the Highcharts graph follow the video based on the \verb@currentTime@ of the videoelement.
 

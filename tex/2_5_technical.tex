@@ -101,7 +101,7 @@ As we are using digital sensors, all of these calculations are done internally i
 \subsection{Arduino}
 %(Write about embedded systems. What other alternatives are there to the Arduino? )
 
-Arduino is an open-source prototyping platform that makes it easy to interface low-level electronics (i.e., sensors) with higher-level electronics (i.e., computers). The core part of the Arduino is an Atmel\texttrademark Atmega microcontroller, which can be programmed by a computer over a USB port, using the Arduino programming language and the Arduino development environment \citep{Arduino}.
+Arduino is an open-source prototyping platform that makes it easy to interface low-level electronics (i.e.,~sensors) with higher-level electronics (i.e.,~computers). The core part of the Arduino is an Atmel\texttrademark Atmega microcontroller, which can be programmed by a computer over a USB port, using the Arduino programming language and the Arduino development environment \citep{Arduino}.
 
 %We have used an Arduino Uno that has 13 digital input output pins (GPIO), five analog inputs, i2c inputs, and a USB port for serial communication. The soil temperature sensor and the temperature and humidity sensor are connected to the digital inputs through a 1K(ohm) pullup resistor. The pullup resistor is used to keep the voltage sent to the Arduino from fluctuating when the sensor is not sending any data. The TSL2561 luminosity sensor is connected to the A4/SDA and A5/SDL ports of the Arduino as it communicates over the i2c protocol. And the DFRobot soil moisture sensor is connected to A3 (Analog input 3) as it outputs analog voltage.  
 
